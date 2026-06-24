@@ -2,9 +2,9 @@
 
 Link to my repo containing other data science projects:
 
-* https://github.com/9more/Spam-Filtering
-* https://github.com/9more/Diabetes-Detection-
-* https://github.com/9more/test_repo
+* [Spam Filtering](https://github.com/9more/Spam-Filtering)
+* [Diabetes Detector](https://github.com/9more/Diabetes-Detection-)
+* [Full Repo](https://github.com/9more/test_repo)
 ## Project Overview
 This project analyses customer reviews from the Kaggle Amazon Reviews dataset to predict sentiment using Natural Language Processing (NLP) and machine learning. The objective is to transform unstructured text into meaningful numerical features and build an optimised classification pipeline for accurate sentiment prediction.
 
