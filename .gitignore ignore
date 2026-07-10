@@ -1,6 +1,0 @@
-#  Ignore Jupyter checkpoints .ipynb_checkpoints
-
-# Ignore other virtual documents or temporary state files
-
-*tmp
-*sage-swp
