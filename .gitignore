@@ -1,6 +1,25 @@
-## Ignore Jupyter checkpoints .ipynb_checkpoints/
+# Checkpoints
+**/*.ipynb_checkpoints/
+*.pyc
 
-# Ignore other virtual documents or temporary state files 
+# Virtual Environments
+venv/
+env/
+.env
 
-*.tmp
-*.sage-swp
+# Dependencies
+node_modules/
+
+
+
+ .ipynb_checkpoints/
+
+ Ignore other virtual documents or temporary state files 
+
+.tmp
+
+.sage-swp
+
+.virtual_documents
+
+*DS_Store/
