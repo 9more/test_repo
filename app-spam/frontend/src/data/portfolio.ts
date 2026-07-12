@@ -1,47 +1,67 @@
-export const portfolio = {
-
-  name: "Imoh Ekpenyong",
-
-  role: "Machine Learning Engineer",
-
-  headline:
-    "Building production-ready machine learning applications",
-
-  summary:
-    "I build end-to-end machine learning systems covering data processing, NLP, model development, APIs, cloud deployment and interactive user interfaces.",
-
-
-  technologies: [
-    "Python",
-    "Scikit-learn",
-    "Pandas",
-    "SQL",
-    "Flask",
-    "React",
-    "TypeScript",
-    "Docker",
-    "AWS",
-    "Azure",
-    "Power BI"
-  ],
+export interface Portfolio {
+    name: string;
+    title: string;
+    location: string;
+    summary: string;
+    introduction: string;
+    skills: string[];
+    expertise: string[];
+    focusAreas: string[];
+    email?: string;
+    github?: string;
+    linkedin?: string;
+}
 
 
-  featuredProject: {
+export const portfolio: Portfolio = {
 
-    title: "Spam Email Detection",
+    name: "Imoh Ekpenyong",
 
-    description:
-      "An NLP-powered classification application that detects spam emails using a machine learning pipeline deployed through a Flask API and React frontend.",
+    title:
+        "Data Scientist | Economist | Machine Learning Engineer",
 
-    model:
-      "Logistic Regression",
+    location:
+        "United Kingdom",
 
-    vectorizer:
-      "TF-IDF",
+    summary:
+        "Economist and data professional specialising in machine learning, analytics, econometrics and data-driven decision making.",
 
-    deployment:
-      "Docker + AWS"
+    introduction:
+        "I combine economics research expertise with practical data science experience, applying machine learning, statistical modelling and analytics to solve real-world problems.",
 
-  }
 
+    skills: [
+        "Python",
+        "Machine Learning",
+        "Natural Language Processing",
+        "SQL",
+        "Power BI",
+        "Econometrics",
+        "Data Analytics",
+        "Cloud Technologies"
+    ],
+
+
+    expertise: [
+        "Machine Learning",
+        "Natural Language Processing",
+        "Econometrics",
+        "Business Intelligence",
+        "Predictive Modelling"
+    ],
+
+
+    focusAreas: [
+        "Healthcare Analytics",
+        "Economic Assessment",
+        "Data Visualisation",
+        "Decision Support Systems"
+    ],
+
+
+    email: "",
+
+    github: "",
+
+    linkedin: ""
 };

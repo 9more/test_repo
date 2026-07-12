@@ -1,4 +1,5 @@
 import { portfolio } from "../data/portfolio";
+import { skills } from "../data/skills";
 
 function About() {
   return (
@@ -6,7 +7,7 @@ function About() {
 
       <div className="row">
 
-        <div className="col-lg-8">
+        <div className="col-lg-12">
 
           <h2 className="fw-bold mb-4">
             About Me
@@ -16,36 +17,56 @@ function About() {
             {portfolio.summary}
           </p>
 
-          <p>
+          <p className="mb-5">
             My focus is on building practical machine learning
             solutions that move from experimentation to deployment,
-            combining data science, software engineering, and cloud
-            technologies.
+            combining data science, software engineering,
+            cloud technologies and economic research.
           </p>
 
         </div>
 
       </div>
 
+      <div className="row g-4">
 
-      <div className="mt-4">
+        {skills.map((group) => (
 
-        <h4 className="mb-3">
-          Technology Stack
-        </h4>
-
-
-        {portfolio.technologies.map((tech) => (
-
-          <span
-            key={tech}
-            className="badge bg-primary fs-6 me-2 mb-2"
+          <div
+            key={group.category}
+            className="col-lg-4 col-md-6"
           >
-            {tech}
-          </span>
+
+            <div className="card h-100 shadow-sm border-0">
+
+              <div className="card-body">
+
+                <h5 className="card-title mb-3">
+                  {group.category}
+                </h5>
+
+                <div className="d-flex flex-wrap gap-2">
+
+                  {group.skills.map((skill) => (
+
+                    <span
+                      key={skill}
+                      className="badge bg-primary"
+                    >
+                      {skill}
+                    </span>
+
+                  ))}
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
 
         ))}
-
 
       </div>
 

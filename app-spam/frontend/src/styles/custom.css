@@ -1,221 +1,279 @@
-/* =========================================================
-   GLOBAL
-========================================================= */
+/* =====================================================
+   GLOBAL PORTFOLIO THEME
+===================================================== */
+
+html,
+body,
+#root {
+    background-color: #1f1f1f !important;
+    color: #f8f9fa;
+    min-height: 100%;
+}
+
 
 body {
-    background: #1f1f1f;
-    color: #f8f9fa;
+    margin: 0;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-html {
-    scroll-behavior: smooth;
+
+/* Remove default white containers */
+
+.app,
+main,
+.container-fluid {
+    background-color: #1f1f1f;
+    color: #f8f9fa;
 }
 
-section {
-    padding: 70px 0;
-}
-
-a {
-    text-decoration: none;
-}
 
 
-/* =========================================================
+/* =====================================================
    NAVBAR
-========================================================= */
+===================================================== */
 
 .navbar {
-    background-color: #212529 !important;
-    padding: 0.6rem 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+    background-color: #181818 !important;
+    border-bottom: 1px solid #333;
 }
 
+
 .navbar-brand {
-    font-size: 1.15rem;
+    color: #ffffff !important;
     font-weight: 700;
 }
 
+
 .nav-link {
-    color: #dee2e6 !important;
-    transition: 0.3s;
+    color: #ced4da !important;
 }
+
 
 .nav-link:hover {
     color: #0d6efd !important;
 }
 
 
-/* =========================================================
+
+/* =====================================================
    HERO
-========================================================= */
+===================================================== */
 
 .hero {
-    min-height: 82vh;
+    min-height: 80vh;
     display: flex;
     align-items: center;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    background-color: #1f1f1f !important;
 }
+
 
 .hero-title {
-    font-size: clamp(2.2rem, 4vw, 3rem);
+    color: #ffffff !important;
+    font-size: clamp(2.2rem, 5vw, 3rem);
     font-weight: 700;
-    margin-bottom: 0.5rem;
 }
+
 
 .hero-subtitle {
-    color: #0d6efd;
-    font-size: clamp(1.35rem, 2vw, 1.8rem);
-    font-weight: 600;
-    margin-bottom: 1rem;
+    color: #0d6efd !important;
+    font-size: 1.5rem;
 }
 
-.hero-description {
-    max-width: 700px;
-    color: #ced4da;
-    line-height: 1.8;
-    font-size: 1.05rem;
-    margin-bottom: 2rem;
-}
 
 .hero-location {
-    color: #adb5bd;
-    margin-bottom: 2rem;
-    font-size: 1rem;
+    color: #adb5bd !important;
 }
 
 
-/* =========================================================
-   BUTTONS
-========================================================= */
-
-.btn-primary {
-    padding: 10px 24px;
-    border-radius: 8px;
-}
-
-.btn-outline-light {
-    padding: 10px 24px;
-    border-radius: 8px;
+.hero-description {
+    color: #ced4da !important;
+    max-width: 700px;
 }
 
 
-/* =========================================================
-   CARDS
-========================================================= */
 
-.card {
-    background-color: #2b2b2b;
-    border: 1px solid #3c3c3c;
-    border-radius: 14px;
-    transition: all 0.25s ease;
+/* =====================================================
+   SECTIONS
+===================================================== */
+
+section {
+    background-color: #1f1f1f;
+    color: #f8f9fa;
 }
 
-.card:hover {
-    transform: translateY(-6px);
-    border-color: #0d6efd;
-    box-shadow: 0 12px 25px rgba(0,0,0,0.35);
-}
 
-.card-title {
+.section-title h2 {
     color: #ffffff;
 }
 
-.card-text {
-    color: #ced4da;
+
+.section-title p {
+    color: #adb5bd;
 }
 
 
-/* =========================================================
-   PROJECT ICONS
-========================================================= */
 
-.project-icon {
-    font-size: 3rem;
-    color: #0d6efd;
-    margin-bottom: 1rem;
+/* =====================================================
+   CARDS
+===================================================== */
+
+.card,
+.project-card,
+.feature-box,
+.metric-card,
+.demo-container {
+    background-color: #2a2a2a !important;
+    color: #ffffff !important;
+    border: 1px solid #3a3a3a;
+    border-radius: 14px;
 }
 
 
-/* =========================================================
-   BADGES
-========================================================= */
+.card-title,
+.project-card h3 {
+    color: #ffffff !important;
+}
+
+
+.card-text,
+.project-card p {
+    color: #ced4da !important;
+}
+
+
+.card:hover,
+.project-card:hover,
+.feature-box:hover {
+    border-color: #0d6efd;
+    transform: translateY(-5px);
+    transition: 0.3s ease;
+}
+
+
+
+/* =====================================================
+   PROJECT TAGS
+===================================================== */
 
 .badge {
-    font-size: 0.9rem;
-    margin-right: 6px;
-    margin-bottom: 6px;
+    margin: 4px;
     padding: 8px 12px;
 }
 
 
-/* =========================================================
-   FEATURE BOXES
-========================================================= */
 
-.feature-box {
-    background: #2b2b2b;
-    border: 1px solid #3b3b3b;
+/* =====================================================
+   SPAM DEMO
+===================================================== */
+
+.demo-container {
+    padding: 30px;
+}
+
+
+textarea {
+    background-color: #181818 !important;
+    color: white !important;
+    border: 1px solid #555 !important;
+}
+
+
+textarea::placeholder {
+    color: #888 !important;
+}
+
+
+.prediction-card {
+    background-color: #222 !important;
+    color: white;
+    border: 1px solid #444;
     border-radius: 12px;
-    padding: 24px;
-    transition: 0.25s;
-}
-
-.feature-box:hover {
-    border-color: #0d6efd;
-    transform: translateY(-4px);
+    padding: 20px;
 }
 
 
-/* =========================================================
-   METRIC CARDS
-========================================================= */
 
-.metric-card {
-    background: #2b2b2b;
-    border-radius: 12px;
-    padding: 25px;
-    text-align: center;
-    border: 1px solid #3b3b3b;
-}
+/* =====================================================
+   BUTTONS
+===================================================== */
 
-.metric-card h3 {
-    color: #0d6efd;
-    font-size: 2rem;
+.btn-primary {
+    background-color: #0d6efd !important;
+    border-color: #0d6efd !important;
 }
 
 
-/* =========================================================
+.btn-primary:hover {
+    transform: translateY(-2px);
+}
+
+
+
+/* =====================================================
    FOOTER
-========================================================= */
+===================================================== */
 
 footer {
-    background: #181818;
+    background-color: #181818 !important;
     color: #adb5bd;
-    padding: 40px 0;
-    text-align: center;
-    margin-top: 80px;
 }
 
 
-/* =========================================================
-   SCROLLBAR
-========================================================= */
 
-::-webkit-scrollbar {
-    width: 10px;
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .hero {
+        text-align: center;
+    }
+
 }
 
-::-webkit-scrollbar-track {
-    background: #202020;
+/* ==========================
+   TECHNOLOGY STACK
+========================== */
+
+#about .badge {
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.65rem 1rem;
+    border-radius: 999px;
+    transition: all 0.25s ease;
 }
 
-::-webkit-scrollbar-thumb {
-    background: #555;
-    border-radius: 10px;
+#about .badge:hover {
+    transform: translateY(-2px);
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background: #0d6efd;
+#about .d-flex {
+    align-items: center;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+#about .card {
+    background: #2b2b2b;
+    border-radius: 14px;
+    transition: 0.25s ease;
+}
+
+#about .card:hover {
+    transform: translateY(-5px);
+    border: 1px solid #0d6efd;
+}
+
+#about .card-title {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+#about .badge {
+    font-size: 0.85rem;
+    padding: 8px 12px;
 }
