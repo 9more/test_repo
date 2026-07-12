@@ -1,28 +1,88 @@
-from flask import Flask, render_template, request
-import pickle
+from flask import Flask, request, jsonify
+from flask_cors import CORS
+
+from src.predictor import predict_email
+
 
 app = Flask(__name__)
 
-model = pickle.load(open("saved_model.pkl","rb"))
+# Allow React frontend to communicate with Flask backend
+CORS(app)
 
-@app.route("/")
+
+@app.route("/", methods=["GET"])
 def home():
-    return render_template("index.html")
+
+    return jsonify(
+        {
+            "message": "Spam Detection API is running"
+        }
+    )
+
+
+@app.route("/health", methods=["GET"])
+def health():
+
+    return jsonify(
+        {
+            "status": "healthy"
+        }
+    )
+
 
 @app.route("/predict", methods=["POST"])
 def predict():
 
-    text = request.form["message"]
+    try:
 
-    prediction = model.predict([text])[0]
+        data = request.get_json()
 
-    result = "Spam" if prediction == 1 else "Not Spam"
+        if not data:
 
-    return render_template(
-        "index.html",
-        prediction=result,
-        message=text
-    )
+            return jsonify(
+                {
+                    "error": "No JSON data received"
+                }
+            ), 400
+
+
+        email = data.get("message")
+
+
+        if not email:
+
+            return jsonify(
+                {
+                    "error": "No email message provided"
+                }
+            ), 400
+
+
+        result = predict_email(email)
+
+
+        return jsonify(result), 200
+
+
+    except Exception as e:
+
+        return jsonify(
+            {
+                "error": str(e)
+            }
+        ), 500
+
+
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0")
+
+    app.run(
+        host="0.0.0.0",
+        port=5000,
+        debug=True
+    )
+
+
+
+
+

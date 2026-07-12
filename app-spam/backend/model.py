@@ -1,7 +1,9 @@
+from pathlib import Path
 import pickle
 
-MODEL_PATH = "trained_model.pkl"
-
+MODEL_PATH = "model"
+BASE_DIR = Path(__file__).resolve().parent
+MODEL_PATH = BASE_DIR / "spam_model.pkl"
 
 class SpamClassifier:
 
