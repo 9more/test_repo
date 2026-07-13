@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ResultCard from "./ResultCard";
+import { predictSpam } from "../services/api";
 
 function SpamForm() {
 
@@ -13,24 +14,34 @@ function SpamForm() {
 
     const handlePrediction = async () => {
 
-        if (message.trim().length < 5) {
-            alert("Please enter an email to analyse.");
+        if (message.length < 5) {
+
+            alert("Please enter an email.");
+
             return;
         }
 
-        setLoading(true);
+        try {
 
-        // Temporary until Flask API is connected
+            setLoading(true);
 
-        setTimeout(() => {
+            const result = await predictSpam(message);
 
-            setPrediction("Not Spam");
-            setConfidence(98.74);
+            setPrediction(result.prediction);
+
+            setConfidence(result.confidence);
+
+        } catch (error) {
+
+            console.error(error);
+
+            alert("Prediction failed.");
+
+        } finally {
 
             setLoading(false);
 
-        }, 800);
-
+        }
     };
 
     return (
@@ -58,29 +69,19 @@ function SpamForm() {
                 </div>
 
                 <textarea
-
                     className="form-control"
-
                     rows={10}
-
                     placeholder="Paste an email message here..."
-
                     value={message}
-
                     onChange={(e) => setMessage(e.target.value)}
-
                 />
 
                 <div className="d-grid mt-4">
 
                     <button
-
                         className="btn btn-primary btn-lg"
-
-                        disabled={loading}
-
                         onClick={handlePrediction}
-
+                        disabled={loading}
                     >
 
                         {loading ? (
@@ -99,8 +100,11 @@ function SpamForm() {
                         ) : (
 
                             <>
+
                                 <i className="bi bi-cpu me-2"></i>
+
                                 Detect Spam
+
                             </>
 
                         )}
@@ -114,11 +118,8 @@ function SpamForm() {
                     <div className="mt-4">
 
                         <ResultCard
-
                             prediction={prediction}
-
                             confidence={confidence}
-
                         />
 
                     </div>
@@ -130,7 +131,6 @@ function SpamForm() {
         </div>
 
     );
-
 }
 
 export default SpamForm;
