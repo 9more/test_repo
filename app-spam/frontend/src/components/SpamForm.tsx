@@ -1,88 +1,76 @@
 import { useState } from "react";
 import ResultCard from "./ResultCard";
 
+
 function SpamForm() {
 
-  const [message, setMessage] = useState("");
+    const [message, setMessage] = useState("");
 
-  const [prediction, setPrediction] = useState("");
+    const [prediction, setPrediction] = useState("");
 
-  const [confidence, setConfidence] = useState(0);
+    const [confidence, setConfidence] = useState(0);
 
-  const handlePrediction = () => {
 
-    if (message.length < 5) {
+    const handlePrediction = () => {
 
-      alert("Please enter an email.");
+        if (message.length < 5) {
 
-      return;
+            alert("Please enter an email.");
 
-    }
+            return;
+        }
 
-    // Temporary until Flask API is connected
 
-    setPrediction("Not Spam");
+        // Temporary until Flask API is connected
 
-    setConfidence(98.74);
+        setPrediction("Not Spam");
 
-  };
+        setConfidence(98.74);
 
-  return (
+    };
 
-    <div className="card shadow-lg border-0">
 
-      <div className="card-body">
+    return (
+        <div className="card shadow-lg border-0">
 
-        <h4 className="mb-3">
+            <div className="card-body">
 
-          Live Spam Detector
+                <h4 className="mb-3">
+                    Live Spam Detector
+                </h4>
 
-        </h4>
 
-        <textarea
+                <textarea
+                    className="form-control"
+                    rows={10}
+                    placeholder="Paste an email here..."
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                />
 
-          className="form-control"
 
-          rows={10}
+                <button
+                    className="btn btn-primary btn-lg mt-4 w-100"
+                    onClick={handlePrediction}
+                >
+                    Detect Spam
+                </button>
 
-          placeholder="Paste an email here..."
 
-          value={message}
+                {prediction && (
 
-          onChange={(e) => setMessage(e.target.value)}
+                    <ResultCard
+                        prediction={prediction}
+                        confidence={confidence}
+                    />
 
-        />
+                )}
 
-        <button
+            </div>
 
-          className="btn btn-primary btn-lg mt-4 w-100"
-
-          onClick={handlePrediction}
-
-        >
-
-          Detect Spam
-
-        </button>
-
-        {prediction && (
-
-          <ResultCard
-
-            prediction={prediction}
-
-            confidence={confidence}
-
-          />
-
-        )}
-
-      </div>
-
-    </div>
-
-  );
-
+        </div>
+    );
 }
+
 
 export default SpamForm;

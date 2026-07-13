@@ -1,9 +1,11 @@
 function Header() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+
       <div className="container">
+
         <a className="navbar-brand fw-bold" href="#">
-          ML Portfolio
+          Imoh Ekpenyong
         </a>
 
         <button
@@ -15,10 +17,12 @@ function Header() {
           <span className="navbar-toggler-icon"></span>
         </button>
 
+
         <div
           className="collapse navbar-collapse justify-content-end"
           id="navbarNav"
         >
+
           <ul className="navbar-nav">
 
             <li className="nav-item">
@@ -27,17 +31,20 @@ function Header() {
               </a>
             </li>
 
+
             <li className="nav-item">
-              <a className="nav-link" href="#technology">
+              <a className="nav-link" href="#about">
                 Technology
               </a>
             </li>
+
 
             <li className="nav-item">
               <a className="nav-link" href="#projects">
                 Projects
               </a>
             </li>
+
 
             <li className="nav-item">
               <a className="nav-link" href="#contact">
@@ -46,8 +53,11 @@ function Header() {
             </li>
 
           </ul>
+
         </div>
+
       </div>
+
     </nav>
   );
 }

@@ -10,7 +10,7 @@ export const skills: SkillCategory[] = [
       "Python",
       "SQL",
       "R",
-      "TypeScript"
+      "Stata"
     ]
   },
 
@@ -49,7 +49,6 @@ export const skills: SkillCategory[] = [
     skills: [
       "Azure",
       "Flask",
-      "React",
       "Git",
       "Docker"
     ]

@@ -6,6 +6,7 @@ type Props = {
     category: "Machine Learning" | "Business Intelligence" | "Research";
 };
 
+
 function ProjectSection({ title, category }: Props) {
 
     const filteredProjects = projects.filter(
@@ -14,17 +15,19 @@ function ProjectSection({ title, category }: Props) {
             !project.featured
     );
 
-    if (filteredProjects.length === 0) return null;
+
+    if (filteredProjects.length === 0) {
+        return null;
+    }
+
 
     return (
-
         <section className="container py-5">
 
             <h2 className="fw-bold mb-4">
-
                 {title}
-
             </h2>
+
 
             <div className="row">
 
@@ -40,9 +43,8 @@ function ProjectSection({ title, category }: Props) {
             </div>
 
         </section>
-
     );
-
 }
+
 
 export default ProjectSection;

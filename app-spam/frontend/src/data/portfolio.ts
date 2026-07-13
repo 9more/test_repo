@@ -4,14 +4,13 @@ export interface Portfolio {
     location: string;
     summary: string;
     introduction: string;
-    skills: string[];
+    technologies: string[];
     expertise: string[];
     focusAreas: string[];
-    email?: string;
-    github?: string;
-    linkedin?: string;
+    email: string;
+    github: string;
+    linkedin: string;
 }
-
 
 export const portfolio: Portfolio = {
 
@@ -29,8 +28,7 @@ export const portfolio: Portfolio = {
     introduction:
         "I combine economics research expertise with practical data science experience, applying machine learning, statistical modelling and analytics to solve real-world problems.",
 
-
-    skills: [
+    technologies: [
         "Python",
         "Machine Learning",
         "Natural Language Processing",
@@ -41,7 +39,6 @@ export const portfolio: Portfolio = {
         "Cloud Technologies"
     ],
 
-
     expertise: [
         "Machine Learning",
         "Natural Language Processing",
@@ -50,7 +47,6 @@ export const portfolio: Portfolio = {
         "Predictive Modelling"
     ],
 
-
     focusAreas: [
         "Healthcare Analytics",
         "Economic Assessment",
@@ -58,10 +54,9 @@ export const portfolio: Portfolio = {
         "Decision Support Systems"
     ],
 
+    email: "imoh.ekpenyong@aol.com",
 
-    email: "",
+    github: "https://github.com/9more/test_repo",
 
-    github: "",
-
-    linkedin: ""
+    linkedin: "linkedin.com/in/imoh-ekpenyong-95983045"
 };

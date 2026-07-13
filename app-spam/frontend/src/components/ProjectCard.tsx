@@ -8,11 +8,10 @@ type Props = {
 function ProjectCard({ project }: Props) {
     return (
         <div className="col-lg-4 col-md-6 mb-4">
+
             <div className="card project-card h-100 shadow-sm">
 
                 <div className="card-body d-flex flex-column">
-
-                    {/* Status */}
 
                     <div className="d-flex justify-content-between align-items-center mb-3">
 
@@ -32,31 +31,21 @@ function ProjectCard({ project }: Props) {
 
                     </div>
 
-                    {/* Title */}
 
                     <h4 className="fw-bold mb-3">
-
                         {project.title}
-
                     </h4>
 
-                    {/* Description */}
 
                     <p className="text-secondary flex-grow-1">
-
                         {project.description}
-
                     </p>
 
-                    {/* Project Type */}
 
                     <p className="small mb-3">
-
                         <strong>Type:</strong> {project.type}
-
                     </p>
 
-                    {/* Technologies */}
 
                     <div className="mb-4">
 
@@ -73,16 +62,16 @@ function ProjectCard({ project }: Props) {
 
                     </div>
 
-                    {/* Buttons */}
 
                     <div className="d-grid gap-2 mt-auto">
 
                         <Link
-                            to={`/projects/${project.id}`}
+                            to={`/projects/${project.slug}`}
                             className="btn btn-primary"
                         >
                             View Project
                         </Link>
+
 
                         <a
                             href={project.github}
@@ -98,6 +87,7 @@ function ProjectCard({ project }: Props) {
                 </div>
 
             </div>
+
         </div>
     );
 }

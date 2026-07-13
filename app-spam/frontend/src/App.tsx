@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import ProjectPage from "./pages/ProjectPage";
 import NotFound from "./pages/NotFound";
 
+
 function App() {
     return (
         <BrowserRouter>
@@ -21,7 +22,7 @@ function App() {
                 />
 
                 <Route
-                    path="/projects/:id"
+                    path="/projects/:slug"
                     element={<ProjectPage />}
                 />
 
@@ -37,5 +38,6 @@ function App() {
         </BrowserRouter>
     );
 }
+
 
 export default App;
