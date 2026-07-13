@@ -4,54 +4,75 @@ function Experience() {
     return (
         <section id="experience" className="container py-5">
 
-            <h2 className="fw-bold mb-5">
-                Professional Experience
-            </h2>
+            <div className="text-center mb-5">
+
+                <h2 className="fw-bold">
+                    Professional Experience
+                </h2>
+
+                <p className="text-secondary">
+                    Experience spanning data analysis, research, economics and operational analytics.
+                </p>
+
+            </div>
 
             <div className="row">
 
-                {experience.map((job) => (
+                {experience.map((job, index) => (
 
                     <div
-                        key={`${job.company}-${job.role}`}
-                        className="col-12 mb-4"
+                        key={index}
+                        className="col-lg-12 mb-4"
                     >
 
-                        <div className="card shadow-sm border-0">
+                        <div className="timeline-card p-4">
 
-                            <div className="card-body">
+                            <div className="d-flex flex-column flex-lg-row justify-content-between mb-3">
 
-                                <h4 className="fw-bold">
-                                    {job.role}
-                                </h4>
+                                <div>
 
-                                <h5 className="text-primary">
-                                    {job.company}
-                                </h5>
+                                    <h4 className="fw-bold mb-1">
+                                        {job.role}
+                                    </h4>
 
-                                <p className="text-secondary mb-3">
+                                    <h5 className="text-primary mb-2">
+                                        {job.company}
+                                    </h5>
 
-                                    {job.period}
+                                </div>
+
+                                <div className="text-lg-end">
+
+                                    <div className="fw-semibold">
+                                        {job.period}
+                                    </div>
 
                                     {job.location && (
-                                        <> • {job.location}</>
+
+                                        <div className="text-secondary">
+                                            {job.location}
+                                        </div>
+
                                     )}
 
-                                </p>
-
-                                <ul className="mb-0">
-
-                                    {job.responsibilities.map((item) => (
-
-                                        <li key={item}>
-                                            {item}
-                                        </li>
-
-                                    ))}
-
-                                </ul>
+                                </div>
 
                             </div>
+
+                            <ul className="mb-0">
+
+                                {job.responsibilities.map((item) => (
+
+                                    <li
+                                        key={item}
+                                        className="mb-2"
+                                    >
+                                        {item}
+                                    </li>
+
+                                ))}
+
+                            </ul>
 
                         </div>
 

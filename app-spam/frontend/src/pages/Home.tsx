@@ -1,8 +1,10 @@
 import Hero from "../components/Hero";
 import Highlights from "../components/Highlights";
-import About from "../pages/About";
-import Projects from "../pages/Projects";
-import Contact from "../pages/Contact";
+
+import Projects from "./Projects";
+import About from "./About";
+import Experience from "./Experience";
+import Contact from "./Contact";
 
 function Home() {
     return (
@@ -11,9 +13,11 @@ function Home() {
 
             <Highlights />
 
+            <Projects />
+
             <About />
 
-            <Projects />
+            <Experience />
 
             <Contact />
         </>

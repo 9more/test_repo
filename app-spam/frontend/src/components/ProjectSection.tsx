@@ -1,11 +1,10 @@
-import { projects } from "../data/projects";
 import ProjectCard from "./ProjectCard";
+import { projects } from "../data/projects";
 
 type Props = {
     title: string;
-    category: "Machine Learning" | "Business Intelligence" | "Research";
+    category: string;
 };
-
 
 function ProjectSection({ title, category }: Props) {
 
@@ -15,21 +14,22 @@ function ProjectSection({ title, category }: Props) {
             !project.featured
     );
 
-
     if (filteredProjects.length === 0) {
         return null;
     }
 
-
     return (
         <section className="container py-5">
 
-            <h2 className="fw-bold mb-4">
-                {title}
-            </h2>
+            <div className="mb-4">
 
+                <h2 className="fw-bold">
+                    {title}
+                </h2>
 
-            <div className="row">
+            </div>
+
+            <div className="row g-4">
 
                 {filteredProjects.map((project) => (
 
@@ -45,6 +45,5 @@ function ProjectSection({ title, category }: Props) {
         </section>
     );
 }
-
 
 export default ProjectSection;

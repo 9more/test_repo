@@ -13,6 +13,6 @@ export const highlights = [
     },
     {
         value: "10+",
-        label: "Years Research & Analytical Experience"
+        label: "Years of Research & Analytics"
     }
 ];

@@ -2,11 +2,11 @@ import { highlights } from "../data/highlights";
 
 function Highlights() {
     return (
-        <section className="highlights py-5">
+        <section className="highlights">
 
             <div className="container">
 
-                <div className="row g-4">
+                <div className="row g-3">
 
                     {highlights.map((item) => (
 
@@ -15,7 +15,7 @@ function Highlights() {
                             className="col-lg-3 col-md-6"
                         >
 
-                            <div className="highlight-card text-center">
+                            <div className="highlight-card">
 
                                 <h3 className="highlight-value">
                                     {item.value}

@@ -1,12 +1,24 @@
+import SkillsPanel from "./SkillsPanel";
+
 function Hero() {
     return (
         <section className="hero">
 
             <div className="container">
 
-                <div className="row align-items-center">
+                <div className="row align-items-center g-5">
 
-                    <div className="col-lg-10">
+                    {/* Skills Panel */}
+
+                    <div className="col-lg-4">
+
+                        <SkillsPanel />
+
+                    </div>
+
+                    {/* Hero Content */}
+
+                    <div className="col-lg-8">
 
                         <h1 className="hero-title">
                             Imoh Ekpenyong
@@ -22,12 +34,10 @@ function Hero() {
                         </p>
 
                         <p className="hero-description">
-                            Building practical machine learning and analytics
-                            solutions by combining data science, econometrics,
-                            business intelligence and cloud technologies.
-                            Experienced in transforming complex data into
-                            actionable insights through scalable and
-                            production-ready applications.
+                            Building machine learning, analytics and
+                            decision-support applications using data science,
+                            econometrics, business intelligence and cloud
+                            technologies.
                         </p>
 
                         <div className="d-flex flex-wrap gap-3">

@@ -9,9 +9,3 @@ export default defineConfig({
     strictPort: true
   }
 });
-
-
-
-git add .
-git commit -m "Stabilize frontend structure and styling"
-git push origin development

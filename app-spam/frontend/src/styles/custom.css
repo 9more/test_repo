@@ -1,11 +1,11 @@
 /* =====================================================
-   GLOBAL PORTFOLIO THEME
+   GLOBAL
 ===================================================== */
 
 html,
 body,
 #root {
-    background-color: #1f1f1f;
+    background-color: #151515;
     color: #f8f9fa;
     min-height: 100%;
 }
@@ -15,13 +15,12 @@ body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Main containers */
+section {
+    padding: 4rem 0;
+}
 
-.app,
-main,
-.container-fluid {
-    background-color: #1f1f1f;
-    color: #f8f9fa;
+.container {
+    max-width: 1250px;
 }
 
 /* =====================================================
@@ -29,8 +28,8 @@ main,
 ===================================================== */
 
 .navbar {
-    background-color: #181818 !important;
-    border-bottom: 1px solid #333;
+    background-color: #111111 !important;
+    border-bottom: 1px solid #2e2e2e;
 }
 
 .navbar-brand {
@@ -47,90 +46,105 @@ main,
 }
 
 /* =====================================================
-   GENERAL SECTIONS
+   HERO
 ===================================================== */
-
-section {
-    background-color: #1f1f1f;
-    color: #f8f9fa;
-}
-
-.section-title h2 {
-    color: #ffffff;
-}
-
-.section-title p {
-    color: #adb5bd;
-}
-
-/* =====================================================
-   HERO SECTION
-===================================================== */
-
 .hero {
-    min-height: 75vh;
-    display: flex;
-    align-items: center;
-    padding: 100px 0;
+    min-height: auto;
+    padding: 25px 0 15px;
 }
 
 .hero-title {
     color: #ffffff;
-    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-size: clamp(1.9rem, 3vw, 2.8rem);
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.1;
 }
 
 .hero-subtitle {
     color: #0d6efd;
-    font-size: 1.6rem;
+    font-size: 1.15rem;
     font-weight: 500;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .hero-location {
     color: #adb5bd;
-    font-size: 1.1rem;
-    opacity: 0.85;
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
 }
 
 .hero-description {
     color: #ced4da;
-    font-size: 1.2rem;
-    line-height: 1.8;
-    max-width: 850px;
-    margin: 2rem 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 650px;
+    margin-bottom: 1.5rem;
+}
+/* =====================================================
+   SKILLS PANEL
+===================================================== */
+
+.skills-group {
+    margin-bottom: 0.9rem;
+}
+
+.skills-category {
+    color: #0d6efd;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.skills-badges .badge {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.7rem;
+}
+
+.skills-panel {
+    background: #242424;
+    border: 1px solid #353535;
+    border-radius: 14px;
+    padding: 1.5rem;
 }
 
 /* =====================================================
    HIGHLIGHTS
 ===================================================== */
 
+/* =====================================================
+   HIGHLIGHTS
+===================================================== */
+
 .highlights {
-    margin-top: 30px;
+    padding: 1rem 0 2rem;
 }
 
 .highlight-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
-    padding: 30px 20px;
-    transition: transform 0.25s ease;
+    background: #242424;
+    border: 1px solid #353535;
+    border-radius: 12px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.25s ease;
+    height: 100%;
 }
 
 .highlight-card:hover {
-    transform: translateY(-5px);
+    border-color: #0d6efd;
+    transform: translateY(-4px);
 }
 
 .highlight-value {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     font-weight: 700;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
 }
 
 .highlight-label {
-    font-size: 1rem;
-    opacity: 0.85;
-    margin-bottom: 0;
+    color: #adb5bd;
+    margin: 0;
+    font-size: 0.9rem;
 }
 
 /* =====================================================
@@ -138,111 +152,123 @@ section {
 ===================================================== */
 
 #about .card {
-    background: #2b2b2b;
+    background: #242424;
+    border: 1px solid #353535;
     border-radius: 14px;
-    transition: 0.25s ease;
 }
 
 #about .card:hover {
-    transform: translateY(-5px);
-    border: 1px solid #0d6efd;
+    border-color: #0d6efd;
 }
 
-#about .card-title {
-    color: #ffffff;
-    font-weight: 600;
+#about .badge {
+    padding: 0.55rem 0.85rem;
 }
 
 /* =====================================================
-   TECHNOLOGY STACK
+   PROJECTS
 ===================================================== */
 
-#about .badge {
-    font-size: 0.95rem;
-    font-weight: 500;
-    padding: 0.65rem 1rem;
-    border-radius: 999px;
-    margin: 4px;
+.project-card {
+    background: #242424;
+    border: 1px solid #353535;
+    border-radius: 14px;
     transition: all 0.25s ease;
 }
 
-#about .badge:hover {
-    transform: translateY(-2px);
+.project-card:hover {
+    border-color: #0d6efd;
+    transform: translateY(-4px);
 }
 
-#about .d-flex {
-    align-items: center;
+.project-card .badge.bg-dark {
+    background-color: #181818 !important;
+    border: 1px solid #444;
+}
+
+.metric-card {
+    background: #1b1b1b;
+    border: 1px solid #303030;
+}
+
+.metric-card h5,
+.metric-card h3 {
+    color: #ffffff;
+}
+
+.project-card h4 {
+    font-size: 1.2rem;
+}
+
+.project-card p {
+    font-size: 0.95rem;
+}
+
+/* =====================================================
+   FORMS
+===================================================== */
+
+textarea.form-control {
+    background-color: #181818;
+    border: 1px solid #444;
+    color: #ffffff;
+}
+
+textarea.form-control:focus {
+    background-color: #181818;
+    border-color: #0d6efd;
+    box-shadow: none;
+    color: #ffffff;
+}
+
+textarea::placeholder {
+    color: #777;
 }
 
 /* =====================================================
    CARDS
 ===================================================== */
 
-.card,
-.project-card,
-.feature-box,
-.metric-card,
-.demo-container {
-    background-color: #2a2a2a;
-    color: #ffffff;
-    border: 1px solid #3a3a3a;
-    border-radius: 14px;
-}
-
-.card-title,
-.project-card h3 {
+.card {
+    background-color: #242424;
     color: #ffffff;
 }
 
-.card-text,
-.project-card p {
-    color: #ced4da;
-}
-
-.card:hover,
-.project-card:hover,
-.feature-box:hover {
-    border-color: #0d6efd;
-    transform: translateY(-5px);
-    transition: 0.3s ease;
+.card-title {
+    color: #ffffff;
 }
 
 /* =====================================================
-   SPAM DEMO
+   EXPERIENCE
 ===================================================== */
 
-.demo-container {
-    padding: 30px;
+.timeline-card {
+    background: #242424;
+    border: 1px solid #353535;
+    border-radius: 14px;
 }
 
-textarea {
-    background-color: #181818;
-    color: #ffffff;
-    border: 1px solid #555;
+.timeline-card:hover {
+    border-color: #0d6efd;
 }
 
-textarea::placeholder {
-    color: #888;
-}
+/* =====================================================
+   CONTACT
+===================================================== */
 
-.prediction-card {
-    background-color: #222;
-    color: #ffffff;
-    border: 1px solid #444;
-    border-radius: 12px;
-    padding: 20px;
+.contact-card {
+    background: #242424;
+    border: 1px solid #353535;
+    border-radius: 14px;
 }
 
 /* =====================================================
    BUTTONS
 ===================================================== */
 
-.btn-primary {
-    background-color: #0d6efd;
-    border-color: #0d6efd;
-}
-
-.btn-primary:hover {
+.btn-primary:hover,
+.btn-outline-primary:hover,
+.btn-outline-light:hover {
     transform: translateY(-2px);
 }
 
@@ -252,25 +278,91 @@ textarea::placeholder {
 
 footer {
     background-color: #181818;
+    border-top: 1px solid #333;
     color: #adb5bd;
+}
+
+/* =====================================================
+   PROJECT PAGE
+===================================================== */
+
+.project-info-card {
+    background: #242424;
+    border: 1px solid #353535;
+    border-radius: 14px;
+}
+
+.project-page h2 {
+    font-size: 1.4rem;
+}
+
+.project-page h3 {
+    font-size: 1.15rem;
+}
+
+.project-page li {
+    margin-bottom: 0.3rem;
+}
+
+details summary {
+    list-style: none;
+    cursor: pointer;
+}
+
+details summary::-webkit-details-marker {
+    display: none;
+}
+
+details[open] summary {
+    margin-bottom: 1rem;
 }
 
 /* =====================================================
    RESPONSIVE
 ===================================================== */
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
+
     .hero {
-        min-height: auto;
-        padding: 80px 0;
+        padding-top: 20px;
+    }
+
+    .skills-panel {
+        margin-bottom: 2rem;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .hero {
         text-align: center;
     }
 
     .hero-description {
-        font-size: 1.05rem;
+        max-width: 100%;
     }
 
-    .highlight-card {
-        margin-bottom: 20px;
+    .skills-panel {
+        text-align: left;
     }
+}
+
+/* =====================================================
+   TYPOGRAPHY TUNING
+===================================================== */
+
+h2 {
+    font-size: 1.75rem;
+}
+
+.project-card h4 {
+    font-size: 1.2rem;
+}
+
+.project-card p {
+    font-size: 0.95rem;
 }
