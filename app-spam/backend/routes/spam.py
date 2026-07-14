@@ -23,7 +23,13 @@ def predict():
 
     result = classifier.predict(message)
 
+    LABEL_MAP = {
+        0: "NOT SPAM",
+        1: "SPAM"
+    }
+
+    result["prediction"] = LABEL_MAP[
+        int(result["prediction"])
+    ]
+
     return jsonify(result)
-
-    
-
