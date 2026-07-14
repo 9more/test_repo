@@ -6,7 +6,34 @@ from model import sentiment_classifier
 
 app = Flask(__name__)
 
-CORS(app)
+CORS(
+    app,
+    resources={
+        r"/*": {
+            "origins": "*"
+        }
+    }
+)
+
+@app.after_request
+def after_request(response):
+
+    response.headers.add(
+        "Access-Control-Allow-Origin",
+        "*"
+    )
+
+    response.headers.add(
+        "Access-Control-Allow-Headers",
+        "Content-Type,Authorization"
+    )
+
+    response.headers.add(
+        "Access-Control-Allow-Methods",
+        "GET,PUT,POST,DELETE,OPTIONS"
+    )
+
+    return response
 
 with open("models/spam_model.pkl", "rb") as f:
     model = pickle.load(f)
