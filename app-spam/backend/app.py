@@ -1,88 +1,62 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-
-from src.predictor import predict_email
-
+import pickle
+from utils.preprocessing import preprocess_text
+from model import sentiment_classifier
 
 app = Flask(__name__)
 
-# Allow React frontend to communicate with Flask backend
 CORS(app)
 
+with open("models/spam_model.pkl", "rb") as f:
+    model = pickle.load(f)
 
-@app.route("/", methods=["GET"])
+
+@app.route("/")
 def home():
 
-    return jsonify(
-        {
-            "message": "Spam Detection API is running"
-        }
-    )
+    return {
+        "status": "running",
+        "message": "Portfolio API"
+    }
 
 
-@app.route("/health", methods=["GET"])
-def health():
+@app.route("/predict/spam", methods=["POST"])
+def predict_spam():
 
-    return jsonify(
-        {
-            "status": "healthy"
-        }
-    )
+    data = request.get_json()
 
+    message = data.get("message", "")
 
-@app.route("/predict", methods=["POST"])
-def predict():
+    clean_text = preprocess_text(message)
 
-    try:
+    prediction = model.predict([clean_text])[0]
 
-        data = request.get_json()
+    LABEL_MAP = {
+        0: "Not Spam",
+        1: "Spam"
+    }
 
-        if not data:
+    return jsonify({
+        "prediction": LABEL_MAP[int(prediction)],
+        "confidence": 100
+    })
 
-            return jsonify(
-                {
-                    "error": "No JSON data received"
-                }
-            ), 400
+@app.route("/predict/sentiment", methods=["POST"])
+def predict_sentiment():
 
+    data = request.get_json()
 
-        email = data.get("message")
+    text = data.get("text", "")
 
+    result = sentiment_classifier.predict(text)
 
-        if not email:
-
-            return jsonify(
-                {
-                    "error": "No email message provided"
-                }
-            ), 400
-
-
-        result = predict_email(email)
-
-
-        return jsonify(result), 200
-
-
-    except Exception as e:
-
-        return jsonify(
-            {
-                "error": str(e)
-            }
-        ), 500
-
+    return jsonify(result)
 
 
 if __name__ == "__main__":
-
     app.run(
         host="0.0.0.0",
         port=5000,
         debug=True
     )
-
-
-
-
-

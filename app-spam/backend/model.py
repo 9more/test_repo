@@ -1,30 +1,75 @@
 from pathlib import Path
 import pickle
 
-MODEL_PATH = "model"
+from utils.preprocessing import preprocess_text
+
 BASE_DIR = Path(__file__).resolve().parent
-MODEL_PATH = BASE_DIR / "spam_model.pkl"
+
+MODEL_PATH = BASE_DIR / "models" / "spam_model.pkl"
+
 
 class SpamClassifier:
 
     def __init__(self):
+
         with open(MODEL_PATH, "rb") as file:
             self.model = pickle.load(file)
 
     def predict(self, message):
 
-        prediction = self.model.predict([message])[0]
+        clean_text = preprocess_text(message)
 
-        probability = self.model.predict_proba([message])[0]
+        prediction = self.model.predict(
+            [clean_text]
+        )[0]
 
-        confidence = max(probability)
-
-        label = "Spam" if prediction == 1 else "Not Spam"
+        label = (
+            "Spam"
+            if int(prediction) == 1
+            else "Not Spam"
+        )
 
         return {
             "prediction": label,
-            "confidence": round(confidence * 100, 2)
+            "confidence": 100
         }
 
 
 classifier = SpamClassifier()
+
+#=======================================================================
+#Sentiment Analysis Model
+#=======================================================================
+
+class SentimentClassifier:
+
+    def __init__(self):
+
+        with open(
+            BASE_DIR / "models" / "sentiment_model.pkl",
+            "rb"
+        ) as file:
+
+            self.model = pickle.load(file)
+
+    def predict(self, text):
+
+        clean_text = preprocess_text(text)
+
+        prediction = self.model.predict(
+            [clean_text]
+        )[0]
+
+        label = (
+            "Positive Sentiment"
+            if int(prediction) == 1
+            else "Negative Sentiment"
+        )
+
+        return {
+            "prediction": label,
+            "confidence": 100
+        }
+
+
+sentiment_classifier = SentimentClassifier()
