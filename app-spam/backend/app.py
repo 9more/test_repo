@@ -2,7 +2,9 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import pickle
 from utils.preprocessing import preprocess_text
-from model import sentiment_classifier
+from model import sentiment_classifier, insurance_estimator
+
+
 
 app = Flask(__name__)
 
@@ -80,6 +82,15 @@ def predict_sentiment():
 
     return jsonify(result)
 
+
+@app.route("/predict/insurance", methods=["POST"])
+def predict_insurance():
+
+    data = request.get_json()
+
+    result = insurance_estimator.predict(data)
+
+    return jsonify(result)
 
 if __name__ == "__main__":
     app.run(

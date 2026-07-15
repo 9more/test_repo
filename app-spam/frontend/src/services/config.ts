@@ -1,7 +1,6 @@
 const config = {
     API_BASE_URL:
-        import.meta.env.VITE_API_URL ||
-        "http://localhost:5000"
+        "https://obscure-funicular-76jp96vjvvw3pggq-5000.app.github.dev"
 };
 
 export default config;

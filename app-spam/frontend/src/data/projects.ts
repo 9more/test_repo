@@ -177,19 +177,22 @@ export const projects: Project[] = [
 
         type: "Regression",
 
-        technologies: [
-            "Python",
-            "Pandas",
-            "Scikit-learn"
-        ],
+       technologies: [
+                "Python",
+                "Pandas",
+                "Scikit-Learn",
+                "Flask",
+                "React"
+            ],
 
         workflow: [
             "User Input",
             "Preprocessing",
             "Encoding",
-            "Regression Model",
+            "Quantile Transformation",
+            "Random Forest Regression",
             "Charge Estimation"
-        ],
+],
 
         metrics: {
             rmse: "To be updated",

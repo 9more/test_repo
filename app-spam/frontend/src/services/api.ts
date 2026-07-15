@@ -46,6 +46,11 @@ export async function predictSentiment(
     text: string
 ): Promise<SentimentPredictionResponse> {
 
+    console.log(
+        "API URL:",
+        `${API_BASE_URL}/predict/sentiment`
+    );
+
     const response = await fetch(
         `${API_BASE_URL}/predict/sentiment`,
         {

@@ -73,3 +73,67 @@ class SentimentClassifier:
 
 
 sentiment_classifier = SentimentClassifier()
+
+
+
+#==========================================================================================
+
+# INSURANCXE ESTIMATOR
+
+#=========================================================================================
+
+class InsuranceEstimator:
+
+    def __init__(self):
+
+        with open(
+            BASE_DIR / "models" / "insurance_model.pkl",
+            "rb"
+        ) as file:
+
+            self.model = pickle.load(file)
+
+    def predict(self, data):
+
+        prediction = self.model.predict([data])[0]
+
+        return {
+            "estimatedCharge":
+                round(float(prediction), 2)
+        }
+
+
+insurance_estimator = InsuranceEstimator()
+
+
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# INSURANCE ESTIMATOR
+#==========================================================
+
+import pickle
+import pandas as pd
+
+class InsuranceEstimator:
+
+    def __init__(self):
+
+        with open(
+            "models/insurance_model.pkl",
+            "rb"
+        ) as f:
+
+            self.model = pickle.load(f)
+
+    def predict(self, data):
+
+        X = pd.DataFrame([data])
+
+        prediction = self.model.predict(X)[0]
+
+        return {
+            "estimatedCharge":
+                round(float(prediction), 2)
+        }
+
+
+insurance_estimator = InsuranceEstimator()
