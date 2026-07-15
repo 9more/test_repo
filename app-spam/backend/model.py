@@ -137,3 +137,41 @@ class InsuranceEstimator:
 
 
 insurance_estimator = InsuranceEstimator()
+
+#======================================================================
+# INSURANCE RISK CLASSIFIER
+#======================================================================
+
+class InsuranceRiskClassifier:
+
+    def __init__(self):
+
+        with open(
+            "models/insurance_risk_model.pkl",
+            "rb"
+        ) as f:
+
+            self.model = pickle.load(f)
+
+    def predict(self, data):
+
+        X = pd.DataFrame([data])
+
+        prediction = self.model.predict(X)[0]
+
+        probability = float(
+            max(
+                self.model.predict_proba(X)[0]
+            )
+        )
+
+        return {
+            "prediction": prediction,
+            "confidence": round(
+                probability * 100,
+                2
+            )
+        }
+    
+    
+insurance_risk_classifier = InsuranceRiskClassifier()

@@ -148,3 +148,31 @@ export async function economicAssessment(
 
     return await response.json();
 }
+
+/* ==========================================
+   INSURANCE Risk Classification
+========================================== */
+
+export async function predictInsuranceRisk(
+    data: unknown
+): Promise<PredictionResponse> {
+
+    const response = await fetch(
+        `${API_BASE_URL}/predict/insurance-risk`,
+        {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        }
+    );
+
+    if (!response.ok) {
+        throw new Error(
+            "Insurance risk prediction failed"
+        );
+    }
+
+    return await response.json();
+}

@@ -1,6 +1,7 @@
 import SpamForm from "./SpamForm";
 import SentimentForm from "./SentimentForm";
 import InsuranceForm from "./InsuranceForm";
+import InsuranceRiskForm from "./InsuranceRiskForm";
 
 type Props = {
     slug: string;
@@ -20,6 +21,10 @@ function LiveDemo({ slug }: Props) {
 
         case "medical-insurance-charge-estimator":
             return <InsuranceForm />;
+
+        case "insurance-risk-classifier":
+
+             return <InsuranceRiskForm />;
 
         default:
 

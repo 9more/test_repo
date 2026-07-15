@@ -45,3 +45,10 @@ export interface EconomicAssessmentResponse {
     result: string;
     score?: number;
 }
+
+/* ==========================================
+   INSURANCE RISK CLASSIFICATION
+========================================== */
+
+export interface InsuranceRiskResponse
+    extends PredictionResponse {}   
