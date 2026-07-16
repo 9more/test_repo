@@ -15,3 +15,8 @@ def preprocess_text(text):
     ]
 
     return " ".join(tokens).lower().strip()
+
+
+preprocess_text(
+    "I would not recommend this product"
+)

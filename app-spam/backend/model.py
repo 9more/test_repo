@@ -106,23 +106,23 @@ class InsuranceEstimator:
 insurance_estimator = InsuranceEstimator()
 
 
-#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#==========================================================================================
 # INSURANCE ESTIMATOR
-#==========================================================
+#=========================================================================================
 
-import pickle
 import pandas as pd
+
 
 class InsuranceEstimator:
 
     def __init__(self):
 
         with open(
-            "models/insurance_model.pkl",
+            BASE_DIR / "models" / "insurance_model.pkl",
             "rb"
-        ) as f:
+        ) as file:
 
-            self.model = pickle.load(f)
+            self.model = pickle.load(file)
 
     def predict(self, data):
 
@@ -138,6 +138,7 @@ class InsuranceEstimator:
 
 insurance_estimator = InsuranceEstimator()
 
+
 #======================================================================
 # INSURANCE RISK CLASSIFIER
 #======================================================================
@@ -147,11 +148,11 @@ class InsuranceRiskClassifier:
     def __init__(self):
 
         with open(
-            "models/insurance_risk_model.pkl",
+            BASE_DIR / "models" / "insurance_risk_model.pkl",
             "rb"
-        ) as f:
+        ) as file:
 
-            self.model = pickle.load(f)
+            self.model = pickle.load(file)
 
     def predict(self, data):
 
@@ -172,6 +173,6 @@ class InsuranceRiskClassifier:
                 2
             )
         }
-    
-    
+
+
 insurance_risk_classifier = InsuranceRiskClassifier()
