@@ -1,6 +1,7 @@
 import config from "./config";
 
 import type {
+    PredictionResponse,
     SpamPredictionResponse,
     SentimentPredictionResponse,
     DiabetesPredictionResponse,
