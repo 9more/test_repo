@@ -1,4 +1,7 @@
 import SpamForm from "./SpamForm";
+import SentimentForm from "./SentimentForm";
+import InsuranceForm from "./InsuranceForm";
+import InsuranceRiskForm from "./InsuranceRiskForm";
 
 type Props = {
     slug: string;
@@ -10,42 +13,42 @@ function LiveDemo({ slug }: Props) {
 
         case "spam-email-detection":
 
-            return (
-                <section className="my-5">
+            return <SpamForm />;
 
-                    <h2 className="mb-4">
+        case "sentiment-analysis":
 
-                        Live Demo
+            return <SentimentForm />;
 
-                    </h2>
+        case "medical-insurance-charge-estimator":
+            return <InsuranceForm />;
 
-                    <SpamForm />
+        case "insurance-risk-classifier":
 
-                </section>
-            );
+             return <InsuranceRiskForm />;
 
         default:
 
             return (
-                <section className="my-5">
 
-                    <h2 className="mb-4">
+                <div className="card">
 
-                        Live Demo
+                    <div className="card-body text-center">
 
-                    </h2>
+                        <h4>
+                            Live Demo Coming Soon
+                        </h4>
 
-                    <div className="alert alert-secondary">
-
-                        This project is currently presented as a case study.
-                        A live interactive demo will be available in a future release.
+                        <p className="mb-0 text-secondary">
+                            This project is currently being
+                            prepared for deployment.
+                        </p>
 
                     </div>
 
-                </section>
+                </div>
+
             );
     }
-
 }
 
 export default LiveDemo;

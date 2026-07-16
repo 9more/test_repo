@@ -1,47 +1,62 @@
-export const portfolio = {
+export interface Portfolio {
+    name: string;
+    title: string;
+    location: string;
+    summary: string;
+    introduction: string;
+    technologies: string[];
+    expertise: string[];
+    focusAreas: string[];
+    email: string;
+    github: string;
+    linkedin: string;
+}
 
-  name: "Imoh Ekpenyong",
+export const portfolio: Portfolio = {
 
-  role: "Machine Learning Engineer",
+    name: "Imoh Ekpenyong",
 
-  headline:
-    "Building production-ready machine learning applications",
+    title:
+        "Data Scientist | Economist | Machine Learning Engineer",
 
-  summary:
-    "I build end-to-end machine learning systems covering data processing, NLP, model development, APIs, cloud deployment and interactive user interfaces.",
+    location:
+        "United Kingdom",
 
+    summary:
+        "Economist and data professional specialising in machine learning, analytics, econometrics and data-driven decision making.",
 
-  technologies: [
-    "Python",
-    "Scikit-learn",
-    "Pandas",
-    "SQL",
-    "Flask",
-    "React",
-    "TypeScript",
-    "Docker",
-    "AWS",
-    "Azure",
-    "Power BI"
-  ],
+    introduction:
+        "I combine economics research expertise with practical data science experience, applying machine learning, statistical modelling and analytics to solve real-world problems.",
 
+    technologies: [
+        "Python",
+        "Machine Learning",
+        "Natural Language Processing",
+        "SQL",
+        "Power BI",
+        "Econometrics",
+        "Data Analytics",
+        "Cloud Technologies"
+    ],
 
-  featuredProject: {
+    expertise: [
+        "Machine Learning",
+        "Natural Language Processing",
+        "Econometrics",
+        "Business Intelligence",
+        "Predictive Modelling"
+    ],
 
-    title: "Spam Email Detection",
+    focusAreas: [
+        "Healthcare Analytics",
+        "Economic Assessment",
+        "Data Visualisation",
+        "Decision Support Systems"
+    ],
 
-    description:
-      "An NLP-powered classification application that detects spam emails using a machine learning pipeline deployed through a Flask API and React frontend.",
+    email: "imoh.ekpenyong@aol.com",
 
-    model:
-      "Logistic Regression",
+    github: "https://github.com/9more/test_repo",
 
-    vectorizer:
-      "TF-IDF",
-
-    deployment:
-      "Docker + AWS"
-
-  }
-
+    linkedin: "linkedin.com/in/imoh-ekpenyong-95983045"
 };

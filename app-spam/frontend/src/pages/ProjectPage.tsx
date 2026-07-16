@@ -3,6 +3,7 @@ import { projects } from "../data/projects";
 import LiveDemo from "../components/LiveDemo";
 
 function ProjectPage() {
+
     const { slug } = useParams();
 
     const project = projects.find(
@@ -10,8 +11,11 @@ function ProjectPage() {
     );
 
     if (!project) {
+
         return (
-            <div className="container py-5 text-center">
+
+            <div className="container py-4 text-center">
+
                 <h2>Project not found</h2>
 
                 <Link
@@ -20,190 +24,220 @@ function ProjectPage() {
                 >
                     Back Home
                 </Link>
+
             </div>
+
         );
     }
 
     return (
-        <div className="container py-5">
 
-            {/* Icon */}
+        <div className="container py-4 project-page">
 
-            <div className="display-2 text-primary mb-3">
-                <i className={`bi ${project.icon}`}></i>
-            </div>
+            {/* Back Button */}
 
-            {/* Title */}
+            <Link
+                to="/"
+                className="btn btn-outline-light mb-4"
+            >
+                ← Back to Projects
+            </Link>
 
-            <h1 className="fw-bold">
+            {/* Header */}
 
-                {project.title}
+            <div className="mb-4">
 
-            </h1>
+                <div className="d-flex flex-wrap gap-2 mb-3">
 
-            <p className="lead text-secondary">
+                    <span className="badge bg-primary">
+                        {project.category}
+                    </span>
 
-                {project.description}
-
-            </p>
-
-            <hr className="my-5" />
-
-            {/* Overview */}
-
-            <section className="mb-5">
-
-                <h2>Overview</h2>
-
-                <p>
-
-                    {project.overview}
-
-                </p>
-
-            </section>
-
-            {/* Tech Stack */}
-
-            <section className="mb-5">
-
-                <h2>Technology Stack</h2>
-
-                <div>
-
-                    {project.technologies.map((tech) => (
-
-                        <span
-                            key={tech}
-                            className="badge bg-dark me-2 mb-2"
-                        >
-
-                            {tech}
-
-                        </span>
-
-                    ))}
+                    <span
+                        className={`badge ${
+                            project.status === "Live"
+                                ? "bg-success"
+                                : "bg-warning text-dark"
+                        }`}
+                    >
+                        {project.status}
+                    </span>
 
                 </div>
 
-            </section>
+                <h1 className="fw-bold mb-3">
+                    {project.title}
+                </h1>
 
-            {/* Workflow */}
+                <p className="lead text-secondary mb-0">
+                    {project.description}
+                </p>
 
-            <section className="mb-5">
+            </div>
 
-                <h2>Workflow</h2>
+            {/* Overview */}
 
-                <ol>
+            <div className="mb-4">
 
-                    {project.workflow.map((step) => (
+                <h2 className="fw-bold mb-3">
+                    Overview
+                </h2>
 
-                        <li key={step}>
+                <p className="mb-0">
+                    {project.overview}
+                </p>
 
-                            {step}
+            </div>
 
-                        </li>
+            {/* Information Grid */}
 
-                    ))}
+            <div className="row g-4 mb-4">
 
-                </ol>
+                {/* Technology */}
 
-            </section>
-            
-            <LiveDemo slug={project.slug} />
+                <div className="col-lg-6">
 
-            {/* Metrics */}
+                    <div className="project-info-card p-4 h-100">
 
-            {project.metrics && (
+                        <h3 className="mb-3">
+                            Technology Stack
+                        </h3>
 
-                <section className="mb-5">
+                        {project.technologies.map((tech) => (
 
-                    <h2>Model Performance</h2>
-
-                    <div className="row">
-
-                        {Object.entries(project.metrics).map(([key, value]) => (
-
-                            <div
-                                key={key}
-                                className="col-md-3 mb-3"
+                            <span
+                                key={tech}
+                                className="badge bg-dark border me-2 mb-2"
                             >
-
-                                <div className="card bg-dark text-white">
-
-                                    <div className="card-body text-center">
-
-                                        <h5>
-
-                                            {key.toUpperCase()}
-
-                                        </h5>
-
-                                        <h3>
-
-                                            {value}
-
-                                        </h3>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
+                                {tech}
+                            </span>
 
                         ))}
 
                     </div>
 
-                </section>
+                </div>
 
-            )}
+                {/* Results */}
 
-            {/* Future */}
+                <div className="col-lg-6">
 
-            <section className="mb-5">
+                    <div className="project-info-card p-4 h-100">
 
-                <h2>Future Improvements</h2>
+                        <h3 className="mb-3">
+                            Results
+                        </h3>
 
-                <ul>
+                        {project.metrics ? (
 
-                    {project.futureImprovements.map((item) => (
+                            <div className="row">
 
-                        <li key={item}>
+                                {Object.entries(project.metrics).map(
+                                    ([key, value]) => (
 
-                            {item}
+                                        <div
+                                            key={key}
+                                            className="col-6 mb-3"
+                                        >
 
-                        </li>
+                                            <div className="metric-card p-2 text-center">
 
-                    ))}
+                                                <small className="text-secondary text-uppercase">
 
-                </ul>
+                                                    {key}
 
-            </section>
+                                                </small>
 
-            {/* GitHub */}
+                                                <h6 className="mt-2 mb-0">
 
-            <a
-                href={project.github}
-                target="_blank"
-                rel="noreferrer"
-                className="btn btn-outline-primary me-3"
-            >
+                                                    {value}
 
-                GitHub Repository
+                                                </h6>
 
-            </a>
+                                            </div>
 
-            <Link
-                to="/"
-                className="btn btn-primary"
-            >
+                                        </div>
 
-                Back Home
+                                    )
+                                )}
 
-            </Link>
+                            </div>
+
+                        ) : (
+
+                            <p className="text-secondary mb-0">
+                                Results currently being updated.
+                            </p>
+
+                        )}
+
+                    </div>
+
+                </div>
+
+                {/* Workflow */}
+
+                <div className="col-12">
+
+                    <div className="project-info-card p-4">
+
+                        <h3 className="mb-3">
+                            Workflow
+                        </h3>
+
+                        <ol className="mb-0 ps-3">
+
+                            {project.workflow.map((step) => (
+
+                                <li
+                                    key={step}
+                                    className="mb-1"
+                                >
+                                    {step}
+                                </li>
+
+                            ))}
+
+                        </ol>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {/* Demo */}
+
+            <div className="mb-4">
+
+                <LiveDemo slug={project.slug} />
+
+            </div>
+
+            {/* Actions */}
+
+            <div className="d-flex flex-wrap gap-3">
+
+                <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-outline-light"
+                >
+                    GitHub Repository
+                </a>
+
+                <Link
+                    to="/"
+                    className="btn btn-primary"
+                >
+                    Back Home
+                </Link>
+
+            </div>
 
         </div>
+
     );
 }
 

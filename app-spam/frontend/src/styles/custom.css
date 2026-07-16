@@ -1,221 +1,368 @@
-/* =========================================================
+/* =====================================================
    GLOBAL
-========================================================= */
+===================================================== */
+
+html,
+body,
+#root {
+    background-color: #151515;
+    color: #f8f9fa;
+    min-height: 100%;
+}
 
 body {
-    background: #1f1f1f;
-    color: #f8f9fa;
+    margin: 0;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 section {
-    padding: 70px 0;
+    padding: 4rem 0;
 }
 
-a {
-    text-decoration: none;
+.container {
+    max-width: 1250px;
 }
 
-
-/* =========================================================
+/* =====================================================
    NAVBAR
-========================================================= */
+===================================================== */
 
 .navbar {
-    background-color: #212529 !important;
-    padding: 0.6rem 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+    background-color: #111111 !important;
+    border-bottom: 1px solid #2e2e2e;
 }
 
 .navbar-brand {
-    font-size: 1.15rem;
+    color: #ffffff !important;
     font-weight: 700;
 }
 
 .nav-link {
-    color: #dee2e6 !important;
-    transition: 0.3s;
+    color: #ced4da !important;
 }
 
 .nav-link:hover {
     color: #0d6efd !important;
 }
 
-
-/* =========================================================
+/* =====================================================
    HERO
-========================================================= */
-
+===================================================== */
 .hero {
-    min-height: 82vh;
-    display: flex;
-    align-items: center;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    min-height: auto;
+    padding: 25px 0 15px;
 }
 
 .hero-title {
-    font-size: clamp(2.2rem, 4vw, 3rem);
+    color: #ffffff;
+    font-size: clamp(1.9rem, 3vw, 2.8rem);
     font-weight: 700;
     margin-bottom: 0.5rem;
+    line-height: 1.1;
 }
 
 .hero-subtitle {
     color: #0d6efd;
-    font-size: clamp(1.35rem, 2vw, 1.8rem);
-    font-weight: 600;
-    margin-bottom: 1rem;
-}
-
-.hero-description {
-    max-width: 700px;
-    color: #ced4da;
-    line-height: 1.8;
-    font-size: 1.05rem;
-    margin-bottom: 2rem;
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
 }
 
 .hero-location {
     color: #adb5bd;
-    margin-bottom: 2rem;
-    font-size: 1rem;
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
 }
 
+.hero-description {
+    color: #ced4da;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 650px;
+    margin-bottom: 1.5rem;
+}
+/* =====================================================
+   SKILLS PANEL
+===================================================== */
 
-/* =========================================================
-   BUTTONS
-========================================================= */
-
-.btn-primary {
-    padding: 10px 24px;
-    border-radius: 8px;
+.skills-group {
+    margin-bottom: 0.9rem;
 }
 
-.btn-outline-light {
-    padding: 10px 24px;
-    border-radius: 8px;
+.skills-category {
+    color: #0d6efd;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
 }
 
+.skills-badges .badge {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.7rem;
+}
 
-/* =========================================================
-   CARDS
-========================================================= */
+.skills-panel {
+    background: #242424;
+    border: 1px solid #353535;
+    border-radius: 14px;
+    padding: 1.5rem;
+}
 
-.card {
-    background-color: #2b2b2b;
-    border: 1px solid #3c3c3c;
+/* =====================================================
+   HIGHLIGHTS
+===================================================== */
+
+/* =====================================================
+   HIGHLIGHTS
+===================================================== */
+
+.highlights {
+    padding: 1rem 0 2rem;
+}
+
+.highlight-card {
+    background: #242424;
+    border: 1px solid #353535;
+    border-radius: 12px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.25s ease;
+    height: 100%;
+}
+
+.highlight-card:hover {
+    border-color: #0d6efd;
+    transform: translateY(-4px);
+}
+
+.highlight-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.highlight-label {
+    color: #adb5bd;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* =====================================================
+   ABOUT
+===================================================== */
+
+#about .card {
+    background: #242424;
+    border: 1px solid #353535;
+    border-radius: 14px;
+}
+
+#about .card:hover {
+    border-color: #0d6efd;
+}
+
+#about .badge {
+    padding: 0.55rem 0.85rem;
+}
+
+/* =====================================================
+   PROJECTS
+===================================================== */
+
+.project-card {
+    background: #242424;
+    border: 1px solid #353535;
     border-radius: 14px;
     transition: all 0.25s ease;
 }
 
-.card:hover {
-    transform: translateY(-6px);
+.project-card:hover {
     border-color: #0d6efd;
-    box-shadow: 0 12px 25px rgba(0,0,0,0.35);
+    transform: translateY(-4px);
+}
+
+.project-card .badge.bg-dark {
+    background-color: #181818 !important;
+    border: 1px solid #444;
+}
+
+.metric-card {
+    background: #1b1b1b;
+    border: 1px solid #303030;
+}
+
+.metric-card h5,
+.metric-card h3 {
+    color: #ffffff;
+}
+
+.project-card h4 {
+    font-size: 1.2rem;
+}
+
+.project-card p {
+    font-size: 0.95rem;
+}
+
+/* =====================================================
+   FORMS
+===================================================== */
+
+textarea.form-control {
+    background-color: #181818;
+    border: 1px solid #444;
+    color: #ffffff;
+}
+
+textarea.form-control:focus {
+    background-color: #181818;
+    border-color: #0d6efd;
+    box-shadow: none;
+    color: #ffffff;
+}
+
+textarea::placeholder {
+    color: #777;
+}
+
+/* =====================================================
+   CARDS
+===================================================== */
+
+.card {
+    background-color: #242424;
+    color: #ffffff;
 }
 
 .card-title {
     color: #ffffff;
 }
 
-.card-text {
-    color: #ced4da;
+/* =====================================================
+   EXPERIENCE
+===================================================== */
+
+.timeline-card {
+    background: #242424;
+    border: 1px solid #353535;
+    border-radius: 14px;
 }
 
+.timeline-card:hover {
+    border-color: #0d6efd;
+}
 
-/* =========================================================
-   PROJECT ICONS
-========================================================= */
+/* =====================================================
+   CONTACT
+===================================================== */
 
-.project-icon {
-    font-size: 3rem;
-    color: #0d6efd;
+.contact-card {
+    background: #242424;
+    border: 1px solid #353535;
+    border-radius: 14px;
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.btn-primary:hover,
+.btn-outline-primary:hover,
+.btn-outline-light:hover {
+    transform: translateY(-2px);
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    background-color: #181818;
+    border-top: 1px solid #333;
+    color: #adb5bd;
+}
+
+/* =====================================================
+   PROJECT PAGE
+===================================================== */
+
+.project-info-card {
+    background: #242424;
+    border: 1px solid #353535;
+    border-radius: 14px;
+}
+
+.project-page h2 {
+    font-size: 1.4rem;
+}
+
+.project-page h3 {
+    font-size: 1.15rem;
+}
+
+.project-page li {
+    margin-bottom: 0.3rem;
+}
+
+details summary {
+    list-style: none;
+    cursor: pointer;
+}
+
+details summary::-webkit-details-marker {
+    display: none;
+}
+
+details[open] summary {
     margin-bottom: 1rem;
 }
 
+/* =====================================================
+   RESPONSIVE
+===================================================== */
 
-/* =========================================================
-   BADGES
-========================================================= */
+@media (max-width: 992px) {
 
-.badge {
-    font-size: 0.9rem;
-    margin-right: 6px;
-    margin-bottom: 6px;
-    padding: 8px 12px;
+    .hero {
+        padding-top: 20px;
+    }
+
+    .skills-panel {
+        margin-bottom: 2rem;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
 }
 
+@media (max-width: 768px) {
 
-/* =========================================================
-   FEATURE BOXES
-========================================================= */
+    .hero {
+        text-align: center;
+    }
 
-.feature-box {
-    background: #2b2b2b;
-    border: 1px solid #3b3b3b;
-    border-radius: 12px;
-    padding: 24px;
-    transition: 0.25s;
+    .hero-description {
+        max-width: 100%;
+    }
+
+    .skills-panel {
+        text-align: left;
+    }
 }
 
-.feature-box:hover {
-    border-color: #0d6efd;
-    transform: translateY(-4px);
+/* =====================================================
+   TYPOGRAPHY TUNING
+===================================================== */
+
+h2 {
+    font-size: 1.75rem;
 }
 
-
-/* =========================================================
-   METRIC CARDS
-========================================================= */
-
-.metric-card {
-    background: #2b2b2b;
-    border-radius: 12px;
-    padding: 25px;
-    text-align: center;
-    border: 1px solid #3b3b3b;
+.project-card h4 {
+    font-size: 1.2rem;
 }
 
-.metric-card h3 {
-    color: #0d6efd;
-    font-size: 2rem;
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-footer {
-    background: #181818;
-    color: #adb5bd;
-    padding: 40px 0;
-    text-align: center;
-    margin-top: 80px;
-}
-
-
-/* =========================================================
-   SCROLLBAR
-========================================================= */
-
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: #202020;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #555;
-    border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #0d6efd;
+.project-card p {
+    font-size: 0.95rem;
 }

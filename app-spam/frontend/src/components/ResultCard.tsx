@@ -1,39 +1,42 @@
-interface ResultCardProps {
-  prediction: string;
-  confidence: number;
-}
+type Props = {
+    prediction: string;
+    confidence: number;
+};
 
-function ResultCard({ prediction, confidence }: ResultCardProps) {
-  const isSpam = prediction.toLowerCase() === "spam";
+function ResultCard({
+    prediction,
+    confidence
+}: Props) {
 
-  return (
-    <div
-      className={`card mt-4 border-0 shadow ${
-        isSpam ? "border-danger" : "border-success"
-      }`}
-    >
-      <div className="card-body">
+    return (
 
-        <h4 className="card-title">
-          Prediction Result
-        </h4>
+        <div className="card border-0 shadow-sm">
 
-        <h2
-          className={`fw-bold ${
-            isSpam ? "text-danger" : "text-success"
-          }`}
-        >
-          {prediction}
-        </h2>
+            <div className="card-body text-center">
 
-        <p className="mb-0">
-          Confidence:
-          <strong> {confidence.toFixed(2)}%</strong>
-        </p>
+                <h5 className="mb-3">
+                    Prediction Result
+                </h5>
 
-      </div>
-    </div>
-  );
+                <h3
+                    className={`fw-bold ${
+                        prediction.toLowerCase().includes("spam")
+                            ? "text-danger"
+                            : "text-success"
+                    }`}
+                >
+                    {prediction}
+                </h3>
+
+                <p className="text-secondary mb-0">
+                    Confidence: {confidence.toFixed(2)}%
+                </p>
+
+            </div>
+
+        </div>
+
+    );
 }
 
 export default ResultCard;

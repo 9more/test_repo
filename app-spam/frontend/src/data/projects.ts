@@ -3,7 +3,12 @@ export interface Project {
     slug: string;
 
     title: string;
-    category: "Machine Learning" | "Business Intelligence" | "Research";
+
+    category:
+        | "Machine Learning"
+        | "Decision Analytics"
+        | "Business Intelligence"
+        | "Research";
 
     description: string;
     overview: string;
@@ -43,11 +48,8 @@ export const projects: Project[] = [
 
     {
         id: 1,
-
         slug: "spam-email-detection",
-
         title: "Spam Email Detection",
-
         category: "Machine Learning",
 
         description:
@@ -107,11 +109,8 @@ export const projects: Project[] = [
 
     {
         id: 2,
-
         slug: "sentiment-analysis",
-
         title: "Sentiment Analysis",
-
         category: "Machine Learning",
 
         description:
@@ -164,11 +163,8 @@ export const projects: Project[] = [
 
     {
         id: 3,
-
         slug: "medical-insurance-charge-estimator",
-
         title: "Medical Insurance Charge Estimator",
-
         category: "Machine Learning",
 
         description:
@@ -181,19 +177,22 @@ export const projects: Project[] = [
 
         type: "Regression",
 
-        technologies: [
-            "Python",
-            "Pandas",
-            "Scikit-learn"
-        ],
+       technologies: [
+                "Python",
+                "Pandas",
+                "Scikit-Learn",
+                "Flask",
+                "React"
+            ],
 
         workflow: [
             "User Input",
             "Preprocessing",
             "Encoding",
-            "Regression Model",
+            "Quantile Transformation",
+            "Random Forest Regression",
             "Charge Estimation"
-        ],
+],
 
         metrics: {
             rmse: "To be updated",
@@ -220,11 +219,8 @@ export const projects: Project[] = [
 
     {
         id: 4,
-
         slug: "insurance-risk-classifier",
-
         title: "Insurance Risk Classifier",
-
         category: "Machine Learning",
 
         description:
@@ -272,11 +268,8 @@ export const projects: Project[] = [
 
     {
         id: 5,
-
         slug: "diabetes-prediction",
-
         title: "Diabetes Prediction",
-
         category: "Machine Learning",
 
         description:
@@ -319,11 +312,57 @@ export const projects: Project[] = [
 
     {
         id: 6,
+        slug: "economic-assessment-tool",
+        title: "Economic Assessment Tool",
+        category: "Decision Analytics",
 
+        description:
+            "Interactive decision-support application for investment appraisal under uncertainty.",
+
+        overview:
+            "An interactive application developed to evaluate investment projects under uncertainty. The application includes discounted payback period calculations alongside additional financial analysis functions to support investment appraisal and economic decision-making.",
+
+        status: "Live",
+
+        type: "Decision Support System",
+
+        technologies: [
+            "Python",
+            "Flask",
+            "JavaScript",
+            "HTML",
+            "CSS"
+        ],
+
+        workflow: [
+            "Input Project Parameters",
+            "Financial Calculations",
+            "Discounted Payback Analysis",
+            "Decision Support Output"
+        ],
+
+        futureImprovements: [
+            "Monte Carlo Simulation",
+            "Sensitivity Analysis",
+            "Interactive Charts",
+            "Export Reports"
+        ],
+
+        github: "#",
+
+        demo: "#",
+
+        featured: false,
+
+        image: "",
+
+        icon: "bi-calculator-fill"
+    },
+
+    {
+        id: 7,
         slug: "retail-sales-dashboard",
-
         title: "Retail Sales Dashboard",
-
         category: "Business Intelligence",
 
         description:
@@ -366,12 +405,9 @@ export const projects: Project[] = [
     },
 
     {
-        id: 7,
-
+        id: 8,
         slug: "crime-analytics-dashboard",
-
         title: "Crime Analytics Dashboard",
-
         category: "Business Intelligence",
 
         description:
@@ -413,19 +449,16 @@ export const projects: Project[] = [
     },
 
     {
-        id: 8,
-
+        id: 9,
         slug: "health-expenditure-research",
-
         title: "Health Expenditure Research",
-
         category: "Research",
 
         description:
-            "Econometric research using large panel datasets.",
+            "Econometric research analysing the relationship between health expenditure, productivity and economic development.",
 
         overview:
-            "Empirical analysis investigating the relationship between health expenditure, productivity and economic development.",
+            "Applied advanced econometric techniques to large panel datasets to investigate the impact of healthcare expenditure on productivity and long-term economic growth.",
 
         status: "Live",
 
@@ -439,9 +472,10 @@ export const projects: Project[] = [
 
         workflow: [
             "Data Collection",
-            "Cleaning",
+            "Data Cleaning",
             "Econometric Modelling",
-            "Interpretation"
+            "Statistical Testing",
+            "Policy Interpretation"
         ],
 
         futureImprovements: [

@@ -1,88 +1,136 @@
 import { useState } from "react";
 import ResultCard from "./ResultCard";
+import { predictSpam } from "../services/api";
 
 function SpamForm() {
 
-  const [message, setMessage] = useState("");
+    const [message, setMessage] = useState("");
 
-  const [prediction, setPrediction] = useState("");
+    const [prediction, setPrediction] = useState("");
 
-  const [confidence, setConfidence] = useState(0);
+    const [confidence, setConfidence] = useState(0);
 
-  const handlePrediction = () => {
+    const [loading, setLoading] = useState(false);
 
-    if (message.length < 5) {
+    const handlePrediction = async () => {
 
-      alert("Please enter an email.");
+        if (message.length < 5) {
 
-      return;
+            alert("Please enter an email.");
 
-    }
+            return;
+        }
 
-    // Temporary until Flask API is connected
+        try {
 
-    setPrediction("Not Spam");
+            setLoading(true);
 
-    setConfidence(98.74);
+            const result = await predictSpam(message);
 
-  };
+            setPrediction(result.prediction);
 
-  return (
+            setConfidence(result.confidence);
 
-    <div className="card shadow-lg border-0">
+        } catch (error) {
 
-      <div className="card-body">
+            console.error(error);
 
-        <h4 className="mb-3">
+            alert("Prediction failed.");
 
-          Live Spam Detector
+        } finally {
 
-        </h4>
+            setLoading(false);
 
-        <textarea
+        }
+    };
 
-          className="form-control"
+    return (
 
-          rows={10}
+        <div className="card shadow-lg border-0">
 
-          placeholder="Paste an email here..."
+            <div className="card-body p-4">
 
-          value={message}
+                <div className="d-flex align-items-center mb-3">
 
-          onChange={(e) => setMessage(e.target.value)}
+                    <i className="bi bi-envelope-check-fill text-primary fs-3 me-3"></i>
 
-        />
+                    <div>
 
-        <button
+                        <h4 className="mb-0">
+                            Live Spam Detector
+                        </h4>
 
-          className="btn btn-primary btn-lg mt-4 w-100"
+                        <small className="text-secondary">
+                            Test the machine learning model using your own email text.
+                        </small>
 
-          onClick={handlePrediction}
+                    </div>
 
-        >
+                </div>
 
-          Detect Spam
+                <textarea
+                    className="form-control"
+                    rows={10}
+                    placeholder="Paste an email message here..."
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                />
 
-        </button>
+                <div className="d-grid mt-4">
 
-        {prediction && (
+                    <button
+                        className="btn btn-primary btn-lg"
+                        onClick={handlePrediction}
+                        disabled={loading}
+                    >
 
-          <ResultCard
+                        {loading ? (
 
-            prediction={prediction}
+                            <>
 
-            confidence={confidence}
+                                <span
+                                    className="spinner-border spinner-border-sm me-2"
+                                    role="status"
+                                />
 
-          />
+                                Analysing...
 
-        )}
+                            </>
 
-      </div>
+                        ) : (
 
-    </div>
+                            <>
 
-  );
+                                <i className="bi bi-cpu me-2"></i>
 
+                                Detect Spam
+
+                            </>
+
+                        )}
+
+                    </button>
+
+                </div>
+
+                {prediction && (
+
+                    <div className="mt-4">
+
+                        <ResultCard
+                            prediction={prediction}
+                            confidence={confidence}
+                        />
+
+                    </div>
+
+                )}
+
+            </div>
+
+        </div>
+
+    );
 }
 
 export default SpamForm;

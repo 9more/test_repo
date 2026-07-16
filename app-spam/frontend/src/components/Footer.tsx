@@ -1,13 +1,21 @@
 function Footer() {
-  return (
-    <footer className="text-center py-4">
+    return (
+        <footer className="py-4 text-center">
 
-      <p className="text-secondary mb-0">
-        © 2026 Imoh Ekpenyong
-      </p>
+            <div className="container">
 
-    </footer>
-  );
+                <p className="text-secondary mb-2">
+                    © 2026 Imoh Ekpenyong
+                </p>
+
+                <small className="text-secondary">
+                    Machine Learning • Data Science • Business Intelligence • Economics
+                </small>
+
+            </div>
+
+        </footer>
+    );
 }
 
 export default Footer;
