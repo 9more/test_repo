@@ -1,88 +1,117 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-
-from src.predictor import predict_email
+import pickle
+from utils.preprocessing import preprocess_text
+from model import sentiment_classifier, insurance_estimator, insurance_risk_classifier
 
 
 app = Flask(__name__)
 
-# Allow React frontend to communicate with Flask backend
-CORS(app)
+CORS(
+    app,
+    resources={
+        r"/*": {
+            "origins": "*"
+        }
+    }
+)
+
+@app.after_request
+def after_request(response):
+
+    response.headers.add(
+        "Access-Control-Allow-Origin",
+        "*"
+    )
+
+    response.headers.add(
+        "Access-Control-Allow-Headers",
+        "Content-Type,Authorization"
+    )
+
+    response.headers.add(
+        "Access-Control-Allow-Methods",
+        "GET,PUT,POST,DELETE,OPTIONS"
+    )
+
+    return response
+
+with open("models/spam_model.pkl", "rb") as f:
+    model = pickle.load(f)
 
 
-@app.route("/", methods=["GET"])
+@app.route("/")
 def home():
 
-    return jsonify(
-        {
-            "message": "Spam Detection API is running"
-        }
+    return {
+        "status": "running",
+        "message": "Portfolio API"
+    }
+
+
+@app.route("/predict/spam", methods=["POST"])
+def predict_spam():
+
+    data = request.get_json()
+
+    message = data.get("message", "")
+
+    clean_text = preprocess_text(message)
+
+    prediction = model.predict([clean_text])[0]
+
+    LABEL_MAP = {
+        0: "Not Spam",
+        1: "Spam"
+    }
+
+    return jsonify({
+        "prediction": LABEL_MAP[int(prediction)],
+        "confidence": 100
+    })
+
+@app.route("/predict/sentiment", methods=["POST"])
+def predict_sentiment():
+
+    data = request.get_json()
+
+    text = data.get("text", "")
+
+    result = sentiment_classifier.predict(text)
+
+    return jsonify(result)
+
+
+@app.route("/predict/insurance", methods=["POST"])
+def predict_insurance():
+
+    data = request.get_json()
+
+    result = insurance_estimator.predict(data)
+
+    return jsonify(result)
+
+
+@app.route(
+    "/predict/insurance-risk",
+    methods=["POST"]
+)
+def predict_insurance_risk():
+
+    data = request.get_json()
+
+    result = insurance_risk_classifier.predict(
+        data
     )
 
+    return jsonify(result)
 
-@app.route("/health", methods=["GET"])
-def health():
-
-    return jsonify(
-        {
-            "status": "healthy"
-        }
-    )
-
-
-@app.route("/predict", methods=["POST"])
-def predict():
-
-    try:
-
-        data = request.get_json()
-
-        if not data:
-
-            return jsonify(
-                {
-                    "error": "No JSON data received"
-                }
-            ), 400
-
-
-        email = data.get("message")
-
-
-        if not email:
-
-            return jsonify(
-                {
-                    "error": "No email message provided"
-                }
-            ), 400
-
-
-        result = predict_email(email)
-
-
-        return jsonify(result), 200
-
-
-    except Exception as e:
-
-        return jsonify(
-            {
-                "error": str(e)
-            }
-        ), 500
 
 
 
 if __name__ == "__main__":
-
     app.run(
         host="0.0.0.0",
         port=5000,
         debug=True
     )
-
-
-
-
-

@@ -1,35 +1,23 @@
 import Hero from "../components/Hero";
-import About from "../components/About";
-import FeaturedProject from "../components/FeaturedProject";
-import ProjectSection from "../components/ProjectSection";
-import Architecture from "../components/Architecture";
-import Contact from "../components/Contact";
+import Highlights from "../components/Highlights";
+
+import Projects from "./Projects";
+import About from "./About";
+import Experience from "./Experience";
+import Contact from "./Contact";
 
 function Home() {
     return (
         <>
             <Hero />
 
+            <Highlights />
+
+            <Projects />
+
             <About />
 
-            <FeaturedProject />
-
-            <ProjectSection
-                title="Machine Learning"
-                category="Machine Learning"
-            />
-
-            <ProjectSection
-                title="Business Intelligence"
-                category="Business Intelligence"
-            />
-
-            <ProjectSection
-                title="Research"
-                category="Research"
-            />
-
-            <Architecture />
+            <Experience />
 
             <Contact />
         </>

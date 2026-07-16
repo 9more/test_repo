@@ -1,72 +1,132 @@
-import SpamForm from "./SpamForm";
+import { Link } from "react-router-dom";
+import { projects } from "../data/projects";
 
 function FeaturedProject() {
-  return (
-    <section id="featured-project" className="container py-5">
-      <div className="row align-items-center">
+    const project = projects.find((p) => p.featured);
 
-        {/* Left Column */}
-        <div className="col-lg-5 mb-4">
+    if (!project) return null;
 
-          <h2 className="fw-bold mb-4">
-            Featured Project
-          </h2>
+    return (
+        <section className="container py-4">
 
-          <h3 className="text-primary">
-            Spam Email Detection
-          </h3>
+            <div className="card project-card shadow-sm border-0">
 
-          <p className="lead">
-            This application demonstrates an end-to-end machine learning
-            workflow for classifying emails as <strong>Spam</strong> or
-            <strong> Not Spam</strong>. It combines natural language
-            processing, supervised machine learning, a REST API, and a
-            responsive web interface into a production-ready solution.
-          </p>
+                <div className="card-body p-4">
 
-          <h5 className="mt-4">Key Features</h5>
+                    <div className="d-flex justify-content-between align-items-center mb-3">
 
-          <ul className="list-group">
+                        <div>
 
-            <li className="list-group-item">
-              ✅ Text preprocessing using NLP
-            </li>
+                            <span className="badge bg-warning text-dark mb-2">
+                                ⭐ Featured Project
+                            </span>
 
-            <li className="list-group-item">
-              ✅ TF-IDF Vectorisation
-            </li>
+                            <h2 className="fw-bold mb-1">
+                                {project.title}
+                            </h2>
 
-            <li className="list-group-item">
-              ✅ Logistic Regression Classifier
-            </li>
+                            <p className="text-secondary mb-0">
+                                {project.description}
+                            </p>
 
-            <li className="list-group-item">
-              ✅ Flask REST API
-            </li>
+                        </div>
 
-            <li className="list-group-item">
-              ✅ React + TypeScript Frontend
-            </li>
+                        <span
+                            className={`badge fs-6 ${
+                                project.status === "Live"
+                                    ? "bg-success"
+                                    : "bg-warning text-dark"
+                            }`}
+                        >
+                            {project.status}
+                        </span>
 
-            <li className="list-group-item">
-              ✅ Docker & AWS Ready
-            </li>
+                    </div>
 
-          </ul>
+                    <hr />
 
-        </div>
+                    <p className="mb-4">
 
-        {/* Right Column */}
+                        {project.overview}
 
-        <div className="col-lg-7">
+                    </p>
 
-          <SpamForm />
+                    <div className="mb-4">
 
-        </div>
+                        {project.technologies.slice(0, 5).map((tech) => (
 
-      </div>
-    </section>
-  );
+                            <span
+                                key={tech}
+                                className="badge bg-dark border me-2 mb-2"
+                            >
+                                {tech}
+                            </span>
+
+                        ))}
+
+                    </div>
+
+                    {project.metrics && (
+
+                        <div className="row text-center mb-4">
+
+                            {Object.entries(project.metrics).map(([key, value]) => (
+
+                                <div
+                                    key={key}
+                                    className="col-6 col-md-3"
+                                >
+
+                                    <div className="metric-card p-3 rounded">
+
+                                        <small className="text-secondary text-uppercase">
+
+                                            {key}
+
+                                        </small>
+
+                                        <h5 className="fw-bold mb-0">
+
+                                            {value}
+
+                                        </h5>
+
+                                    </div>
+
+                                </div>
+
+                            ))}
+
+                        </div>
+
+                    )}
+
+                    <div className="d-flex flex-wrap gap-3">
+
+                        <Link
+                            to={`/projects/${project.slug}`}
+                            className="btn btn-primary"
+                        >
+                            View Case Study
+                        </Link>
+
+                        <a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn btn-outline-light"
+                        >
+                            GitHub Repository
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+    );
 }
 
 export default FeaturedProject;
