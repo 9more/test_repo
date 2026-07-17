@@ -1,16 +1,14 @@
 import config from "./config";
-
 import type {
-    PredictionResponse,
     SpamPredictionResponse,
     SentimentPredictionResponse,
     DiabetesPredictionResponse,
     InsurancePredictionResponse,
-    EconomicAssessmentResponse
+    EconomicAssessmentResponse,
+    InsuranceRiskResponse
 } from "../types/api";
 
 const API_BASE_URL = config.API_BASE_URL;
-
 /* ==========================================
    SPAM DETECTION
 ========================================== */
@@ -156,8 +154,8 @@ export async function economicAssessment(
 
 export async function predictInsuranceRisk(
     data: unknown
-): Promise<PredictionResponse> {
-
+    
+): Promise<InsuranceRiskResponse> {
     const response = await fetch(
         `${API_BASE_URL}/predict/insurance-risk`,
         {
