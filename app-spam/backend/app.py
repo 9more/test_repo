@@ -89,6 +89,7 @@ def predict_insurance():
 
     result = insurance_estimator.predict(data)
 
+
     return jsonify(result)
 
 
