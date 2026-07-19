@@ -2,11 +2,39 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import pickle
 from utils.preprocessing import preprocess_text
-from model import sentiment_classifier
+from model import sentiment_classifier, insurance_estimator, insurance_risk_classifier
+
 
 app = Flask(__name__)
 
-CORS(app)
+CORS(
+    app,
+    resources={
+        r"/*": {
+            "origins": "*"
+        }
+    }
+)
+
+@app.after_request
+def after_request(response):
+
+    response.headers.add(
+        "Access-Control-Allow-Origin",
+        "*"
+    )
+
+    response.headers.add(
+        "Access-Control-Allow-Headers",
+        "Content-Type,Authorization"
+    )
+
+    response.headers.add(
+        "Access-Control-Allow-Methods",
+        "GET,PUT,POST,DELETE,OPTIONS"
+    )
+
+    return response
 
 with open("models/spam_model.pkl", "rb") as f:
     model = pickle.load(f)
@@ -52,6 +80,34 @@ def predict_sentiment():
     result = sentiment_classifier.predict(text)
 
     return jsonify(result)
+
+
+@app.route("/predict/insurance", methods=["POST"])
+def predict_insurance():
+
+    data = request.get_json()
+
+    result = insurance_estimator.predict(data)
+
+
+    return jsonify(result)
+
+
+@app.route(
+    "/predict/insurance-risk",
+    methods=["POST"]
+)
+def predict_insurance_risk():
+
+    data = request.get_json()
+
+    result = insurance_risk_classifier.predict(
+        data
+    )
+
+    return jsonify(result)
+
+
 
 
 if __name__ == "__main__":

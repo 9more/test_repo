@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { predictInsurance } from "../services/api";
+import ResultCard from "./ResultCard";
+import { predictInsuranceRisk } from "../services/api";
 
-function InsuranceForm() {
+function InsuranceRiskForm() {
 
     const [age, setAge] = useState("");
     const [sex, setSex] = useState("male");
@@ -10,7 +11,8 @@ function InsuranceForm() {
     const [smoker, setSmoker] = useState("no");
     const [region, setRegion] = useState("southwest");
 
-    const [estimate, setEstimate] = useState<number | null>(null);
+    const [prediction, setPrediction] = useState("");
+    const [confidence, setConfidence] = useState(0);
 
     const [loading, setLoading] = useState(false);
 
@@ -20,16 +22,20 @@ function InsuranceForm() {
 
             setLoading(true);
 
-            const result = await predictInsurance({
+            const result = await predictInsuranceRisk({
+
                 age: Number(age),
                 sex,
                 bmi: Number(bmi),
                 children: Number(children),
                 smoker,
                 region
+
             });
 
-            setEstimate(result.estimatedCharge);
+            setPrediction(result.prediction);
+
+            setConfidence(result.confidence);
 
         } catch (error) {
 
@@ -50,13 +56,13 @@ function InsuranceForm() {
 
             <div className="card-body">
 
-                <h4 className="mb-3">
-                    Medical Insurance Cost Estimator
+                <h4 className="mb-4">
+                    Insurance Risk Predictor
                 </h4>
 
                 <input
-                    className="form-control mb-3"
                     type="number"
+                    className="form-control mb-3"
                     placeholder="Age"
                     value={age}
                     onChange={(e) =>
@@ -71,13 +77,21 @@ function InsuranceForm() {
                         setSex(e.target.value)
                     }
                 >
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
+
+                    <option value="male">
+                        Male
+                    </option>
+
+                    <option value="female">
+                        Female
+                    </option>
+
                 </select>
 
                 <input
-                    className="form-control mb-3"
                     type="number"
+                    step="0.1"
+                    className="form-control mb-3"
                     placeholder="BMI"
                     value={bmi}
                     onChange={(e) =>
@@ -86,9 +100,9 @@ function InsuranceForm() {
                 />
 
                 <input
-                    className="form-control mb-3"
                     type="number"
-                    placeholder="Number of Children"
+                    className="form-control mb-3"
+                    placeholder="Children"
                     value={children}
                     onChange={(e) =>
                         setChildren(e.target.value)
@@ -102,8 +116,15 @@ function InsuranceForm() {
                         setSmoker(e.target.value)
                     }
                 >
-                    <option value="no">Non-Smoker</option>
-                    <option value="yes">Smoker</option>
+
+                    <option value="yes">
+                        Yes
+                    </option>
+
+                    <option value="no">
+                        No
+                    </option>
+
                 </select>
 
                 <select
@@ -113,40 +134,45 @@ function InsuranceForm() {
                         setRegion(e.target.value)
                     }
                 >
-                    <option value="southwest">Southwest</option>
-                    <option value="southeast">Southeast</option>
-                    <option value="northwest">Northwest</option>
-                    <option value="northeast">Northeast</option>
+
+                    <option value="southwest">
+                        Southwest
+                    </option>
+
+                    <option value="southeast">
+                        Southeast
+                    </option>
+
+                    <option value="northwest">
+                        Northwest
+                    </option>
+
+                    <option value="northeast">
+                        Northeast
+                    </option>
+
                 </select>
 
                 <button
-                    className="btn btn-primary btn-lg w-100"
-                    onClick={handlePrediction}
+                    className="btn btn-primary w-100"
                     disabled={loading}
+                    onClick={handlePrediction}
                 >
 
                     {loading
-                        ? "Estimating..."
-                        : "Estimate Insurance Cost"}
+                        ? "Assessing Risk..."
+                        : "Assess Insurance Risk"}
 
                 </button>
 
-                {estimate !== null && (
+                {prediction && (
 
-                    <div className="alert alert-success mt-4">
+                    <div className="mt-4">
 
-                        <strong>
-                            Estimated Annual Insurance Cost
-                        </strong>
-
-                        <div className="fs-4 fw-bold mt-2">
-
-                            £{estimate.toLocaleString(undefined, {
-                            minimumFractionDigits: 2,
-                            maximumFractionDigits: 2
-                        })}
-
-                        </div>
+                        <ResultCard
+                            prediction={prediction}
+                            confidence={confidence}
+                        />
 
                     </div>
 
@@ -159,4 +185,4 @@ function InsuranceForm() {
     );
 }
 
-export default InsuranceForm;
+export default InsuranceRiskForm;

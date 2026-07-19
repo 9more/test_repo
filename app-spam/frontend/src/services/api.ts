@@ -1,15 +1,14 @@
 import config from "./config";
-
 import type {
     SpamPredictionResponse,
     SentimentPredictionResponse,
     DiabetesPredictionResponse,
     InsurancePredictionResponse,
-    EconomicAssessmentResponse
+    EconomicAssessmentResponse,
+    InsuranceRiskResponse
 } from "../types/api";
 
 const API_BASE_URL = config.API_BASE_URL;
-
 /* ==========================================
    SPAM DETECTION
 ========================================== */
@@ -45,6 +44,11 @@ export async function predictSpam(
 export async function predictSentiment(
     text: string
 ): Promise<SentimentPredictionResponse> {
+
+    console.log(
+        "API URL:",
+        `${API_BASE_URL}/predict/sentiment`
+    );
 
     const response = await fetch(
         `${API_BASE_URL}/predict/sentiment`,
@@ -139,6 +143,34 @@ export async function economicAssessment(
 
     if (!response.ok) {
         throw new Error("Economic assessment failed");
+    }
+
+    return await response.json();
+}
+
+/* ==========================================
+   INSURANCE Risk Classification
+========================================== */
+
+export async function predictInsuranceRisk(
+    data: unknown
+    
+): Promise<InsuranceRiskResponse> {
+    const response = await fetch(
+        `${API_BASE_URL}/predict/insurance-risk`,
+        {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        }
+    );
+
+    if (!response.ok) {
+        throw new Error(
+            "Insurance risk prediction failed"
+        );
     }
 
     return await response.json();

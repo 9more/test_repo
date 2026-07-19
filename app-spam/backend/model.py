@@ -73,3 +73,106 @@ class SentimentClassifier:
 
 
 sentiment_classifier = SentimentClassifier()
+
+
+
+#==========================================================================================
+
+# INSURANCXE ESTIMATOR
+
+#=========================================================================================
+
+class InsuranceEstimator:
+
+    def __init__(self):
+
+        with open(
+            BASE_DIR / "models" / "insurance_model.pkl",
+            "rb"
+        ) as file:
+
+            self.model = pickle.load(file)
+
+    def predict(self, data):
+
+        prediction = self.model.predict([data])[0]
+
+        return {
+            "estimatedCharge":
+                round(float(prediction), 2)
+        }
+
+
+insurance_estimator = InsuranceEstimator()
+
+
+#==========================================================================================
+# INSURANCE ESTIMATOR
+#=========================================================================================
+
+import pandas as pd
+
+
+class InsuranceEstimator:
+
+    def __init__(self):
+
+        with open(
+            BASE_DIR / "models" / "insurance_model.pkl",
+            "rb"
+        ) as file:
+
+            self.model = pickle.load(file)
+
+    def predict(self, data):
+
+        X = pd.DataFrame([data])
+
+        prediction = self.model.predict(X)[0]
+
+        return {
+            "estimatedCharge":
+                round(float(prediction), 2)
+        }
+
+
+insurance_estimator = InsuranceEstimator()
+
+
+#======================================================================
+# INSURANCE RISK CLASSIFIER
+#======================================================================
+
+class InsuranceRiskClassifier:
+
+    def __init__(self):
+
+        with open(
+            BASE_DIR / "models" / "insurance_risk_model.pkl",
+            "rb"
+        ) as file:
+
+            self.model = pickle.load(file)
+
+    def predict(self, data):
+
+        X = pd.DataFrame([data])
+
+        prediction = self.model.predict(X)[0]
+
+        probability = float(
+            max(
+                self.model.predict_proba(X)[0]
+            )
+        )
+
+        return {
+            "prediction": prediction,
+            "confidence": round(
+                probability * 100,
+                2
+            )
+        }
+
+
+insurance_risk_classifier = InsuranceRiskClassifier()
