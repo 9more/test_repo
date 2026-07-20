@@ -1,6 +1,6 @@
 const config = {
     API_BASE_URL:
-        "https://obscure-funicular-76jp96vjvvw3pggq-5000.app.github.dev"
+        "https://imoh-ml-api.onrender.com"
 };
 
 export default config;
