@@ -91,7 +91,7 @@ body {
 }
 
 .prompt-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px) scale(1.02);
 
   border-color: rgba(168, 85, 247, 0.5);
 
@@ -117,9 +117,8 @@ body {
 .messages {
   min-height: 250px;
   max-height: 350px;
-
   overflow-y: auto;
-
+  scroll-behavior: smooth;
   display: flex;
   flex-direction: column;
 
@@ -322,4 +321,92 @@ body {
   100% {
     transform: translate(0, 0) scale(1);
   }
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.animated-placeholder {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  color: #9ca3af;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.cursor {
+  width: 2px;
+  height: 18px;
+  background: #ffffff;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.github-card {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: all 0.3s ease;
+}
+
+.github-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-icon {
+  font-size: 1.3rem;
+}
+
+pre {
+  background: #1f1f1f;
+  padding: 1rem;
+  border-radius: 10px;
+  overflow-x: auto;
+}
+
+code {
+  font-family: monospace;
+}
+
+.message.assistant h1,
+.message.assistant h2,
+.message.assistant h3 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.message.assistant ul {
+  padding-left: 1.4rem;
+  margin: 0.5rem 0;
+}
+
+.message.assistant p {
+  margin: 0.5rem 0;
+}
+
+.message.assistant pre {
+  background: #1d1d1d;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+.message.assistant code {
+  font-family: monospace;
 }

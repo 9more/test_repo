@@ -1,6 +1,7 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, Response, stream_with_context
 from flask_cors import CORS
 
+from router import route_request
 
 app = Flask(__name__)
 CORS(app)
@@ -10,21 +11,23 @@ CORS(app)
 def home():
     return "Imoh AI Backend Running"
 
+
 @app.route("/chat", methods=["POST"])
 def chat():
-    print("CHAT ENDPOINT HIT")
 
     data = request.get_json()
 
-    message = data.get("message", "")
+    message = data["message"]
 
-    return jsonify({
-        "response": f"Hello from Imoh AI. You said: {message}"
-    })
+    return Response(
+        stream_with_context(route_request(message)),
+        mimetype="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "X-Accel-Buffering": "no",  # Prevent buffering by reverse proxies
+        },
+    )
 
 
 if __name__ == "__main__":
-    app.run(
-        debug=True,
-        port=5001
-    )
+    app.run(host="0.0.0.0", port=5001, debug=True)
