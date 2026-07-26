@@ -1,4 +1,4 @@
-# Checkpoints
+i# Checkpoints
 **/*.ipynb_checkpoints/
 *.pyc
 
@@ -23,3 +23,82 @@ node_modules/
 .virtual_documents
 
 *DS_Store/
+
+
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+.virtual_documents/
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Environment variables
+.env
+.env.*
+
+# Logs
+*.log
+
+# Build
+dist/
+build/
+
+# Node
+node_modules/
+
+# React/Vite
+frontend/node_modules/
+frontend/dist/
+
+# Python build
+*.egg-info/
+
+# Model artifacts (if regenerated)
+*.joblib
+*.pickle
+
+# Coverage
+.coverage
+.pytest_cache/
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Jupyter
+.ipynb_checkpoints/
+.virtual_documents/
+
+# Node
+node_modules/
+
+# macOS
+.DS_Store
+
+# Environment
+.env
+.env.*
+
+# Build
+dist/
+build/
+
+# Backup files
+*.bak
