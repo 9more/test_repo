@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+
+  backend:
+    build:
+      context: ./backend
+    container_name: imoh-ai-backend
+
+    env_file:
+      - ./backend/.env
+
+    ports:
+      - "5001:5001"
+
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: imoh-ai-frontend
+
+    depends_on:
+      - backend
+
+    ports:
+      - "3000:80"
+
+    restart: unless-stopped
