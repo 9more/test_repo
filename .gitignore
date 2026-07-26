@@ -1,4 +1,4 @@
-# Checkpoints
+i# Checkpoints
 **/*.ipynb_checkpoints/
 *.pyc
 
@@ -75,3 +75,30 @@ frontend/dist/
 # Coverage
 .coverage
 .pytest_cache/
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Jupyter
+.ipynb_checkpoints/
+.virtual_documents/
+
+# Node
+node_modules/
+
+# macOS
+.DS_Store
+
+# Environment
+.env
+.env.*
+
+# Build
+dist/
+build/
+
+# Backup files
+*.bak
