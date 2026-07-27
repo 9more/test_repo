@@ -4,6 +4,7 @@ services:
   backend:
     build:
       context: ./backend
+
     container_name: imoh-ai-backend
 
     env_file:
@@ -17,6 +18,9 @@ services:
   frontend:
     build:
       context: ./frontend
+      args:
+        VITE_API_URL: http://51.20.129.94:5001
+
     container_name: imoh-ai-frontend
 
     depends_on:
