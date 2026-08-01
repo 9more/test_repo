@@ -1,6 +1,7 @@
-from knowledge import load_all_knowledge
+from tools.spam import run
 
-knowledge = load_all_knowledge()
+result = run({
+    "message": "Congratulations! You've won £1000."
+})
 
-print(len(knowledge))
-print(knowledge[:1000])
+print(result)

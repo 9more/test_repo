@@ -5,7 +5,7 @@ class Route(ABC):
     """Base class for all routes."""
 
     @abstractmethod
-    def can_handle(self, message: str) -> bool:
+    def can_handle(self, message: str, tool: str) -> bool:
         pass
 
     @abstractmethod

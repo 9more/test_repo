@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { streamMessage } from "../api"; // Adjust path if Chat.tsx is in another folder
+import { streamMessage } from "../api";
 import { FaGithub } from "react-icons/fa";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -12,6 +12,7 @@ type Message = {
 export default function Chat() {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState<Message[]>([]);
+  const [tool, setTool] = useState("gemini"); // <-- NEW
 
   const prompts = [
     "Ask me about NLP projects",
@@ -46,7 +47,6 @@ export default function Chat() {
     const userMessage = message;
     setMessage("");
 
-    // Immediately show the user message and an empty assistant message
     setMessages((prev) => [
       ...prev,
       {
@@ -60,7 +60,7 @@ export default function Chat() {
     ]);
 
     try {
-      await streamMessage(userMessage, (chunk) => {
+      await streamMessage(tool, userMessage, (chunk) => {
         setMessages((prev) => {
           const updated = [...prev];
 
