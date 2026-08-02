@@ -1,5 +1,7 @@
 import { API_URL } from "./config";
+
 export async function streamMessage(
+  tool: string,
   message: string,
   onChunk: (chunk: string) => void,
 ) {
@@ -8,7 +10,10 @@ export async function streamMessage(
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ message }),
+    body: JSON.stringify({
+      tool,
+      message,
+    }),
   });
 
   if (!response.ok) {

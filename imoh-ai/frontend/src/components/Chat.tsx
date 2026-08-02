@@ -1,17 +1,38 @@
 import { useState, useEffect, useRef } from "react";
-import { streamMessage } from "../api"; // Adjust path if Chat.tsx is in another folder
+import { streamMessage } from "../api";
 import { FaGithub } from "react-icons/fa";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import ActionButtons from "./ActionButtons";
 
 type Message = {
   role: "user" | "assistant";
   content: string;
+  showActions?: boolean;
 };
 
 export default function Chat() {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState<Message[]>([]);
+  const [tool, setTool] = useState("gemini"); // <-- NEW
+  const demoMessages: Record<string, string> = {
+    spam: `🛡️ **Email Threat Detection**
+
+Paste an email below and I'll classify it as:
+
+• Ham
+• Spam
+• Phishing`,
+
+    sentiment: `😊 **Sentiment Analysis**
+
+Paste a customer review below.
+
+I'll classify it as:
+
+• Positive
+• Negative`,
+  };
 
   const prompts = [
     "Ask me about NLP projects",
@@ -46,7 +67,6 @@ export default function Chat() {
     const userMessage = message;
     setMessage("");
 
-    // Immediately show the user message and an empty assistant message
     setMessages((prev) => [
       ...prev,
       {
@@ -56,11 +76,14 @@ export default function Chat() {
       {
         role: "assistant",
         content: "",
+        showActions: true,
       },
     ]);
 
     try {
-      await streamMessage(userMessage, (chunk) => {
+      const activeTool = tool;
+
+      await streamMessage(activeTool, userMessage, (chunk) => {
         setMessages((prev) => {
           const updated = [...prev];
 
@@ -72,6 +95,24 @@ export default function Chat() {
           return updated;
         });
       });
+
+      // Automatically return to Gemini after one prediction
+      if (activeTool !== "gemini") {
+        setMessages((prev) => [
+          ...prev,
+          {
+            role: "assistant",
+            content: `✅ ${
+              activeTool === "spam" ? "Email" : "Sentiment"
+            } analysed successfully.
+
+You can continue asking me about my projects, skills, or experience, or launch another live demo.`,
+            showActions: false,
+          },
+        ]);
+
+        setTool("gemini");
+      }
     } catch (error) {
       console.error("Failed to send message:", error);
 
@@ -82,6 +123,7 @@ export default function Chat() {
           role: "assistant",
           content:
             "Sorry, something went wrong while contacting the AI service.",
+          showActions: false,
         };
 
         return updated;
@@ -165,9 +207,48 @@ export default function Chat() {
           {messages.map((msg, index) => (
             <div key={index} className={`message ${msg.role}`}>
               {msg.role === "assistant" ? (
-                <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                  {msg.content}
-                </ReactMarkdown>
+                <>
+                  <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                    {msg.content}
+                  </ReactMarkdown>
+
+                  {msg.showActions &&
+                    (msg.content.includes("Email Threat Detection") ||
+                      msg.content.includes("Sentiment Analysis")) && (
+                      <ActionButtons
+                        actions={[
+                          {
+                            tool: "spam",
+                            label: "🛡️ Launch Email Threat Detection",
+                          },
+                          {
+                            tool: "sentiment",
+                            label: "😊 Launch Sentiment Analysis",
+                          },
+
+                          {
+                            url: "https://imoh-ml-portfoliovercelapp.vercel.app",
+                            label: "🌐 Open Interactive ML Portfolio",
+                          },
+                        ]}
+                        onSelectTool={(selectedTool) => {
+                          setTool(selectedTool);
+
+                          setMessages((prev) => [
+                            ...prev,
+                            {
+                              role: "assistant",
+                              content:
+                                demoMessages[
+                                  selectedTool as keyof typeof demoMessages
+                                ],
+                              showActions: false,
+                            },
+                          ]);
+                        }}
+                      />
+                    )}
+                </>
               ) : (
                 msg.content
               )}

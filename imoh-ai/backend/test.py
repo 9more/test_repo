@@ -1,6 +1,5 @@
-from knowledge import load_all_knowledge
+from joblib import load
 
-knowledge = load_all_knowledge()
+model = load("models/sentiment_model.joblib")
 
-print(len(knowledge))
-print(knowledge[:1000])
+print(model.predict(["the product was really terrible"]))
