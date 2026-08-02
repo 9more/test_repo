@@ -4,11 +4,16 @@ on:
   push:
     branches:
       - development
+    paths:
+      - "imoh-ai/**"
+      - ".github/workflows/development.yml"
 
   pull_request:
     branches:
       - development
-
+    paths:
+      - "imoh-ai/**"
+      - ".github/workflows/development.yml"
 jobs:
   build:
     runs-on: ubuntu-latest
