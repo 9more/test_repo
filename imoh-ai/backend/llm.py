@@ -68,8 +68,12 @@ def stream_llm(message: str):
 
         if "RESOURCE_EXHAUSTED" in message:
             yield (
-                "Gemini's request limit has been reached. "
-                "Please wait a minute and try again."
+                yield """⚠️ Gemini is temporarily unavailable due to API usage limits.
+
+                  In the meantime, you can continue exploring my interactive machine learning portfolio.
+
+                [[ACTION:portfolio]]
+                """
             )
         else:
             yield f"Gemini returned an error: {message}"

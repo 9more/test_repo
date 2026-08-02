@@ -1,7 +1,5 @@
-from tools.spam import run
+from joblib import load
 
-result = run({
-    "message": "Congratulations! You've won £1000."
-})
+model = load("models/sentiment_model.joblib")
 
-print(result)
+print(model.predict(["the product was really terrible"]))
