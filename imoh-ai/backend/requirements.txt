@@ -1,7 +1,7 @@
 Flask
 Flask-Cors
 gunicorn
-google-generativeai
+google-genai
 python-dotenv
 scikit-learn
 pandas
