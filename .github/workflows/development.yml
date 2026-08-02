@@ -4,14 +4,10 @@ on:
   push:
     branches:
       - development
-    paths:
-      - "imoh-ai/**"
 
   pull_request:
     branches:
       - development
-    paths:
-      - "imoh-ai/**"
 
 jobs:
   build:
