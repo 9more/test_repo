@@ -66,20 +66,27 @@ def stream_llm(message: str):
         message = str(e)
 
         if "RESOURCE_EXHAUSTED" in message:
-            yield (
+        
                 yield """⚠️ Gemini is temporarily unavailable due to API usage limits.
 
                   In the meantime, you can continue exploring my interactive machine learning portfolio.
 
                 [[ACTION:portfolio]]
                 """
-            )
+            
         else:
             yield f"Gemini returned an error: {message}"
 
     except ServerError as e:
         print(e)
-        yield f"Gemini server error: {e}"
+        yield """⚠️ Gemini is currently experiencing high demand.
+
+Google's Gemini service is temporarily unavailable.
+
+You can still explore the live AI demonstrations below while the service recovers.
+
+[[ACTION:portfolio]]
+"""
     except Exception as e:
         traceback.print_exc()
         raise

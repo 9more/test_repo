@@ -4,6 +4,7 @@ import { FaGithub } from "react-icons/fa";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import ActionButtons from "./ActionButtons";
+import InsuranceForm from "./InsuranceForm";
 
 type Message = {
   role: "user" | "assistant";
@@ -15,6 +16,7 @@ export default function Chat() {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState<Message[]>([]);
   const [tool, setTool] = useState("gemini"); // <-- NEW
+  const [activeDemo, setActiveDemo] = useState<string | null>(null);
   const demoMessages: Record<string, string> = {
     spam: `🛡️ **Email Threat Detection**
 
@@ -203,6 +205,7 @@ You can continue asking me about my projects, skills, or experience, or launch a
               <br />• AI Engineering
             </div>
           )}
+          {activeDemo === "insurance" && <InsuranceForm />}
 
           {messages.map((msg, index) => (
             <div key={index} className={`message ${msg.role}`}>
@@ -225,6 +228,10 @@ You can continue asking me about my projects, skills, or experience, or launch a
                             tool: "sentiment",
                             label: "😊 Launch Sentiment Analysis",
                           },
+                          {
+                            tool: "insurance",
+                            label: "🏥 Launch Insurance Analytics",
+                          },
 
                           {
                             url: "https://imoh-ml-portfoliovercelapp.vercel.app",
@@ -232,6 +239,18 @@ You can continue asking me about my projects, skills, or experience, or launch a
                           },
                         ]}
                         onSelectTool={(selectedTool) => {
+                          console.log("Selected:", selectedTool);
+
+                          if (selectedTool === "insurance") {
+                            setTool("insurance");
+
+                            setActiveDemo("insurance");
+
+                            return;
+                          }
+
+                          setActiveDemo(null);
+
                           setTool(selectedTool);
 
                           setMessages((prev) => [

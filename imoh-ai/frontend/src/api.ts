@@ -2,18 +2,26 @@ import { API_URL } from "./config";
 
 export async function streamMessage(
   tool: string,
-  message: string,
+  data: string | Record<string, unknown>,
   onChunk: (chunk: string) => void,
 ) {
+  const payload =
+    typeof data === "string"
+      ? {
+          tool,
+          message: data, // Backwards compatibility
+        }
+      : {
+          tool,
+          data,
+        };
+
   const response = await fetch(`${API_URL}/chat`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({
-      tool,
-      message,
-    }),
+    body: JSON.stringify(payload),
   });
 
   if (!response.ok) {
