@@ -1,0 +1,50 @@
+name: Development CI
+
+on:
+  push:
+    branches:
+      - development
+    paths:
+      - "imoh-ai/**"
+      - ".github/workflows/development.yml"
+
+  pull_request:
+    branches:
+      - development
+    paths:
+      - "imoh-ai/**"
+      - ".github/workflows/development.yml"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Backend Dependencies
+        working-directory: imoh-ai/backend
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install Frontend Dependencies
+        working-directory: imoh-ai/frontend
+        run: npm install
+
+      - name: Build Frontend
+        working-directory: imoh-ai/frontend
+        run: npm run build
+
+      - name: Success
+        run: echo "✅ Development build completed successfully."

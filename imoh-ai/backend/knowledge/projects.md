@@ -1,71 +1,53 @@
 # AI Portfolio Projects
 
-## AI Assistant (Current Project)
+### 4. AI Assistant (In Development)
 
-Status: In Development
+**Overview**
 
-Description:
-An end-to-end conversational AI assistant built using React, Flask and Google's Gemini API. The application supports real-time streaming responses, conversation memory and a modular backend architecture designed for future expansion. The long-term objective is to evolve the assistant into a production-ready AI system capable of answering questions about my projects, experience and technical skills.
+A conversational AI platform that integrates Google's Gemini large language model with custom machine learning models to provide an interactive portfolio experience.
 
-Technologies:
+**Technologies**
 
-- Python
-- Flask
-- React
-- TypeScript
-- Google Gemini API
-- REST APIs
-- Git
-- Markdown
+Python • Flask • React • Gemini API • Git • Docker
 
-Current Features:
+**Current Features**
 
 - Streaming responses
 - Conversation memory
-- Modular routing
-- Prompt engineering
-- Error handling
-- Responsive web interface
+- Modular routing architecture
+- Machine learning tool routing
+- Email Threat Detection integration
 
-Planned Features:
+**Planned Features**
 
 - Retrieval-Augmented Generation (RAG)
-- Portfolio knowledge base
-- Tool calling
-- Docker deployment
-- AWS EC2 deployment
-- CI/CD with GitHub Actions
-- Persistent conversation storage
-- HTTPS and production monitoring
+- Vector Database
+- Intelligent tool selection
+- Additional machine learning models
+- AWS deployment
 
 ---
 
-## Spam Email Detection
+## Natural Language Processing (NLP) Projects
 
-Status: Complete
+### 1. Email Threat Detection (Complete)
 
-Description:
-Developed a machine learning pipeline to classify emails as spam or legitimate using Natural Language Processing techniques. The project demonstrates the complete machine learning workflow from data preprocessing through model deployment.
+**Overview**
 
-Key Features:
+A supervised machine learning application that classifies emails into **Ham**, **Spam**, or **Phishing** using Natural Language Processing and traditional machine learning techniques.
 
-- Text preprocessing
-- spaCy tokenisation
-- Lemmatization
-- TF-IDF Vectorisation
-- Linear Support Vector Classifier
-- Hyperparameter tuning using GridSearchCV
+**Technologies**
+
+Python • Scikit-learn • Flask • React • Git
+
+**Key Features**
+
+- Three-class email classification (Ham, Spam, Phishing)
+- TF-IDF feature extraction
+- Linear Support Vector Classifier (LinearSVC)
 - Scikit-learn Pipeline
-- Flask API deployment
-- React frontend integration
-
-Technologies:
-
-- Python
-- spaCy
-- Scikit-learn
-- Flask
-- React
+- Real-time inference through a Flask API
+- Interactive React frontend
 
 Skills Demonstrated:
 
@@ -77,31 +59,23 @@ Skills Demonstrated:
 
 ---
 
-## Sentiment Analysis
+### 2. Sentiment Analysis (Complete)
 
-Status: Complete
+**Overview**
 
-Description:
-Built a Natural Language Processing application capable of classifying customer reviews into positive or negative sentiment. The project applies traditional machine learning techniques and demonstrates feature engineering for unstructured text.
+A supervised machine learning application that predicts customer sentiment from text reviews.
 
-Key Features:
+**Technologies**
 
-- Text cleaning
-- Lemmatization
-- Stop-word removal
-- TF-IDF feature extraction
-- Classification pipeline
-- Model optimisation
-- Flask API
-- Interactive web interface
+Python • Scikit-learn • Flask • React • Git
 
-Technologies:
+**Key Features**
 
-- Python
-- spaCy
-- Scikit-learn
-- Flask
-- React
+- Customer review classification
+- TF-IDF Vectorisation
+- Hyperparameter optimisation using GridSearchCV
+- Scikit-learn Pipeline
+- Real-time prediction through a Flask API
 
 Skills Demonstrated:
 
@@ -208,27 +182,22 @@ Skills Demonstrated:
 
 ---
 
-## Language Detection
+### 3. Language Detector (In Development)
 
-Status: In Development
+**Overview**
 
-Description:
-Developing a Natural Language Processing application capable of automatically identifying the language of user-provided text. The objective is to demonstrate multilingual text processing and machine learning classification techniques.
+A multilingual Natural Language Processing application designed to automatically identify the language of user-provided text.
 
-Planned Features:
+**Technologies**
 
-- Text preprocessing
+Python • Scikit-learn • Flask • React • Git
+
+**Planned Features**
+
 - Language identification
-- Probability scores
-- REST API
-- Interactive frontend
-
-Technologies:
-
-- Python
-- Scikit-learn
-- Flask
-- React
+- Text preprocessing
+- Machine learning inference
+- REST API deployment
 
 Skills Demonstrated:
 

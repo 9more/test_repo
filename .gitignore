@@ -70,7 +70,12 @@ frontend/dist/
 
 # Model artifacts (if regenerated)
 *.joblib
+
+!imoh-ai/backend/models/
+!imoh-ai/backend/models/*.joblib
 *.pickle
+!imoh-ai/backend/models/*.pkl
+
 
 # Coverage
 .coverage

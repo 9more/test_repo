@@ -16,18 +16,17 @@ def home():
 def chat():
 
     data = request.get_json()
-
     message = data["message"]
+    tool = data.get("tool", "gemini")
 
     return Response(
-        stream_with_context(route_request(message)),
+        stream_with_context(route_request(message, tool)),
         mimetype="text/event-stream",
         headers={
             "Cache-Control": "no-cache",
             "X-Accel-Buffering": "no",  # Prevent buffering by reverse proxies
         },
     )
-
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5001, debug=False)
