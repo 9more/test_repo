@@ -3,7 +3,6 @@ from dotenv import load_dotenv
 from google import genai
 from google.genai import types
 from google.genai.errors import ClientError, ServerError
-
 from config import MODEL_NAME
 from prompts import SYSTEM_PROMPT, build_prompt
 from context_builder import build_context
