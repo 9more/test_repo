@@ -27,7 +27,10 @@ jobs:
           script: |
             set -e
 
-            cd /home/ubuntu/test_repo
+            cd /home/ubuntu/test_repo/imoh-ai
+            echo "Current directory:"
+            pwd
+            ls -la
 
             echo "Cleaning Docker..."
             docker system prune -af || true
