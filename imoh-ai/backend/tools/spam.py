@@ -1,16 +1,10 @@
-import joblib
+from model_registry import registry
 
-MODEL = joblib.load("models/spam_model.joblib")
+def run(data):
 
-
-def run(payload: dict) -> dict:
-    """
-    Email Threat Detection
-    """
-
-    message = payload["message"]
-
-    prediction = MODEL.predict([message])[0]
+    prediction = registry.get("spam").predict(
+        [data["message"]]
+    )[0]
 
     return {
         "tool": "spam",

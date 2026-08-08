@@ -3,7 +3,6 @@ from dotenv import load_dotenv
 from google import genai
 from google.genai import types
 from google.genai.errors import ClientError, ServerError
-
 from config import MODEL_NAME
 from prompts import SYSTEM_PROMPT, build_prompt
 from context_builder import build_context
@@ -11,9 +10,15 @@ from memory import add_user_message, add_assistant_message
 import traceback
 import time
 
-client = genai.Client(
-    api_key=os.getenv("GEMINI_API_KEY")
-)
+client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
+
+ACTION_PORTFOLIO = "[[ACTION:portfolio|🌐 Open Interactive ML Portfolio]]"
+
+ACTION_SPAM = "[[ACTION:spam|🛡️ Launch Email Threat Detection]]"
+
+ACTION_SENTIMENT = "[[ACTION:sentiment|😊 Launch Sentiment Analysis]]"
+
+ACTION_INSURANCE = "[[ACTION:insurance|🏥 Launch Insurance Analytics]]"
 
 
 def stream_llm(message: str):
@@ -29,13 +34,10 @@ def stream_llm(message: str):
     print("=" * 80)
     print("CONTEXT LENGTH:", len(context))
     print("=" * 80)
-    print(context[:3000])   # Print the first 3000 characters
+    print(context[:3000])  # Print the first 3000 characters
     print("=" * 80)
 
-    prompt = build_prompt(
-    user_message=message,
-    knowledge=context
-    )
+    prompt = build_prompt(user_message=message, knowledge=context)
 
     full_response = ""
 
@@ -54,12 +56,11 @@ def stream_llm(message: str):
                 print(repr(chunk.text))
                 full_response += chunk.text
                 yield chunk.text
-                time.sleep(0.2)   # Temporary test only
+                time.sleep(0.2)  # Temporary test only
 
         # Save the assistant's complete response
         if full_response:
             add_assistant_message(full_response)
-
 
     except ClientError as e:
         print(e)
@@ -67,21 +68,38 @@ def stream_llm(message: str):
         message = str(e)
 
         if "RESOURCE_EXHAUSTED" in message:
-            yield (
-                yield """⚠️ Gemini is temporarily unavailable due to API usage limits.
 
-                  In the meantime, you can continue exploring my interactive machine learning portfolio.
+            yield f"""
+                ⚠️ Gemini is currently experiencing high demand.
 
-                [[ACTION:portfolio]]
-                """
-            )
+                Google's Gemini service is temporarily unavailable.
+
+                You can still explore the live AI demonstrations below.
+
+                {ACTION_SPAM}
+                {ACTION_SENTIMENT}
+                {ACTION_INSURANCE}
+                {ACTION_PORTFOLIO}
+                    """
+
         else:
             yield f"Gemini returned an error: {message}"
 
     except ServerError as e:
         print(e)
-        yield f"Gemini server error: {e}"
-    except Exception as e:
+        yield """⚠️ Gemini is currently experiencing high demand.
+
+Google's Gemini service is temporarily unavailable.
+
+You can still explore the live AI demonstrations below while the service recovers.
+
+[[ACTION:portfolio]]
+"""
+    except Exception:
+
         traceback.print_exc()
-        raise
-        
+
+        yield """⚠️ An unexpected error occurred.
+
+    Please try again in a few moments.
+    """

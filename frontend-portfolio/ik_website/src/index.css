@@ -1,0 +1,47 @@
+/* Remove default browser spacing */
+:root {
+    --primary: #12355B;
+    --secondary: #FFFFFF;
+    --accent: #D4A017;
+    --text: #333333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global website styles */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f7fa;
+    color: var(--text);
+}
+
+root {
+
+    /* Colours */
+
+    --primary: #12355B;
+    --secondary: #FFFFFF;
+    --accent: #D4A017;
+    --text: #333333;
+
+    /* Spacing */
+
+    --space-sm: 16px;
+    --space-md: 24px;
+    --space-lg: 48px;
+    --space-xl: 64px;
+
+    /* Border radius */
+
+    --radius: 12px;
+
+}
+.container {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+}

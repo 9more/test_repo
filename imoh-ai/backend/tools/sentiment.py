@@ -1,13 +1,11 @@
-from joblib import load
-
-model = load("models/sentiment_model.joblib")
+from model_registry import registry
 
 
 def run(data):
 
-    text = data["message"]
-
-    prediction = model.predict([text])[0]
+    prediction = registry.get("sentiment").predict(
+        [data["message"]]
+    )[0]
 
     return {
         "tool": "sentiment",
