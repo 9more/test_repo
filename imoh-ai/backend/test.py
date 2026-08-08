@@ -1,5 +1,15 @@
-from joblib import load
+from tools.insurance import run
 
-model = load("models/sentiment_model.joblib")
+result = run(
+    {
+        "age": 35,
+        "sex": "male",
+        "bmi": 28.5,
+        "children": 2,
+        "smoker": "no",
+        "region": "northwest",
+    }
+)
 
-print(model.predict(["the product was really terrible"]))
+print(result)
+

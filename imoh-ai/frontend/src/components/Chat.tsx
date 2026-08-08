@@ -1,38 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 import { streamMessage } from "../api";
 import { FaGithub } from "react-icons/fa";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import ActionButtons from "./ActionButtons";
-
-type Message = {
-  role: "user" | "assistant";
-  content: string;
-  showActions?: boolean;
-};
+import Message, { type ChatMessage } from "./Message";
 
 export default function Chat() {
   const [message, setMessage] = useState("");
-  const [messages, setMessages] = useState<Message[]>([]);
-  const [tool, setTool] = useState("gemini"); // <-- NEW
-  const demoMessages: Record<string, string> = {
-    spam: `🛡️ **Email Threat Detection**
-
-Paste an email below and I'll classify it as:
-
-• Ham
-• Spam
-• Phishing`,
-
-    sentiment: `😊 **Sentiment Analysis**
-
-Paste a customer review below.
-
-I'll classify it as:
-
-• Positive
-• Negative`,
-  };
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
 
   const prompts = [
     "Ask me about NLP projects",
@@ -81,9 +54,7 @@ I'll classify it as:
     ]);
 
     try {
-      const activeTool = tool;
-
-      await streamMessage(activeTool, userMessage, (chunk) => {
+      await streamMessage(userMessage, (chunk) => {
         setMessages((prev) => {
           const updated = [...prev];
 
@@ -95,26 +66,8 @@ I'll classify it as:
           return updated;
         });
       });
-
-      // Automatically return to Gemini after one prediction
-      if (activeTool !== "gemini") {
-        setMessages((prev) => [
-          ...prev,
-          {
-            role: "assistant",
-            content: `✅ ${
-              activeTool === "spam" ? "Email" : "Sentiment"
-            } analysed successfully.
-
-You can continue asking me about my projects, skills, or experience, or launch another live demo.`,
-            showActions: false,
-          },
-        ]);
-
-        setTool("gemini");
-      }
     } catch (error) {
-      console.error("Failed to send message:", error);
+      console.error(error);
 
       setMessages((prev) => {
         const updated = [...prev];
@@ -123,7 +76,6 @@ You can continue asking me about my projects, skills, or experience, or launch a
           role: "assistant",
           content:
             "Sorry, something went wrong while contacting the AI service.",
-          showActions: false,
         };
 
         return updated;
@@ -157,6 +109,7 @@ You can continue asking me about my projects, skills, or experience, or launch a
             <FaGithub className="card-icon" />
             Explore My GitHub
           </h3>
+
           <p>Browse source code, projects & documentation</p>
         </div>
 
@@ -205,54 +158,26 @@ You can continue asking me about my projects, skills, or experience, or launch a
           )}
 
           {messages.map((msg, index) => (
-            <div key={index} className={`message ${msg.role}`}>
-              {msg.role === "assistant" ? (
-                <>
-                  <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                    {msg.content}
-                  </ReactMarkdown>
-
-                  {msg.showActions &&
-                    (msg.content.includes("Email Threat Detection") ||
-                      msg.content.includes("Sentiment Analysis")) && (
-                      <ActionButtons
-                        actions={[
-                          {
-                            tool: "spam",
-                            label: "🛡️ Launch Email Threat Detection",
-                          },
-                          {
-                            tool: "sentiment",
-                            label: "😊 Launch Sentiment Analysis",
-                          },
-
-                          {
-                            url: "https://imoh-ml-portfoliovercelapp.vercel.app",
-                            label: "🌐 Open Interactive ML Portfolio",
-                          },
-                        ]}
-                        onSelectTool={(selectedTool) => {
-                          setTool(selectedTool);
-
-                          setMessages((prev) => [
-                            ...prev,
-                            {
-                              role: "assistant",
-                              content:
-                                demoMessages[
-                                  selectedTool as keyof typeof demoMessages
-                                ],
-                              showActions: false,
-                            },
-                          ]);
-                        }}
-                      />
-                    )}
-                </>
-              ) : (
-                msg.content
-              )}
-            </div>
+            <Message
+              key={index}
+              message={msg}
+              onCloseWidget={() => {
+                setMessages((prev) => prev.filter((m) => !m.component));
+              }}
+              onSelectTool={(selectedTool) => {
+                setMessages((prev) => [
+                  ...prev,
+                  {
+                    role: "assistant",
+                    content: "",
+                    component: selectedTool as
+                      | "spam"
+                      | "sentiment"
+                      | "insurance",
+                  },
+                ]);
+              }}
+            />
           ))}
 
           <div ref={messagesEndRef} />

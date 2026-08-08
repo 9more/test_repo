@@ -1,7 +1,6 @@
 import { API_URL } from "./config";
 
 export async function streamMessage(
-  tool: string,
   message: string,
   onChunk: (chunk: string) => void,
 ) {
@@ -11,7 +10,7 @@ export async function streamMessage(
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      tool,
+      tool: "gemini",
       message,
     }),
   });
@@ -34,4 +33,27 @@ export async function streamMessage(
 
     onChunk(decoder.decode(value));
   }
+}
+
+/*
+ * ML Prediction endpoint
+ */
+
+export async function predictModel<T>(tool: string, data: T): Promise<string> {
+  const response = await fetch(`${API_URL}/chat`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      tool,
+      data,
+    }),
+  });
+
+  if (!response.ok) {
+    throw new Error("Prediction failed.");
+  }
+
+  return await response.text();
 }
