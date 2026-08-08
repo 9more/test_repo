@@ -29,18 +29,16 @@ jobs:
 
             cd /home/ubuntu/test_repo
 
-            echo "Pulling latest code..."
-            git fetch origin
-            git reset --hard origin/main
+            echo "Cleaning Docker..."
+            docker system prune -af || true
+            docker builder prune -af || true
 
             echo "Building Docker images..."
-            cd imoh-ai
             docker compose build --pull
-
+            
             echo "Starting containers..."
             docker compose up -d --remove-orphans
 
-            echo "Removing unused Docker images..."
-            docker image prune -f
-
+            echo "Starting containers..."
+            docker compose up -d --remove-orphans
             echo "Deployment completed successfully!"
