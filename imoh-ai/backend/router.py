@@ -4,6 +4,8 @@ from tools.spam import run as spam_run
 from tools.sentiment import run as sentiment_run
 from tools.insurance_predictor import run as insurance_predictor_run
 from tools.insurance import run as insurance_run
+
+
 class GeminiRoute(Route):
 
     def can_handle(self, message: str, tool: str) -> bool:
@@ -26,7 +28,8 @@ class SpamRoute(Route):
         print(result)
 
         yield f"Prediction: {result['prediction']}"
-       
+
+
 class SentimentRoute(Route):
 
     def can_handle(self, data, tool: str) -> bool:
@@ -40,7 +43,8 @@ class SentimentRoute(Route):
         print(result)
 
         yield f"Prediction: {result['prediction']}"
-        
+
+
 class InsurancePredictorRoute(Route):
 
     def can_handle(self, data, tool: str):
@@ -52,6 +56,7 @@ class InsurancePredictorRoute(Route):
         result = insurance_predictor_run(data)
 
         yield f"Estimated Annual Charge: £{result['prediction']:,.2f}"
+
 
 class InsuranceRoute(Route):
 
@@ -65,17 +70,20 @@ class InsuranceRoute(Route):
 
         yield (
             f"Estimated Annual Charge: "
-            f"£{result['charge']:,.2f}\n\n"
+            f"£{result['charge']:,.2f};\n\n"
             f"Risk Classification: "
             f"{result['risk']}"
         )
+
+
 ROUTES = [
     SpamRoute(),
     SentimentRoute(),
     InsurancePredictorRoute(),
     GeminiRoute(),
-    InsuranceRoute()
+    InsuranceRoute(),
 ]
+
 
 def route_request(data, tool: str):
 
@@ -84,8 +92,7 @@ def route_request(data, tool: str):
     for route in ROUTES:
 
         print(
-            f"Checking {route.__class__.__name__} -> "
-            f"{route.can_handle(data, tool)}"
+            f"Checking {route.__class__.__name__} -> " f"{route.can_handle(data, tool)}"
         )
 
         if route.can_handle(data, tool):

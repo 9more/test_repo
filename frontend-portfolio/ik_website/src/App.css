@@ -1,0 +1,163 @@
+.hero {
+    background-color: var(--primary);
+    color: var(--secondary);
+    text-align: center;
+    padding: 56px 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 16px;
+}
+
+.hero-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.hero-research {
+    color: var(--accent);
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    padding: 20px;
+}
+
+nav {
+
+    background: white;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .06);
+
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+
+.biography {
+    display: flex;
+    gap: 50px;
+    font-size: 2rem;
+    align-items: center;
+    padding: 40px 10%;
+    background: white;
+
+}
+
+.biography .container {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+}
+
+.biography-image img {
+    width: 250px;
+    border-radius: 12px;
+}
+
+.biography-content {
+    flex: 1;
+    text-align: left;
+}
+
+.biography-image img {
+    width: 280px;
+    border-radius: 12px;
+}
+
+.biography-content h2 {
+    margin-top: 0;
+    color: var(--primary);
+}
+
+.biography-content p {
+    line-height: 1.7;
+}
+
+.research {
+    padding: 48px 0;
+    font-size: 2rem;
+}
+
+.research h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.research-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.research-card {
+
+    background: white;
+
+    border-radius: 12px;
+
+    padding: 24px;
+
+    transition: 0.3s;
+
+}
+
+.research-card:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow: 0 12px 25px rgba(0, 0, 0, .08);
+
+}
+
+.biography,
+.research,
+.publications,
+.teaching,
+.contact {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+section h2 {
+
+    font-size: 2rem;
+
+    text-align: center;
+
+    margin-bottom: 40px;
+
+    color: var(--primary);
+
+}
+
+.container{
+    width:min(1100px,90%);
+    margin:0 auto;
+}
