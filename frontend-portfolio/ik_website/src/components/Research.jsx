@@ -19,10 +19,10 @@ function Research() {
 
                     <div className="research-card">
 
-                        <h3>{area}</h3>
+                        <h3>key={area}</h3>
 
                     </div>)
-                )};
+                )}
 
         </div>
 
