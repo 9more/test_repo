@@ -9,64 +9,81 @@ from sklearn.pipeline import Pipeline
 import joblib
 from data_split import data_split
 
-train=data_split()['train']
+train = data_split()['train']
 
-tf=TfidfVectorizer(ngram_range = (2, 3),
-                   max_df=70000, sublinear_tf=True)
+tf = TfidfVectorizer(
+    analyzer='char',
+    ngram_range=(2, 5),
+    sublinear_tf=True,
+    min_df=1
+)
 
-models=[SGDClassifier(),
-        ComplementNB(),
-        LinearSVC(),
-        ExtraTreesClassifier(),
-        LogisticRegression()]
+models = [SGDClassifier(),
+          ComplementNB(),
+          LinearSVC(),
+          ExtraTreesClassifier(),
+          LogisticRegression()]
 
-params=[{
-        'loss':['log_loss', 'hinge'],
-         'penalty':['l2','l1'],
-         'alpha':[1e-3, 1e-5],
-         'max_iter':[1000],
-         'class_weight':['balanced']
-        },
+params = [{
+    'models__loss': ['log_loss', 'hinge'],
+    'models__penalty': ['l2', 'l1'],
+    'models__alpha': [1e-3, 1e-5],
+    'models__max_iter': [1000],
+    'models__class_weight': ['balanced']
+},
 
-        {
-            'alpha': [.5,1],
-            'normalize': [True, False]
-        },
-        {
-            'C':[.1, .5, 1],
-            'max_iter':[2000],
-            'class_weight':['balanced'],
-        },
-       {
-           'n_estimators' : [200],
-           'max_depth':[10, 50, 100],
-           'min_samples_split':[10, 20],
-           'class_weight': ['balanced'],
+    {
+        'models__alpha': [0.5, 1]
+    },
+    {
+        'models__C': [0.1, 0.5, 1],
+        'models__max_iter': [2000],
+        'models__class_weight': ['balanced']
+    },
+    {
+        'models__n_estimators': [200],
+        'models__max_depth': [10, 50, 100],
+        'models__min_samples_split': [10, 20],
+        'models__class_weight': ['balanced']
+    },
 
-       },
-        {
-           'penalty':['l2','l1'],
-           'C': [0.5, 1, 10],
-           'solver':['saga'],
-           'max_iter':[1000],
-           'class_weight':['balanced'],
-        }
+    {
+        'models__penalty': ['l2', 'l1'],
+        'models__C': [0.5, 1, 10],
+        'models__solver': ['saga'],
+        'models__max_iter': [1000],
+        'models__class_weight': ['balanced']
+    }
 ]
+
 
 def best_grid():
     best_models = {}
     best_scores = {}
-    num=0
-    for _ in zip(models, params):
-        mum=+1
-        pipe=Pipeline([('transformer',tf), ('model',_[0]) ])
-        grid_num = GridSearchCV(pipe, param_grid= _[1], cv=5,
-                                n_jobs=-1,
-                               refit = True,
-                               scoring='f1')
-        grid_num.fit(train[0],train[1])
-        best_models.setdefault(str(_[0]),grid_num.best_estimator_)
-        joblib.dump(grid_num.best_estimator_, 'models/'+str(_[0]))
-        best_scores.setdefault(str(_[0]),grid_num.best_score_)
+    for model, param in zip(models, params):
+        pipe = Pipeline([
+            ('transformer', tf),
+            ('models', model)
+        ])
+        grid_num = GridSearchCV(
+            estimator=pipe,
+            param_grid=param,
+            cv=5,
+            n_jobs=-1,
+            refit=True,
+            scoring='f1_macro',
+            error_score='raise'
+        )
+        print("X type:", type(train[0]))
+        print("X shape:", train[0].shape)
+        print("y type:", type(train[1]))
+        print("y shape:", train[1].shape)
+        print(train[1].head())
+        grid_num.fit(train[0]['Text'], train[1])
+        best_models[str(model)] = grid_num.best_estimator_
+        best_scores[str(model)] = grid_num.best_score_
+        joblib.dump(grid_num.best_estimator_, 'models/' + str(model))
+    return best_models, best_scores
 
-    return best_models ,best_scores
+
+
