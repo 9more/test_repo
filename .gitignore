@@ -118,3 +118,4 @@ build/
 /.idea/dictionaries/
 /.idea/shelf/
 .idea/
+c-language_detector/models/
