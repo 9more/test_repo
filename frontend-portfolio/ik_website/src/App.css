@@ -2,7 +2,6 @@
     padding: 16px 0;
     background: white;
     border: 2px;
-
 }
 
 .biography h2 {
@@ -108,7 +107,6 @@ nav a:hover {
 
 . .research {
     background: #f5f7fa;
-    font-size: 2rem;
     border: 2px solid blue;
 }
 
@@ -117,21 +115,32 @@ nav a:hover {
     margin-bottom: 40px;
 }
 
-.research-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+.research-card h3 {
+    margin: 0;
+    font-size: 0.95rem;
 }
-
 .research-card {
-
+    flex: 1;
+    padding: 16px;
     background: white;
+    border-radius: 8px;
+}
+.research-grid {
+    display: flex;
+    gap: 16px;
 
+    border: 1px solid #dfe3e8;
     border-radius: 12px;
 
-    padding: 24px;
+    padding: 0;
+}
 
-    transition: 0.3s;
+.research-grid {
+    display: flex;
+    gap: 16px;
+
+    border: 1px solid #dfe3e8;
+    border-radius: 12px;
 
 }
 
@@ -156,9 +165,11 @@ nav a:hover {
     width: min(1100px, 90%);
     margin: 0 auto;
 }
+
 section {
-       padding: 24px 0;
+    padding: 24px 0;
 }
+
 section h2 {
 
     font-size: 2rem;
