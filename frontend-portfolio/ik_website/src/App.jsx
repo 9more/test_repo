@@ -4,6 +4,7 @@ import Research from "./components/Research";
 import Navbar from "./components/Navbar";
 import Layout from "./components/Layout";
 import "./App.css";
+import Publications from "./components/Publications.jsx";
 
 function App() {
     return (
@@ -29,6 +30,8 @@ function App() {
                 </section>
 
                 <Research/>
+
+                <Publications/>
 
             </Layout>
 

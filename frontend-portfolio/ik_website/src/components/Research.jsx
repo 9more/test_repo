@@ -7,27 +7,31 @@ function Research() {
         "Economic Growth"
     ];
 
-    return (<section
-        className="research"
-        id="research"
-    >
-        <h2>Research Interests</h2>
+    return (
+        <section
+            className="research"
+            id="research"
+        >
+            <div className="container">
 
-        <div className="research-grid">
-            {
-                researchAreas.map(area => (
+                <h2>Research Interests</h2>
 
-                    <div className="research-card">
+                <div className="research-grid">
 
-                        <h3>{area}</h3>
+                    {researchAreas.map(area => (
+                        <div
+                            key={area}
+                            className="research-card"
+                        >
+                            <h3>{area}</h3>
+                        </div>
+                    ))}
 
-                    </div>)
-                )};
+                </div>
 
-        </div>
-
-    </section>)
-
+            </div>
+        </section>
+    );
 }
 
 export default Research;
