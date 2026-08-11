@@ -8,11 +8,6 @@ test=data_split()['test']
 
 BASE_DIR = Path(__file__).resolve().parent
 MODELS_DIR = BASE_DIR / "models"
-SGD= joblib.load(MODELS_DIR/'SGDClassifier()')
-EXTR= joblib.load(MODELS_DIR/'ExtraTreesClassifier()')
-CBN= joblib.load(MODELS_DIR/'ComplementNB()')
-LSVC= joblib.load(MODELS_DIR/'LinearSVC()')
-LGR= joblib.load(MODELS_DIR / 'LogisticRegression()')
 
 MODELS= ['ComplementNB()',
          'ExtraTreesClassifier()',
