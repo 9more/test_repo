@@ -15,9 +15,7 @@ MODELS= ['ComplementNB()',
          'LogisticRegression()',
          'SGDClassifier()',
          ]
-estimators=[]
-for model in MODELS:
-    estimators.append((model[:4], joblib.load(MODELS_DIR/model)))
+estimators=[(model[:4], joblib.load(MODELS_DIR/model)) for model in MODELS]
 
 
 voting= VotingClassifier(estimators=estimators,
@@ -26,4 +24,5 @@ voting= VotingClassifier(estimators=estimators,
 
 voting.fit(train[0]['Text'],train[1])
 print(voting.score(test[0]['Text'],test[1]))
+joblib.dump(voting, Path.joinpath(MODELS_DIR,'voting.joblib'))
 print(voting.predict(['today is a beautiful day']))
