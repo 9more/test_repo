@@ -105,6 +105,11 @@ nav a:hover {
     color: var(--primary);
 }
 
+.publication-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
 . .research {
     background: #f5f7fa;
     border: 2px solid blue;
