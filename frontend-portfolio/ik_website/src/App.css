@@ -110,6 +110,15 @@ nav a:hover {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
 }
+.publication h3 {
+    margin: 0 0 6px;
+    font-size: 1rem;
+}
+
+.publication p {
+    margin: 0;
+    font-size: 0.9rem;
+}
 . .research {
     background: #f5f7fa;
     border: 2px solid blue;
