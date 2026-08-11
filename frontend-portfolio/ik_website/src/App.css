@@ -107,8 +107,21 @@ nav a:hover {
 
 .publication-list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 32px;
+    row-gap: 0;
+}
+
+
+.publication {
+     padding: 16px 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+@media (max-width: 700px) {
+    .publication-list {
+        grid-template-columns: 1fr;
+    }
 }
 . .research {
     background: #f5f7fa;
