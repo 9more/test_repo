@@ -1,11 +1,7 @@
 # Crime Data Analytics Dashboard
 [link to dashboard](https://app.powerbi.com/reportEmbed?reportId=e04b4e69-6d79-4b7c-9156-dafadb1f91b5&autoAuth=true&ctid=5a25c45a-db2f-42cc-b69f-0e657afd3300&actionBarEnabled=true)
 
-<<<<<<< HEAD
 ![dashboard](assets/crime_page-0001.jpg)
-=======
-![dashboard](/Users/imohekpenyong/test_repo/BI-Projects/Crime Analysis/assets/crime_page-0001.jpg)
->>>>>>> 1a509d1 (.)
 
 
 ## Project Overview
