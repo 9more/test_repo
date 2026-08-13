@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Layout from "./components/Layout";
 import "./App.css";
 import Publications from "./components/Publications.jsx";
+import Teaching from "./components/Teaching.jsx";
 
 function App() {
     return (
@@ -32,6 +33,10 @@ function App() {
                 <Research/>
 
                 <Publications/>
+
+                <Teaching/>
+
+
 
             </Layout>
 

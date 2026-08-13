@@ -108,16 +108,29 @@ nav a:hover {
 .publication-list {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: 32px;
+    column-gap: 60px;
     row-gap: 0;
 }
 
 
 .publication {
     width: 100%;
-    padding: 0 0 24px;
+    padding: 6px 0;
     border-bottom: 1px solid #e5e7eb;
 
+}
+
+.publication a {
+    display: inline-block;
+    margin-top: 8px;
+    color: var(--primary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.publication a:hover {
+    text-decoration: underline;
 }
 
 .publication-authors {
@@ -141,6 +154,7 @@ nav a:hover {
         grid-template-columns: 1fr;
     }
 }
+
 .publication h3 {
     margin: 0 0 6px;
     font-size: 1rem;
@@ -150,6 +164,7 @@ nav a:hover {
     margin: 0;
     font-size: 0.9rem;
 }
+
 . .research {
     background: #f5f7fa;
     border: 2px solid blue;
@@ -164,6 +179,7 @@ nav a:hover {
     margin: 0;
     font-size: 0.95rem;
 }
+
 .research-card {
     flex: 1;
     padding: 16px;
@@ -175,7 +191,9 @@ nav a:hover {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 48px;
+    row-gap: 24px;
 }
+
 .research-grid {
     display: flex;
     gap: 16px;
@@ -227,4 +245,54 @@ section h2 {
     text-align: center;
     margin-bottom: 40px;
     color: var(--primary);
+}
+
+.teaching {
+    padding: 24px 0;
+}
+
+.teaching-philosophy {
+    max-width: 800px;
+    margin: 0 auto 24px;
+    text-align: center;
+}
+
+.teaching-philosophy h3 {
+    margin: 0 0 8px;
+    font-size: 1.1rem;
+}
+
+.teaching-philosophy p {
+    margin: 0;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+.courses h3 {
+    margin: 0 0 12px;
+    font-size: 1.1rem;
+}
+
+.course-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.course {
+    padding: 14px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+}
+
+.course h4 {
+    margin: 0 0 6px;
+    font-size: 0.95rem;
+}
+
+.course p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #666;
 }
