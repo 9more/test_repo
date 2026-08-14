@@ -6,6 +6,8 @@ import Layout from "./components/Layout";
 import "./App.css";
 import Publications from "./components/Publications.jsx";
 import Teaching from "./components/Teaching.jsx";
+import Contact from "./components/Contact.jsx";
+
 
 function App() {
     return (
@@ -13,7 +15,7 @@ function App() {
             <Navbar/>
 
             <Hero
-                name="Dr Jane Smith"
+                name="Dr Ikechukwu Ikechukwu"
                 title="Senior Lecturer in Economics"
                 research="Labour Economics • Public Policy • Development Economics"
                 description="Researching labour markets, economic growth and evidence-based public policy."
@@ -36,7 +38,7 @@ function App() {
 
                 <Teaching/>
 
-
+                <Contact />
 
             </Layout>
 

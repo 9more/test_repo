@@ -243,8 +243,8 @@ section h2 {
 
     font-size: 2rem;
     text-align: center;
-    margin-bottom: 40px;
     color: var(--primary);
+    margin-bottom: 12px;
 }
 
 .teaching {
@@ -253,8 +253,8 @@ section h2 {
 
 .teaching-philosophy {
     max-width: 800px;
-    margin: 0 auto 24px;
     text-align: center;
+    margin: 0 auto 24px;
 }
 
 .teaching-philosophy h3 {
@@ -280,10 +280,11 @@ section h2 {
 }
 
 .course {
-    padding: 14px;
+    padding: 12px 16px;
     background: white;
     border: 1px solid #e5e7eb;
     border-radius: 8px;
+    border-left: 3px solid var(--primary);
 }
 
 .course h4 {
@@ -295,4 +296,24 @@ section h2 {
     margin: 0;
     font-size: 0.8rem;
     color: #666;
+}
+
+.contact {
+    padding: 24px 0;
+    text-align: center;
+}
+.contact > .container > p {
+    max-width: 600px;
+    margin: 0 auto 4px;
+    line-height: 1.0;
+}
+
+.contact a {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.contact a:hover {
+    text-decoration: underline;
 }
