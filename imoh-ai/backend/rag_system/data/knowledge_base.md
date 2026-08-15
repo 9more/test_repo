@@ -3,7 +3,7 @@
 ## About
 
 Imoh is a data scientist and AI developer interested in
-machine learning, artificial intelligence and data analysis.
+machine learning, artificial intelligence and data analysis. He has a PhD in Economics.
 
 ## Spam Detection
 

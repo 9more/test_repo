@@ -17,7 +17,6 @@ documents = [
     section["text"]
     for section in sections
 ]
-
 document_embeddings = create_embeddings(documents)
 
 index = create_index(document_embeddings)
