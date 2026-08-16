@@ -1,50 +1,54 @@
 from pathlib import Path
 import faiss
-import numpy as np
-from pathlib import Path
-from src.chunker import chunk_text
 from src.embeddings import create_embeddings
-from src.vector_store import create_index, save_index
+from src.vector_store import load_index, load_metadata
 
-index_path = Path("index/faiss.index")
 
-index_path.parent.mkdir(exist_ok=True)
+INDEX_PATH = Path("index/faiss.index")
+METADATA_PATH = Path("index/metadata.pkl")
 
-path = Path("data/knowledge_base.md")
-text = path.read_text(encoding="utf-8")
-sections = chunk_text(text)
-documents = [
-    section["text"]
-    for section in sections
-]
-document_embeddings = create_embeddings(documents)
 
-index = create_index(document_embeddings)
+def retrieve(query, top_k=3):
 
-index_path = Path("index/faiss.index")
+    index = load_index(INDEX_PATH)
 
-index_path.parent.mkdir(exist_ok=True)
+    metadata = load_metadata(METADATA_PATH)
 
-save_index(index, index_path)
+    query_embedding = create_embeddings([query])
 
-print("Number of vectors:", index.ntotal)
-print("Index saved to:", index_path)
-print("Number of vectors:", index.ntotal)
-query = "What classifier was used for spam detection?"
-query_embedding = create_embeddings([query])
-query_embedding = np.asarray(query_embedding).astype("float32")
-faiss.normalize_L2(query_embedding)
+    query_embedding = query_embedding.astype("float32")
 
-distances, indices = index.search(
-    query_embedding,
-    3
-)
-for distance, index_number in zip(distances[0], indices[0]):
+    faiss.normalize_L2(query_embedding)
 
-    print("\n--------------------")
+    distances, indices = index.search(
+        query_embedding,
+        top_k
+    )
 
-    print("Score:", distance)
+    results = []
 
-    print("Section:", sections[index_number]["section"])
+    for distance, index_number in zip(
+        distances[0],
+        indices[0]
+    ):
 
-    print("Text:", sections[index_number]["text"])
+        results.append({
+            "score": float(distance),
+            "section": metadata[index_number]["section"],
+            "text": metadata[index_number]["text"]
+        })
+
+    return results
+
+if __name__ == "__main__":
+
+    query = "What classifier was used for spam detection?"
+
+    results = retrieve(query)
+
+    for result in results:
+
+        print("\n--------------------")
+        print("Score:", result["score"])
+        print("Section:", result["section"])
+        print("Text:", result["text"])
