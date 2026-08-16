@@ -11,15 +11,15 @@ function Biography() {
                     </div>
                     <div className="biography-content">
                         <p>
-                            Dr Ikechukwu Matthew is a Senior Lecturer in Economics
-                            whose research focuses on labour markets,
-                            public policy and economic development.
+                           Dr. Ogbuagu Matthew Ikechukwu is an economist and
+                            researcher whose research areas include macroeconomic
+                            modelling, development financing, and small and medium
+                            enterprises (SMEs) development.
+
                         </p>
                         <p>
-                            Her work combines rigorous quantitative
-                            analysis with practical policy applications,
-                            helping governments and institutions make
-                            evidence-based decisions.
+                            He holds a PhD in Economics, an MSc in Economics,
+                            and a First Class Honours BSc in Economics.
                         </p>
 
                     </div>
@@ -29,5 +29,7 @@ function Biography() {
             </div>
 
         </section>
-    )}
-  export default Biography
+    )
+}
+
+export default Biography

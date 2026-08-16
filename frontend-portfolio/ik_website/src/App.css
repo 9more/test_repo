@@ -115,7 +115,6 @@ nav a:hover {
 
 .publication {
     width: 100%;
-    padding: 6px 0;
     border-bottom: 1px solid #e5e7eb;
 
 }
@@ -136,7 +135,6 @@ nav a:hover {
 .publication-authors {
     margin: 0 0 6px;
     font-size: 0.85rem;
-    font-weight: 600;
 }
 
 .publication h3 {
@@ -158,6 +156,7 @@ nav a:hover {
 .publication h3 {
     margin: 0 0 6px;
     font-size: 1rem;
+    font-weight: 400;
 }
 
 .publication p {
@@ -172,7 +171,7 @@ nav a:hover {
 
 .research h2 {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .research-card h3 {
@@ -228,6 +227,7 @@ nav a:hover {
 .contact {
     max-width: 1100px;
     margin: 0 auto;
+    padding: 12px 0;
 }
 
 .container {
@@ -236,7 +236,7 @@ nav a:hover {
 }
 
 section {
-    padding: 24px 0;
+    padding: 12px 0;
 }
 
 section h2 {
@@ -244,11 +244,13 @@ section h2 {
     font-size: 2rem;
     text-align: center;
     color: var(--primary);
-    margin-bottom: 12px;
+    margin-bottom: 5px;
 }
 
 .teaching {
-    padding: 24px 0;
+}
+.teaching h2 {
+    margin-bottom: 12px;
 }
 
 .teaching-philosophy {
@@ -299,13 +301,13 @@ section h2 {
 }
 
 .contact {
-    padding: 24px 0;
+    padding: 12px 0;
     text-align: center;
 }
 .contact > .container > p {
     max-width: 600px;
     margin: 0 auto 4px;
-    line-height: 1.0;
+    line-height: 1.6;
 }
 
 .contact a {

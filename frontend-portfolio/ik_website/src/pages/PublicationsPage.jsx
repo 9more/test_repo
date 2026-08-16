@@ -1,15 +1,15 @@
 import publications from "../data/publications";
 
-function Publications() {
+function PublicationsPage() {
     return (
-        <section className="publications" id="publications">
+        <section className="publications-page">
             <div className="container">
 
-                <h2>Publications</h2>
+                <h1>Publications</h1>
 
                 <div className="publication-list">
 
-                    {publications.slice(0, 10).map(publication => (
+                    {publications.map(publication => (
                         <article
                             key={publication.id}
                             className="publication"
@@ -42,15 +42,9 @@ function Publications() {
 
                 </div>
 
-                <div className="publication-full-list">
-                    <a href="/publications">
-                        View full publication list →
-                    </a>
-                </div>
-
             </div>
         </section>
     );
 }
 
-export default Publications;
+export default PublicationsPage;
