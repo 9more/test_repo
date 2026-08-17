@@ -1,17 +1,27 @@
-def chunk_text(text, chunk_size=500):
-    chunks = []
+def chunk_text(text):
+    sections = []
+    current_section = None
+    current_content = []
 
-    for i in range(0, len(text), chunk_size):
-        chunk = text[i:i + chunk_size]
-        chunks.append(chunk)
+    for line in text.splitlines():
 
-    return chunks
+        if line.startswith("## "):
+            if current_section and current_content:
+                sections.append({
+                    "section": current_section,
+                    "text": "\n".join(current_content).strip()
+                })
 
-with open("data/knowledge_base.md", "r") as file:
-    text = file.read()
+            current_section = line.replace("## ", "").strip()
+            current_content = []
 
-chunks = chunk_text(text)
+        elif current_section:
+            current_content.append(line)
 
-for i, chunk in enumerate(chunks):
-    print(f"\n--- Chunk {i} ---")
-    print(chunk)
+    if current_section and current_content:
+        sections.append({
+            "section": current_section,
+            "text": "\n".join(current_content).strip()
+        })
+
+    return sections
