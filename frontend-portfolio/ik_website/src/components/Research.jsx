@@ -1,9 +1,8 @@
 function Research() {
     const researchAreas = [
         "Labour Economics",
-        "Public Policy",
+        "Small & Medium Enterprises (SMEs) Development",
         "Development Economics",
-        "Behavioural Economics",
         "Economic Growth"
     ];
 

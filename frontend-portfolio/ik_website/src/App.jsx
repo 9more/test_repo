@@ -1,41 +1,26 @@
-import Hero from "./components/Hero";
-import Biography from "./components/Biography";
-import Research from "./components/Research";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
+
 import Navbar from "./components/Navbar";
-import Layout from "./components/Layout";
+import Home from "./pages/Home";
+import PublicationsPage from "./pages/PublicationsPage";
+
 import "./App.css";
-import Publications from "./components/Publications.jsx";
 
 function App() {
     return (
-        <>
+        <BrowserRouter>
+
             <Navbar/>
 
-            <Hero
-                name="Dr Jane Smith"
-                title="Senior Lecturer in Economics"
-                research="Labour Economics • Public Policy • Development Economics"
-                description="Researching labour markets, economic growth and evidence-based public policy."
-            />
+            <Routes>
+                <Route path="/" element={<Home/>}/>
+                <Route
+                    path="/publications"
+                    element={<PublicationsPage/>}
+                />
+            </Routes>
 
-            <Layout>
-                <section className="biography">
-
-                    <div className="container">
-
-                         <Biography/>
-
-                    </div>
-
-                </section>
-
-                <Research/>
-
-                <Publications/>
-
-            </Layout>
-
-        </>
+        </BrowserRouter>
     );
 }
 
