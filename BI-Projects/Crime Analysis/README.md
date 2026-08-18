@@ -1,6 +1,9 @@
 # Crime Data Analytics Dashboard
 [link to dashboard](https://app.powerbi.com/reportEmbed?reportId=e04b4e69-6d79-4b7c-9156-dafadb1f91b5&autoAuth=true&ctid=5a25c45a-db2f-42cc-b69f-0e657afd3300&actionBarEnabled=true)
 
+![dashboard](assets/crime_page-0001.jpg)
+
+![dashboard](assets/crime_page-0002.jpg)
 ## Project Overview
 
 This Business Intelligence (BI) project analyzes crime incident data to uncover patterns, trends, and key performance indicators that support data-driven decision-making. The project demonstrates an end-to-end analytics workflow, from data extraction and transformation to dimensional modeling, DAX development, and dashboard creation.
