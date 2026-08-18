@@ -1,40 +1,39 @@
 import os
-
-from huggingface_hub import InferenceClient
-
+from dotenv import load_dotenv
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_core.runnables import RunnableLambda
+from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
+from langchain_core.output_parsers import StrOutputParser
 
+load_dotenv()
 
-client = InferenceClient(
-    api_key=os.getenv("HF_TOKEN")
+llm = HuggingFaceEndpoint(
+    repo_id="deepseek-ai/DeepSeek-V3-0324",
+    task="text-generation",
+    huggingfacehub_api_token=os.getenv("HF_TOKEN"),
 )
 
+chat_model = ChatHuggingFace(llm=llm)
 
-def call_model(messages):
-    response = client.chat.completions.create(
-        model="deepseek-ai/DeepSeek-V3-0324",
-        messages=[
-            {
-                "role": "user",
-                "content": messages.messages[0].content
-            }
-        ],
+prompt = ChatPromptTemplate.from_messages([
+    (
+        "system",
+        "You are Imoh-AI, an AI assistant specialising in "
+        "machine learning, data science, and economics."
+    ),
+    (
+        "human",
+        "{message}"
     )
+])
 
-    return response.choices[0].message.content
+parser = StrOutputParser()
 
-
-prompt = ChatPromptTemplate.from_template(
-    "Explain {topic} in simple terms."
-)
-
-model = RunnableLambda(call_model)
-
-chain = prompt | model
+chain = prompt | chat_model | parser
 
 response = chain.invoke({
     "topic": "machine learning"
 })
 
-print(response)
+print("TYPE:", type(response))
+print("IS STRING:", isinstance(response, str))
+print("VALUE:", response)
