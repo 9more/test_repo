@@ -1,7 +1,7 @@
 # Loan Portfolio Business Intelligence Dashboard 
 [[click here to dashboard]](https://app.powerbi.com/reportEmbed?reportId=8ceb4914-a57c-4cbb-a0f4-cfa3d6b28106&autoAuth=true&ctid=5a25c45a-db2f-42cc-b69f-0e657afd3300)
 
-![Dashboard](BI-Projects/Loan Performance/assets/Loan Project.pdf)
+![Dashboard] (https://github.com/9more/test_repo/blob/1c61741c2cb63f27868a819b7339648a9a6ed317/BI-Projects/Loan%20Performance/assets/Loan%20Project.pdf))
 ## Overview
 
 This project presents an end-to-end Business Intelligence solution for analysing a loan portfolio dataset containing over 200,000 records. The objective is to transform raw loan data into actionable insights that support performance monitoring, customer segmentation, and strategic decision-making.
