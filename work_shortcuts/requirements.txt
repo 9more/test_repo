@@ -1,0 +1,6 @@
+undetected-chromedriver==3.5.5
+dotenv==0.9.9
+python-dotenv==1.2.3
+selenium==4.48.0
+setuptools==84.0.0
+undetected-chromedriver==3.5.5

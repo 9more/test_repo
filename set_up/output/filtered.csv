@@ -1,0 +1,44 @@
+FixtureId,WTEvent,StartTime,EndTime,Broadcaster,Server,Decoder,DataSource,Sport,Competition,Country,Home,Away
+105e3cb6-0404-4cf6-962e-b7160b6869a5, 10073573, 09/09/2026 00:00:00, 09/09/2026 02:30:00,Infront,Euro202,IGM_INF_DSC_DEFAULT,InFront Streaming,Soccer, Brazil - Brazilian Serie B - Mixed, Brazil, Criciuma, Juventude
+20134fee-8021-41fa-88d7-76e10e1876a4, 10077521, 09/09/2026 00:23:00, 09/09/2026 02:53:00,Infront,Euro203,IGM_INF_DSC_DEFAULT,InFront Streaming,Soccer, World - Greek Cup - Mixed, World, AEK Athens, Panserraikos
+1b1314bc-309f-412d-872a-b6cf411eb168, 10077522, 09/09/2026 00:23:00, 09/09/2026 02:53:00,Infront,Euro204,IGM_INF_DSC_DEFAULT,InFront Streaming,Soccer, World - Greek Cup - Mixed, World, Levadiakos, Aris
+f0660569-913a-4a32-8569-52df0222aa7f, 10075056, 09/09/2026 00:30:00, 09/09/2026 03:00:00,Stadium Feed,Euro141,GEN_CH01,Stats Perform,Soccer, Colombia - Primera B - Male, Colombia, Internacional Palmira, Atletico
+ce08cfd6-0394-4a18-a044-509273fd5fb9, 10070753, 09/09/2026 00:30:00, 09/09/2026 03:00:00,Stadium Feed,Euro127,LVM_CH19,Stats Perform,Soccer, Bolivia - Copa Bolivia - Male, Bolivia, Oriente Petrolero, Guabira
+203eb49b-d359-4a51-8d67-0fbf55f7a4e5, 10080200, 09/09/2026 00:30:00, 09/09/2026 03:00:00,Sportdigital Fussball HD [241],Euro28,GER-4,Stats Perform,Soccer, South America - CONMEBOL Sudamericana - Male, South America, Boca Juniors, Sao Paulo
+, 10081884, 09/09/2026 00:30:00, 09/09/2026 07:30:00,WOWOW Live - 622,Jpn7,Not Set,Legacy,Tennis, US Open, United States, Ben Shelton, Carlos Alcaraz
+ec5863b3-ba45-4345-b347-7b97cb2ed05b, 10072454, 09/09/2026 01:00:00, 09/09/2026 03:30:00,Stadium Feed,Euro146,VLW_CH04,Stats Perform,Volleyball, Asia - Asian Volleyball Championship - Male, Asia, Bahrain, Oman
+, 10080235, 09/09/2026 01:00:00, 09/09/2026 03:30:00,612 ACC,Us7,Not Set,Legacy,Volleyball, Women's College Volleyball, United States, Georgia Tech, Oklahoma
+, 10071269, 09/09/2026 01:30:00, 09/09/2026 17:30:00,Stadium Feed,Euro111,CRO_CH31,Legacy,Badminton, YONEX-SUNRISE Vietnam Open, Vietnam, , 
+, 10071270, 09/09/2026 01:30:00, 09/09/2026 17:30:00,Stadium Feed,Euro112,CRO_CH32,Legacy,Badminton, YONEX-SUNRISE Vietnam Open, Vietnam, , 
+7c829089-b60e-440c-8ac8-7af8f01f9d0d, 10072274, 09/09/2026 01:40:00, 09/09/2026 05:40:00,301 SNE,Us23,Not Set,Stats Perform,Baseball, United States - MLB - Male, United States, Athletics, Toronto Blue Jays
+4c142333-f3c0-4048-8d78-474acca3d3a5, 10072268, 09/09/2026 01:40:00, 09/09/2026 05:40:00,743 - Extra Innings,Us17,Not Set,Stats Perform,Baseball, United States - MLB - Male, United States, Seattle Mariners, Texas Rangers
+37e538e4-5535-4f06-8fc6-ae404285d389, 10072266, 09/09/2026 01:40:00, 09/09/2026 05:40:00,746 - Extra Innings,Us13,Not Set,Stats Perform,Baseball, United States - MLB - Male, United States, San Diego Padres, Washington Nationals
+, 10071271, 09/09/2026 01:40:00, 09/09/2026 09:40:00,Stadium Feed,Euro113,CRO_CH33,Legacy,Badminton, YONEX-SUNRISE Vietnam Open, Vietnam, , 
+, 10071272, 09/09/2026 01:40:00, 09/09/2026 09:40:00,Stadium Feed,Euro114,CRO_CH34,Legacy,Badminton, YONEX-SUNRISE Vietnam Open, Vietnam, , 
+ca665a6e-ccff-4f7b-81d2-148ea1c7f8bf, 10072277, 09/09/2026 01:45:00, 09/09/2026 05:45:00,696 - NBCSBA,Us6,Not Set,Stats Perform,Baseball, United States - MLB - Male, United States, San Francisco Giants, St. Louis Cardinals
+9d90c9b8-4f09-46f8-9702-eb6a7d54f57c, 10072275, 09/09/2026 02:10:00, 09/09/2026 06:10:00,748 - Extra Innings,Us4,Not Set,Stats Perform,Baseball, United States - MLB - Male, United States, Los Angeles Dodgers, Cincinnati Reds
+, 10079546, 09/09/2026 02:10:00, 09/09/2026 06:10:00,JSports3 [606],Jpn3,Not Set,Stats Perform,Baseball, United States - MLB - Male, United States, Los Angeles Dodgers, Cincinnati Reds
+, 10081105, 09/09/2026 04:00:00, 09/09/2026 23:00:00,206 -ESPN 1,Us1,Not Set,Legacy,Special, News & Analysis, United States, , 
+796906b7-6b77-452a-bf19-87dbddb727f9, 10072444, 09/09/2026 04:30:00, 09/09/2026 07:00:00,Stadium Feed,Euro130,VLW_CH07,Stats Perform,Volleyball, Asia - Asian Volleyball Championship - Male, Asia, Chinese Taipei, Thailand
+5db60239-c027-4bfb-af97-6fc5b5f2050f, 10072440, 09/09/2026 08:00:00, 09/09/2026 10:30:00,Stadium Feed,Euro146,VLW_CH04,Stats Perform,Volleyball, Asia - Asian Volleyball Championship - Male, Asia, Iran, China PR
+2467ac73-3573-45ec-a146-510e643c27ff, 10081441, 09/09/2026 08:00:00, 09/09/2026 11:00:00,KHL,Russia3,Not Set,Stats Perform,Ice Hockey, Russia - MHL - Male, Russia, Snezhnye Barsy U20, Ak. Mihaylova U20 II
+bd86bb3c-1756-47ff-907c-b31d722d748b, 10076538, 09/09/2026 08:30:00, 09/09/2026 11:00:00,Stadium Feed,Euro141,GEN_CH01,Stats Perform,Soccer, Malaysia - FA Cup - Male, Malaysia, Penang, Melaka
+5wgJIZAstEG-c7bb6-0xrg, 10079906, 09/09/2026 08:30:00, 09/09/2026 15:30:00,Modus,Euro201,IGM_MODUS_CH01,Manually Created,Darts, Modus Super Series, United Kingdom, , 
+, 10071947, 09/09/2026 08:30:00, 09/09/2026 20:30:00,Stadium Feed,Euro102,CRO_CH02,Legacy,Tennis, WTA Antalya, Turkey, , 
+ed951417-565c-4b20-8a43-79343d42359e, 10078053, 09/09/2026 09:00:00, 09/09/2026 14:00:00,JSports3 [606],Jpn3,Not Set,Stats Perform,Baseball, Japan - NPB - Male, Japan, Orix Buffaloes, Saitama Seibu Lions
+e2dfe3d7-33e3-45c8-b4ac-5d0453ddd35b, 10078944, 09/09/2026 09:00:00, 09/09/2026 19:00:00,Fox Cricket HD [501],Aus1,Not Set,Stats Perform,Cricket, World - Pakistan in England 2026 - Male, World, England, Pakistan
+e2a62317-c2f1-4b0f-95f5-f965342d995d, 10078051, 09/09/2026 09:00:00, 09/09/2026 14:00:00,607 - A japan,Jpn7,Not Set,Stats Perform,Baseball, Japan - NPB - Male, Japan, Hanshin Tigers, Hiroshima Carp
+7ea71397-241a-47bb-bf21-bfde2f44116b, 10078038, 09/09/2026 09:00:00, 09/09/2026 14:00:00,NTV News24 [571],Jpn10,Not Set,Stats Perform,Baseball, Japan - NPB - Male, Japan, Chiba Lotte Marines, Tohoku Rakuten
+71e93eb5-61f1-4f31-93b2-c0ef589af7ba, 10078035, 09/09/2026 09:00:00, 09/09/2026 14:00:00,Sukachan 0 [580],Jpn8,Not Set,Stats Perform,Baseball, Japan - NPB - Male, Japan, Fukuoka SoftBank Hawks, Nippon-Ham Fighters
+5368462b-bf22-4a54-ace4-8a030e4e686f, 10078032, 09/09/2026 09:00:00, 09/09/2026 14:00:00,TBS2 Japan [617],Jpn9,Not Set,Stats Perform,Baseball, Japan - NPB - Male, Japan, Yokohama BayStars, Tokyo Yakult Swallows
+0b859423-5fa9-4fb0-a760-4f66cfaa19ad, 10078029, 09/09/2026 09:00:00, 09/09/2026 14:00:00,608 - G-,Jpn5,Not Set,Stats Perform,Baseball, Japan - NPB - Male, Japan, Yomiuri Giants, Chunichi Dragons
+, 10080078, 09/09/2026 09:00:00, 09/09/2026 11:00:00,TNT Sport 1 [410],Euro55,ASTRA-3,Legacy,Snooker, English Open, England, , 
+, 10071946, 09/09/2026 09:00:00, 09/09/2026 20:30:00,Stadium Feed,Euro101,CRO_CH01,Legacy,Tennis, WTA Antalya, Turkey, , 
+, 10080250, 09/09/2026 09:00:00, 09/09/2026 19:00:00,Radio 5 Live SX,Euro43,R5LX,Stats Perform,Cricket, World - Pakistan in England 2026 - Male, World, England, Pakistan
+b4711039-6912-48d6-ae89-6d2285dbe1f3, 10054194, 09/09/2026 09:30:00, 09/09/2026 14:30:00,SPOTV2,NewKorea5,Not Set,Stats Perform,Baseball, South Korea - KBO - Male, South Korea, KIA Tigers, NC Dinos
+61ae4943-16f6-4199-b524-f6188b7b0609, 10070425, 09/09/2026 09:30:00, 09/09/2026 12:00:00,Stadium Feed,Euro134,JLE_CH04,Stats Perform,Soccer, Japan - J-League Cup - Male, Japan, Reilac Shiga, Tokyo Verdy
+3a7df82f-274d-40ed-9dc3-0ed6f0b8432e, 10080225, 09/09/2026 09:30:00, 09/09/2026 14:30:00,MBC ESPN,NewKorea3,Not Set,Stats Perform,Baseball, South Korea - KBO - Male, South Korea, Doosan Bears, SSG Landers
+02ed51e3-fb61-463d-aee9-6dd5404988ea, 10080224, 09/09/2026 09:30:00, 09/09/2026 14:30:00,KBSN Sports,NewKorea1,Not Set,Stats Perform,Baseball, South Korea - KBO - Male, South Korea, Samsung Lions, KT Wiz
+, 10079495, 09/09/2026 09:30:00, 09/09/2026 22:30:00,Stadium Feed,Euro105,CRO_CH05,Legacy,Tennis, WTA Montreux Open, Switzerland, , 
+, 10080964, 09/09/2026 09:30:00, 09/09/2026 14:30:00,SBS Sports,NewKorea2,Not Set,Stats Perform,Baseball, South Korea - KBO - Male, South Korea, Hanwha Eagles, LG Twins
+, 10079470, 09/09/2026 09:30:00, 09/09/2026 22:30:00,Stadium Feed,Euro104,CRO_CH04,Legacy,Tennis, WTA Montreux Open, Switzerland, , 
