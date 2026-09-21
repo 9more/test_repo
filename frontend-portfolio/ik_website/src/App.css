@@ -108,14 +108,43 @@ nav a:hover {
 .publication-list {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: 32px;
+    column-gap: 60px;
     row-gap: 0;
 }
 
 
 .publication {
-     padding: 16px 0;
+    width: 100%;
     border-bottom: 1px solid #e5e7eb;
+
+}
+
+.publication a {
+    display: inline-block;
+    margin-top: 8px;
+    color: var(--primary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.publication a:hover {
+    text-decoration: underline;
+}
+
+.publication-authors {
+    margin: 0 0 6px;
+    font-size: 0.85rem;
+}
+
+.publication h3 {
+    margin: 0 0 6px;
+    font-size: 1rem;
+}
+
+.publication-details {
+    margin: 0;
+    font-size: 0.9rem;
 }
 
 @media (max-width: 700px) {
@@ -123,6 +152,18 @@ nav a:hover {
         grid-template-columns: 1fr;
     }
 }
+
+.publication h3 {
+    margin: 0 0 6px;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.publication p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
 . .research {
     background: #f5f7fa;
     border: 2px solid blue;
@@ -130,19 +171,28 @@ nav a:hover {
 
 .research h2 {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .research-card h3 {
     margin: 0;
     font-size: 0.95rem;
 }
+
 .research-card {
     flex: 1;
     padding: 16px;
     background: white;
     border-radius: 8px;
 }
+
+.publication-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 48px;
+    row-gap: 24px;
+}
+
 .research-grid {
     display: flex;
     gap: 16px;
@@ -177,6 +227,7 @@ nav a:hover {
 .contact {
     max-width: 1100px;
     margin: 0 auto;
+    padding: 12px 0;
 }
 
 .container {
@@ -185,13 +236,86 @@ nav a:hover {
 }
 
 section {
-    padding: 24px 0;
+    padding: 12px 0;
 }
 
 section h2 {
 
     font-size: 2rem;
     text-align: center;
-    margin-bottom: 40px;
     color: var(--primary);
+    margin-bottom: 5px;
+}
+
+.teaching {
+}
+.teaching h2 {
+    margin-bottom: 12px;
+}
+
+.teaching-philosophy {
+    max-width: 800px;
+    text-align: center;
+    margin: 0 auto 24px;
+}
+
+.teaching-philosophy h3 {
+    margin: 0 0 8px;
+    font-size: 1.1rem;
+}
+
+.teaching-philosophy p {
+    margin: 0;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+.courses h3 {
+    margin: 0 0 12px;
+    font-size: 1.1rem;
+}
+
+.course-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.course {
+    padding: 12px 16px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    border-left: 3px solid var(--primary);
+}
+
+.course h4 {
+    margin: 0 0 6px;
+    font-size: 0.95rem;
+}
+
+.course p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.contact {
+    padding: 12px 0;
+    text-align: center;
+}
+.contact > .container > p {
+    max-width: 600px;
+    margin: 0 auto 4px;
+    line-height: 1.6;
+}
+
+.contact a {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.contact a:hover {
+    text-decoration: underline;
 }

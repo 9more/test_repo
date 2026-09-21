@@ -1,27 +1,22 @@
-def chunk_text(text):
-    sections = []
-    current_section = None
-    current_content = []
 
-    for line in text.splitlines():
+from src.section_splitter import split_sections
+from pathlib import Path
 
-        if line.startswith("## "):
-            if current_section and current_content:
-                sections.append({
-                    "section": current_section,
-                    "text": "\n".join(current_content).strip()
-                })
+path = Path("data/knowledge_base.md",)
+content = path.read_text(encoding="utf-8")
 
-            current_section = line.replace("## ", "").strip()
-            current_content = []
+def chunk_section(text):
 
-        elif current_section:
-            current_content.append(line)
+    paragraphs = text.split("\n\n")
 
-    if current_section and current_content:
-        sections.append({
-            "section": current_section,
-            "text": "\n".join(current_content).strip()
-        })
+    chunks = []
 
-    return sections
+    for paragraph in paragraphs:
+
+        paragraph = paragraph.strip()
+
+        if paragraph:
+            chunks.append(paragraph)
+
+    return chunks
+

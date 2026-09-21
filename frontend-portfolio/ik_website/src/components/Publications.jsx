@@ -1,59 +1,55 @@
+import publications from "../data/publications";
+
 function Publications() {
-
-    const publications = [
-        {
-            title: "The Impact of Labour Market Policies",
-            journal: "Journal of Economic Studies",
-            year: 2025
-        },
-        {
-            title: "Economic Growth and Public Investment",
-            journal: "Economic Policy Review",
-            year: 2024
-        },
-        {
-            title: "Behavioural Economics in Public Policy",
-            journal: "Applied Economics",
-            year: 2023
-        }
-    ];
-
     return (
-        <section
-            className="publications"
-            id="publications"
-        >
+        <section className="publications" id="publications">
             <div className="container">
 
                 <h2>Publications</h2>
 
                 <div className="publication-list">
 
-                    {publications.map(publication => (
+                    {publications.slice(0, 10).map(publication => (
                         <article
-                            key={publication.title}
+                            key={publication.id}
                             className="publication"
                         >
-
-                            <p>
-                                {publication.title}
+                            <p className="publication-authors">
+                                {publication.authors}
                             </p>
 
-                            <p>
+                            <h3>{publication.title}</h3>
+
+                            <p className="publication-details">
                                 {publication.journal}
                                 {" · "}
                                 {publication.year}
+                                {" · "}
+                                {publication.status}
                             </p>
 
+                            {publication.link && (
+                                <a
+                                    href={publication.link}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    View publication
+                                </a>
+                            )}
                         </article>
-
                     ))}
 
                 </div>
 
+                <div className="publication-full-list">
+                    <a href="/publications">
+                        View full publication list →
+                    </a>
+                </div>
+
             </div>
         </section>
-
     );
 }
 

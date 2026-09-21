@@ -2,7 +2,6 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from chain import chain
 
-
 app = Flask(__name__)
 CORS(app)
 
@@ -13,13 +12,9 @@ def chat():
 
     message = data["message"]
 
-    result = chain.invoke({
-        "topic": message
-    })
+    result = chain.invoke({"message": message})
 
-    return jsonify({
-        "response": str(result)
-    })
+    return jsonify({"response": str(result)})
 
 
 if __name__ == "__main__":

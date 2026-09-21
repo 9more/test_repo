@@ -7,19 +7,19 @@ function Biography() {
                     <div className="biography-image">
                         <img
                             src="https://media.istockphoto.com/id/1222233279/photo/wave-formation-of-the-adriatic-sea.jpg?s=1024x1024&w=is&k=20&c=gtc7CmFfw2Tsl5ywqK3_Uka6YBjSWjn-u2rwfqwMVLQ="
-                            alt="Portrait of Dr Jane Smith"/>
+                            alt="Portrait of Dr Ogbuagu Ikechukwu"/>
                     </div>
                     <div className="biography-content">
                         <p>
-                            Dr Jane Smith is a Senior Lecturer in Economics
-                            whose research focuses on labour markets,
-                            public policy and economic development.
+                           Dr. Ogbuagu Matthew Ikechukwu is an economist and
+                            researcher whose research areas include macroeconomic
+                            modelling, development financing, and small and medium
+                            enterprises (SMEs) development.
+
                         </p>
                         <p>
-                            Her work combines rigorous quantitative
-                            analysis with practical policy applications,
-                            helping governments and institutions make
-                            evidence-based decisions.
+                            He holds a PhD in Economics, an MSc in Economics,
+                            and a First Class Honours BSc in Economics.
                         </p>
 
                     </div>
@@ -29,5 +29,7 @@ function Biography() {
             </div>
 
         </section>
-    )}
-  export default Biography
+    )
+}
+
+export default Biography

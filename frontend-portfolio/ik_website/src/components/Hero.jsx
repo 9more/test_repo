@@ -1,3 +1,4 @@
+
 function Hero({ name, title, research }) {
   return (
     <section className="hero">
