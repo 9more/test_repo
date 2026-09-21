@@ -1,3 +1,5 @@
+from pathlib import Path
+import joblib
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
@@ -9,6 +11,13 @@ from sklearn.ensemble import RandomForestClassifier
 from xgboost import XGBClassifier
 from sklearn.metrics import roc_auc_score
 from data.fetch import df
+
+BASE_DIR = Path(__file__).resolve().parent
+HOME_DIR = Path.home()
+DESTINATION_DIR = (
+    HOME_DIR / "test_repo/app_churn" / "backend" / "models" / "readmission"
+)
+
 
 df["target"] = (df["readmitted"] == "<30").astype(int)
 X = df.drop(columns=["readmitted", "target", "encounter_id", "patient_nbr"])
@@ -100,3 +109,9 @@ for name, model in models.items():
     y_prob = model.predict_proba(X_test)[:, 1]
     auc = roc_auc_score(y_test, y_prob)
     print(f"{name}: {auc:.4f}")
+
+
+joblib.dump(xgb_model, DESTINATION_DIR / "readmission_model.joblib")
+
+print(f"Best threshold saved to, {DESTINATION_DIR}")
+print(xgb_model)

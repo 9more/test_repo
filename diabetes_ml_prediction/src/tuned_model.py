@@ -1,6 +1,12 @@
 from sklearn.model_selection import RandomizedSearchCV
 from train import xgb_model, X_train, y_train, X_test, y_test
 from sklearn.metrics import roc_auc_score
+import joblib
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent
+HOME_DIR = Path.home()
+DESTINATION_DIR = HOME_DIR / "test_repo/app_churn/backend/models/readmission"
 
 param_grid = {
     "classifier__n_estimators": [200, 300, 500],
@@ -27,6 +33,9 @@ print("Best parameters:")
 print(xgb_search.best_params_)
 
 best_xgb = xgb_search.best_estimator_
+
+joblib.dump(best_xgb, DESTINATION_DIR / "threshold.joblib")
+print(f"Best model saved to {DESTINATION_DIR}")
 
 y_prob = best_xgb.predict_proba(X_test)[:, 1]
 
