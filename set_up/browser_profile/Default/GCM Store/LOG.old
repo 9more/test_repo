@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 2026/09/08-18:24:07.425 52972a Reusing MANIFEST /Users/imohekpenyong/test_repo/set_up/browser_profile/Default/GCM Store/MANIFEST-000001
 2026/09/08-18:24:07.473 52972a Recovering log #3
 2026/09/08-18:24:07.474 52972a Reusing old log /Users/imohekpenyong/test_repo/set_up/browser_profile/Default/GCM Store/000003.log 
+=======
+2026/09/17-23:11:48.207 3445d6 Reusing MANIFEST /Users/imohekpenyong/test_repo/set_up/browser_profile/Default/GCM Store/MANIFEST-000001
+2026/09/17-23:11:48.208 3445d6 Recovering log #3
+2026/09/17-23:11:48.209 3445d6 Reusing old log /Users/imohekpenyong/test_repo/set_up/browser_profile/Default/GCM Store/000003.log 
+>>>>>>> feature
