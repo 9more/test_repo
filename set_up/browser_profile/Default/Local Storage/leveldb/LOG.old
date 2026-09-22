@@ -1,3 +1,3 @@
-2026/09/20-11:21:59.982 6a0109 Reusing MANIFEST /Users/imohekpenyong/test_repo/set_up/browser_profile/Default/Local Storage/leveldb/MANIFEST-000001
-2026/09/20-11:21:59.984 6a0109 Recovering log #3
-2026/09/20-11:21:59.985 6a0109 Reusing old log /Users/imohekpenyong/test_repo/set_up/browser_profile/Default/Local Storage/leveldb/000003.log 
+2026/09/21-18:18:16.781 83501f Reusing MANIFEST /Users/imohekpenyong/test_repo/set_up/browser_profile/Default/Local Storage/leveldb/MANIFEST-000001
+2026/09/21-18:18:16.783 83501f Recovering log #3
+2026/09/21-18:18:16.784 83501f Reusing old log /Users/imohekpenyong/test_repo/set_up/browser_profile/Default/Local Storage/leveldb/000003.log 
