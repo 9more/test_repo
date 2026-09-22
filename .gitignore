@@ -10,7 +10,8 @@ env/
 # Dependencies
 node_modules/
 
-
+# Ignore the entire browser profile folder
+set_up/browser_profile/
 
  .ipynb_checkpoints/
 
