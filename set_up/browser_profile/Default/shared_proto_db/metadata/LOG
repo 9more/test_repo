@@ -1,9 +1,0 @@
-<<<<<<< HEAD
-2026/09/08-20:41:39.005 54cb7c Reusing MANIFEST /Users/imohekpenyong/test_repo/set_up/browser_profile/Default/shared_proto_db/metadata/MANIFEST-000001
-2026/09/08-20:41:39.005 54cb7c Recovering log #3
-2026/09/08-20:41:39.005 54cb7c Reusing old log /Users/imohekpenyong/test_repo/set_up/browser_profile/Default/shared_proto_db/metadata/000003.log 
-=======
-2026/09/21-18:18:17.245 834fd4 Reusing MANIFEST /Users/imohekpenyong/test_repo/set_up/browser_profile/Default/shared_proto_db/metadata/MANIFEST-000001
-2026/09/21-18:18:17.246 834fd4 Recovering log #3
-2026/09/21-18:18:17.246 834fd4 Reusing old log /Users/imohekpenyong/test_repo/set_up/browser_profile/Default/shared_proto_db/metadata/000003.log 
->>>>>>> feature
