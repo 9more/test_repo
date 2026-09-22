@@ -1,3 +1,21 @@
+<<<<<<< HEAD
 2026/09/22-07:03:10.258 8d4662 Reusing MANIFEST /Users/imohekpenyong/test_repo/set_up/browser_profile/Default/Extension State/MANIFEST-000001
 2026/09/22-07:03:10.259 8d4662 Recovering log #3
 2026/09/22-07:03:10.259 8d4662 Reusing old log /Users/imohekpenyong/test_repo/set_up/browser_profile/Default/Extension State/000003.log 
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+2026/09/08-20:41:39.366 54cb7b Reusing MANIFEST /Users/imohekpenyong/test_repo/set_up/browser_profile/Default/Extension State/MANIFEST-000001
+2026/09/08-20:41:39.367 54cb7b Recovering log #3
+2026/09/08-20:41:39.367 54cb7b Reusing old log /Users/imohekpenyong/test_repo/set_up/browser_profile/Default/Extension State/000003.log 
+=======
+2026/09/21-18:18:17.358 834fd4 Reusing MANIFEST /Users/imohekpenyong/test_repo/set_up/browser_profile/Default/Extension State/MANIFEST-000001
+2026/09/21-18:18:17.358 834fd4 Recovering log #3
+2026/09/21-18:18:17.359 834fd4 Reusing old log /Users/imohekpenyong/test_repo/set_up/browser_profile/Default/Extension State/000003.log 
+>>>>>>> feature
+=======
+2026/09/22-07:03:10.258 8d4662 Reusing MANIFEST /Users/imohekpenyong/test_repo/set_up/browser_profile/Default/Extension State/MANIFEST-000001
+2026/09/22-07:03:10.259 8d4662 Recovering log #3
+2026/09/22-07:03:10.259 8d4662 Reusing old log /Users/imohekpenyong/test_repo/set_up/browser_profile/Default/Extension State/000003.log 
+>>>>>>> f8980e7 (.)
+>>>>>>> development

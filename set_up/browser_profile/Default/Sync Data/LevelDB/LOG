@@ -1,3 +1,21 @@
+<<<<<<< HEAD
 2026/09/22-07:03:09.568 8d4662 Reusing MANIFEST /Users/imohekpenyong/test_repo/set_up/browser_profile/Default/Sync Data/LevelDB/MANIFEST-000001
 2026/09/22-07:03:09.584 8d4662 Recovering log #3
 2026/09/22-07:03:09.584 8d4662 Reusing old log /Users/imohekpenyong/test_repo/set_up/browser_profile/Default/Sync Data/LevelDB/000003.log 
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+2026/09/08-20:41:38.321 54cb7b Reusing MANIFEST /Users/imohekpenyong/test_repo/set_up/browser_profile/Default/Sync Data/LevelDB/MANIFEST-000001
+2026/09/08-20:41:38.347 54cb7b Recovering log #3
+2026/09/08-20:41:38.347 54cb7b Reusing old log /Users/imohekpenyong/test_repo/set_up/browser_profile/Default/Sync Data/LevelDB/000003.log 
+=======
+2026/09/21-18:18:16.722 834fd3 Reusing MANIFEST /Users/imohekpenyong/test_repo/set_up/browser_profile/Default/Sync Data/LevelDB/MANIFEST-000001
+2026/09/21-18:18:16.736 834fd3 Recovering log #3
+2026/09/21-18:18:16.737 834fd3 Reusing old log /Users/imohekpenyong/test_repo/set_up/browser_profile/Default/Sync Data/LevelDB/000003.log 
+>>>>>>> feature
+=======
+2026/09/22-07:03:09.568 8d4662 Reusing MANIFEST /Users/imohekpenyong/test_repo/set_up/browser_profile/Default/Sync Data/LevelDB/MANIFEST-000001
+2026/09/22-07:03:09.584 8d4662 Recovering log #3
+2026/09/22-07:03:09.584 8d4662 Reusing old log /Users/imohekpenyong/test_repo/set_up/browser_profile/Default/Sync Data/LevelDB/000003.log 
+>>>>>>> f8980e7 (.)
+>>>>>>> development
