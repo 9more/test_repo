@@ -1,261 +1,147 @@
 FixtureId,WTEvent,StartTime,EndTime,Broadcaster,Server,Decoder,DataSource,Sport,Competition,Country,Home,Away
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-105e3cb6-0404-4cf6-962e-b7160b6869a5, 10073573, 09/09/2026 00:00:00, 09/09/2026 02:30:00,Infront,Euro202,IGM_INF_DSC_DEFAULT,InFront Streaming,Soccer, Brazil - Brazilian Serie B - Mixed, Brazil, Criciuma, Juventude
-20134fee-8021-41fa-88d7-76e10e1876a4, 10077521, 09/09/2026 00:23:00, 09/09/2026 02:53:00,Infront,Euro203,IGM_INF_DSC_DEFAULT,InFront Streaming,Soccer, World - Greek Cup - Mixed, World, AEK Athens, Panserraikos
-1b1314bc-309f-412d-872a-b6cf411eb168, 10077522, 09/09/2026 00:23:00, 09/09/2026 02:53:00,Infront,Euro204,IGM_INF_DSC_DEFAULT,InFront Streaming,Soccer, World - Greek Cup - Mixed, World, Levadiakos, Aris
-f0660569-913a-4a32-8569-52df0222aa7f, 10075056, 09/09/2026 00:30:00, 09/09/2026 03:00:00,Stadium Feed,Euro141,GEN_CH01,Stats Perform,Soccer, Colombia - Primera B - Male, Colombia, Internacional Palmira, Atletico
-ce08cfd6-0394-4a18-a044-509273fd5fb9, 10070753, 09/09/2026 00:30:00, 09/09/2026 03:00:00,Stadium Feed,Euro127,LVM_CH19,Stats Perform,Soccer, Bolivia - Copa Bolivia - Male, Bolivia, Oriente Petrolero, Guabira
-203eb49b-d359-4a51-8d67-0fbf55f7a4e5, 10080200, 09/09/2026 00:30:00, 09/09/2026 03:00:00,Sportdigital Fussball HD [241],Euro28,GER-4,Stats Perform,Soccer, South America - CONMEBOL Sudamericana - Male, South America, Boca Juniors, Sao Paulo
-, 10081884, 09/09/2026 00:30:00, 09/09/2026 07:30:00,WOWOW Live - 622,Jpn7,Not Set,Legacy,Tennis, US Open, United States, Ben Shelton, Carlos Alcaraz
-ec5863b3-ba45-4345-b347-7b97cb2ed05b, 10072454, 09/09/2026 01:00:00, 09/09/2026 03:30:00,Stadium Feed,Euro146,VLW_CH04,Stats Perform,Volleyball, Asia - Asian Volleyball Championship - Male, Asia, Bahrain, Oman
-, 10080235, 09/09/2026 01:00:00, 09/09/2026 03:30:00,612 ACC,Us7,Not Set,Legacy,Volleyball, Women's College Volleyball, United States, Georgia Tech, Oklahoma
-, 10071269, 09/09/2026 01:30:00, 09/09/2026 17:30:00,Stadium Feed,Euro111,CRO_CH31,Legacy,Badminton, YONEX-SUNRISE Vietnam Open, Vietnam, , 
-, 10071270, 09/09/2026 01:30:00, 09/09/2026 17:30:00,Stadium Feed,Euro112,CRO_CH32,Legacy,Badminton, YONEX-SUNRISE Vietnam Open, Vietnam, , 
-7c829089-b60e-440c-8ac8-7af8f01f9d0d, 10072274, 09/09/2026 01:40:00, 09/09/2026 05:40:00,301 SNE,Us23,Not Set,Stats Perform,Baseball, United States - MLB - Male, United States, Athletics, Toronto Blue Jays
-4c142333-f3c0-4048-8d78-474acca3d3a5, 10072268, 09/09/2026 01:40:00, 09/09/2026 05:40:00,743 - Extra Innings,Us17,Not Set,Stats Perform,Baseball, United States - MLB - Male, United States, Seattle Mariners, Texas Rangers
-37e538e4-5535-4f06-8fc6-ae404285d389, 10072266, 09/09/2026 01:40:00, 09/09/2026 05:40:00,746 - Extra Innings,Us13,Not Set,Stats Perform,Baseball, United States - MLB - Male, United States, San Diego Padres, Washington Nationals
-, 10071271, 09/09/2026 01:40:00, 09/09/2026 09:40:00,Stadium Feed,Euro113,CRO_CH33,Legacy,Badminton, YONEX-SUNRISE Vietnam Open, Vietnam, , 
-, 10071272, 09/09/2026 01:40:00, 09/09/2026 09:40:00,Stadium Feed,Euro114,CRO_CH34,Legacy,Badminton, YONEX-SUNRISE Vietnam Open, Vietnam, , 
-ca665a6e-ccff-4f7b-81d2-148ea1c7f8bf, 10072277, 09/09/2026 01:45:00, 09/09/2026 05:45:00,696 - NBCSBA,Us6,Not Set,Stats Perform,Baseball, United States - MLB - Male, United States, San Francisco Giants, St. Louis Cardinals
-9d90c9b8-4f09-46f8-9702-eb6a7d54f57c, 10072275, 09/09/2026 02:10:00, 09/09/2026 06:10:00,748 - Extra Innings,Us4,Not Set,Stats Perform,Baseball, United States - MLB - Male, United States, Los Angeles Dodgers, Cincinnati Reds
-, 10079546, 09/09/2026 02:10:00, 09/09/2026 06:10:00,JSports3 [606],Jpn3,Not Set,Stats Perform,Baseball, United States - MLB - Male, United States, Los Angeles Dodgers, Cincinnati Reds
-, 10081105, 09/09/2026 04:00:00, 09/09/2026 23:00:00,206 -ESPN 1,Us1,Not Set,Legacy,Special, News & Analysis, United States, , 
-796906b7-6b77-452a-bf19-87dbddb727f9, 10072444, 09/09/2026 04:30:00, 09/09/2026 07:00:00,Stadium Feed,Euro130,VLW_CH07,Stats Perform,Volleyball, Asia - Asian Volleyball Championship - Male, Asia, Chinese Taipei, Thailand
-5db60239-c027-4bfb-af97-6fc5b5f2050f, 10072440, 09/09/2026 08:00:00, 09/09/2026 10:30:00,Stadium Feed,Euro146,VLW_CH04,Stats Perform,Volleyball, Asia - Asian Volleyball Championship - Male, Asia, Iran, China PR
-2467ac73-3573-45ec-a146-510e643c27ff, 10081441, 09/09/2026 08:00:00, 09/09/2026 11:00:00,KHL,Russia3,Not Set,Stats Perform,Ice Hockey, Russia - MHL - Male, Russia, Snezhnye Barsy U20, Ak. Mihaylova U20 II
-bd86bb3c-1756-47ff-907c-b31d722d748b, 10076538, 09/09/2026 08:30:00, 09/09/2026 11:00:00,Stadium Feed,Euro141,GEN_CH01,Stats Perform,Soccer, Malaysia - FA Cup - Male, Malaysia, Penang, Melaka
-5wgJIZAstEG-c7bb6-0xrg, 10079906, 09/09/2026 08:30:00, 09/09/2026 15:30:00,Modus,Euro201,IGM_MODUS_CH01,Manually Created,Darts, Modus Super Series, United Kingdom, , 
-, 10071947, 09/09/2026 08:30:00, 09/09/2026 20:30:00,Stadium Feed,Euro102,CRO_CH02,Legacy,Tennis, WTA Antalya, Turkey, , 
-ed951417-565c-4b20-8a43-79343d42359e, 10078053, 09/09/2026 09:00:00, 09/09/2026 14:00:00,JSports3 [606],Jpn3,Not Set,Stats Perform,Baseball, Japan - NPB - Male, Japan, Orix Buffaloes, Saitama Seibu Lions
-e2dfe3d7-33e3-45c8-b4ac-5d0453ddd35b, 10078944, 09/09/2026 09:00:00, 09/09/2026 19:00:00,Fox Cricket HD [501],Aus1,Not Set,Stats Perform,Cricket, World - Pakistan in England 2026 - Male, World, England, Pakistan
-e2a62317-c2f1-4b0f-95f5-f965342d995d, 10078051, 09/09/2026 09:00:00, 09/09/2026 14:00:00,607 - A japan,Jpn7,Not Set,Stats Perform,Baseball, Japan - NPB - Male, Japan, Hanshin Tigers, Hiroshima Carp
-7ea71397-241a-47bb-bf21-bfde2f44116b, 10078038, 09/09/2026 09:00:00, 09/09/2026 14:00:00,NTV News24 [571],Jpn10,Not Set,Stats Perform,Baseball, Japan - NPB - Male, Japan, Chiba Lotte Marines, Tohoku Rakuten
-71e93eb5-61f1-4f31-93b2-c0ef589af7ba, 10078035, 09/09/2026 09:00:00, 09/09/2026 14:00:00,Sukachan 0 [580],Jpn8,Not Set,Stats Perform,Baseball, Japan - NPB - Male, Japan, Fukuoka SoftBank Hawks, Nippon-Ham Fighters
-5368462b-bf22-4a54-ace4-8a030e4e686f, 10078032, 09/09/2026 09:00:00, 09/09/2026 14:00:00,TBS2 Japan [617],Jpn9,Not Set,Stats Perform,Baseball, Japan - NPB - Male, Japan, Yokohama BayStars, Tokyo Yakult Swallows
-0b859423-5fa9-4fb0-a760-4f66cfaa19ad, 10078029, 09/09/2026 09:00:00, 09/09/2026 14:00:00,608 - G-,Jpn5,Not Set,Stats Perform,Baseball, Japan - NPB - Male, Japan, Yomiuri Giants, Chunichi Dragons
-, 10080078, 09/09/2026 09:00:00, 09/09/2026 11:00:00,TNT Sport 1 [410],Euro55,ASTRA-3,Legacy,Snooker, English Open, England, , 
-, 10071946, 09/09/2026 09:00:00, 09/09/2026 20:30:00,Stadium Feed,Euro101,CRO_CH01,Legacy,Tennis, WTA Antalya, Turkey, , 
-, 10080250, 09/09/2026 09:00:00, 09/09/2026 19:00:00,Radio 5 Live SX,Euro43,R5LX,Stats Perform,Cricket, World - Pakistan in England 2026 - Male, World, England, Pakistan
-b4711039-6912-48d6-ae89-6d2285dbe1f3, 10054194, 09/09/2026 09:30:00, 09/09/2026 14:30:00,SPOTV2,NewKorea5,Not Set,Stats Perform,Baseball, South Korea - KBO - Male, South Korea, KIA Tigers, NC Dinos
-61ae4943-16f6-4199-b524-f6188b7b0609, 10070425, 09/09/2026 09:30:00, 09/09/2026 12:00:00,Stadium Feed,Euro134,JLE_CH04,Stats Perform,Soccer, Japan - J-League Cup - Male, Japan, Reilac Shiga, Tokyo Verdy
-3a7df82f-274d-40ed-9dc3-0ed6f0b8432e, 10080225, 09/09/2026 09:30:00, 09/09/2026 14:30:00,MBC ESPN,NewKorea3,Not Set,Stats Perform,Baseball, South Korea - KBO - Male, South Korea, Doosan Bears, SSG Landers
-02ed51e3-fb61-463d-aee9-6dd5404988ea, 10080224, 09/09/2026 09:30:00, 09/09/2026 14:30:00,KBSN Sports,NewKorea1,Not Set,Stats Perform,Baseball, South Korea - KBO - Male, South Korea, Samsung Lions, KT Wiz
-, 10079495, 09/09/2026 09:30:00, 09/09/2026 22:30:00,Stadium Feed,Euro105,CRO_CH05,Legacy,Tennis, WTA Montreux Open, Switzerland, , 
-, 10080964, 09/09/2026 09:30:00, 09/09/2026 14:30:00,SBS Sports,NewKorea2,Not Set,Stats Perform,Baseball, South Korea - KBO - Male, South Korea, Hanwha Eagles, LG Twins
-, 10079470, 09/09/2026 09:30:00, 09/09/2026 22:30:00,Stadium Feed,Euro104,CRO_CH04,Legacy,Tennis, WTA Montreux Open, Switzerland, , 
-=======
-, 10079491, 21/09/2026 06:00:00, 21/09/2026 18:00:00,Stadium Feed,Euro114,DZN_Ch02,Legacy,Tennis, WTA Singapore, Singapore, , 
-0a7f961f-f313-4d58-a280-8c5503a62884, 10084066, 21/09/2026 07:00:00, 21/09/2026 09:30:00,beIN Sport 7 - ME [009],Israel7,Not Set,Stats Perform,Soccer, Asia - Women's Asian Games - Female, Asia, China PR, Philippines
-e9484e64-c9cb-4b97-b07d-08b53d65a2d1, 10083063, 21/09/2026 08:00:00, 21/09/2026 10:30:00,Stadium Feed,Euro126,LVM_CH21,Stats Perform,Soccer, Mongolia - Premier League - Male, Mongolia, Khovd Western, Erchim
-, 10073344, 21/09/2026 08:00:00, 21/09/2026 20:45:00,Stadium Feed,Euro104,CRO_CH26,,Tennis, WTA Ankara, Turkey, , 
-, 10073352, 21/09/2026 08:00:00, 21/09/2026 20:45:00,Stadium Feed,Euro105,CRO_CH27,,Tennis, WTA Ankara, Turkey, , 
-, 10073384, 21/09/2026 08:00:00, 21/09/2026 20:45:00,Stadium Feed,Euro106,CRO_CH28,,Tennis, WTA Ankara, Turkey, , 
-, 10072793, 21/09/2026 08:00:00, 21/09/2026 21:30:00,Stadium Feed,Euro108,CRO_CH02,Legacy,Tennis, WTA Tolentino, Italy, , 
-, 10072794, 21/09/2026 08:00:00, 21/09/2026 21:30:00,Stadium Feed,Euro108,CRO_CH02,Legacy,Tennis, WTA Tolentino, Italy, , 
-, 10072812, 21/09/2026 08:00:00, 21/09/2026 14:00:00,Stadium Feed,Euro107,CRO_CH01,Legacy,Tennis, WTA Tolentino, Italy, , 
-, 10072813, 21/09/2026 08:00:00, 21/09/2026 14:00:00,Stadium Feed,Euro107,CRO_CH01,Legacy,Tennis, WTA Tolentino, Italy, , 
-, 10073343, 21/09/2026 08:00:00, 21/09/2026 20:50:00,Stadium Feed,Euro104,CRO_CH26,,Tennis, WTA Ankara, Turkey, , 
-EcT4x0UjtEGoAJDlkPG51A, 10085186, 21/09/2026 08:30:00, 21/09/2026 15:30:00,Modus,Euro205,IGM_MODUS_CH01,Manually Created,Darts, Modus Super Series, United Kingdom, , 
-ef908e5c-ed2a-4e23-bdbb-3701cd7ece07, 10077324, 21/09/2026 09:00:00, 21/09/2026 12:00:00,Infront,Euro201,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, World - Kontinental Hockey League - Mixed, World, Amur, Severstal
-ab578c50-9fcf-4a96-93dc-9237a99f7ed8, 10077415, 21/09/2026 09:00:00, 21/09/2026 11:16:11,Infront,Euro203,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, World - Kontinental Hockey League - Mixed, World, Amur, Severstal
-30d358d0-d2a1-4cdb-aa2f-72579bb9a53c, 10084166, 21/09/2026 09:00:00, 21/09/2026 14:00:00,Game Postponed,Jpn10,Not Set,Stats Perform,Baseball, Japan - NPB - Male, Japan, Chiba Lotte Marines, Saitama Seibu Lions
-f4dc2289-a687-47a4-b65e-b3bd3553ff27, 10080482, 21/09/2026 09:30:00, 21/09/2026 12:00:00,ESPN 1 Aus [509],Aus2,Not Set,Stats Perform,Basketball, Australia - NBL - Male, Australia, Tasmania JackJumpers, South East Melbourne
-aa442eae-5340-438d-9c82-9ceeabdec728, 10077325, 21/09/2026 09:30:00, 21/09/2026 11:59:54,Infront,Euro202,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, World - Kontinental Hockey League - Mixed, World, Admiral, CSKA
-1b5c3186-c6ba-403c-9371-d75ac5ab9146, 10077416, 21/09/2026 09:30:00, 21/09/2026 12:30:00,Infront,Euro204,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, World - Kontinental Hockey League - Mixed, World, Admiral, CSKA
-, 10079517, 21/09/2026 10:00:00, 21/09/2026 22:05:00,Stadium Feed,Euro101,CRO_CH04,Legacy,Tennis, WTA Porto Open, Portugal, , 
-, 10079519, 21/09/2026 10:00:00, 21/09/2026 22:05:00,Stadium Feed,Euro102,CRO_CH05,Legacy,Tennis, WTA Porto Open, Portugal, , 
-, 10079522, 21/09/2026 10:00:00, 21/09/2026 22:05:00,Stadium Feed,Euro103,CRO_CH06,Legacy,Tennis, WTA Porto Open, Portugal, , 
-, 10079523, 21/09/2026 10:00:00, 21/09/2026 22:00:00,Stadium Feed,Euro103,CRO_CH06,Legacy,Tennis, WTA Porto Open, Portugal, , 
-5f3643d5-93da-4264-ac10-5ee2710fc7c1, 10084067, 21/09/2026 10:30:00, 21/09/2026 13:00:00,beIN Sport 2 - ME [004],Israel7,Not Set,Stats Perform,Soccer, Asia - Women's Asian Games - Female, Asia, Japan, Chinese Taipei
-, 10086446, 21/09/2026 10:30:00, 21/09/2026 16:30:00,TVP Sport [183],Euro15,EPOL,Legacy,Boxing, Europe Championship, Europe, , 
-, 10082565, 21/09/2026 11:00:00, 21/09/2026 13:30:00,Super Sport Rugby [211],Sa1,Not Set,,Rugby Union, Betway SA Rugby Women's Club Championship, South Africa, Harlequins , Collegians Valkyries
-, 10073353, 21/09/2026 11:00:00, 21/09/2026 20:30:00,Stadium Feed,Euro105,CRO_CH27,,Tennis, WTA Ankara, Turkey, , 
-, 10079518, 21/09/2026 11:30:00, 21/09/2026 22:00:00,Stadium Feed,Euro101,CRO_CH04,Legacy,Tennis, WTA Porto Open, Portugal, , 
-, 10079520, 21/09/2026 11:30:00, 21/09/2026 22:00:00,Stadium Feed,Euro102,CRO_CH05,Legacy,Tennis, WTA Porto Open, Portugal, , 
-, 10082566, 21/09/2026 12:15:00, 21/09/2026 14:45:00,Super Sport Rugby [211],Sa1,Not Set,,Rugby Union, Betway SA Rugby Women's Club Championship, South Africa, Busy Bees , Pirates
-, 10083797, 21/09/2026 12:45:00, 21/09/2026 15:15:00,TNT Sport 1 [410],Euro55,ASTRA-3,Legacy,Cycling, World Road Championship, World, , 
-, 10082972, 21/09/2026 12:50:00, 21/09/2026 18:50:00,Eurosport Norway HD,Euro66,SCAND-6 N,Legacy,Cycling, World Road Championship, World, , 
-, 10086833, 21/09/2026 13:00:00, 21/09/2026 19:00:00,Stadium Feed,Euro106,CRO_CH28,,Tennis, WTA Ankara, Turkey, , 
-, 10082567, 21/09/2026 13:25:00, 21/09/2026 15:55:00,Super Sport Rugby [211],Sa1,Not Set,,Rugby Union, Betway SA Rugby Women's Club Championship, South Africa, Walkerbabes, Mqanduli Sharks
-ba6837c8-34ec-44a0-b101-59e436217fe5, 10085023, 21/09/2026 13:30:00, 21/09/2026 16:30:00,KHL Prime,Russia2,Not Set,Stats Perform,Ice Hockey, Russia - MHL - Male, Russia, Stalnye Lisy U20, Kuznetskie Medvedi U20
-853d08b1-7214-45c3-82db-64afdaa4b888, 10082588, 21/09/2026 14:00:00, 21/09/2026 16:30:00,Polsat Sport [119],Euro16,POL-1,Stats Perform,Volleyball, Europe - European Championship - Male, Europe, Belgium, Czechia
-452b385d-55c0-42c7-a722-2015eeee4d80, 10084280, 21/09/2026 14:00:00, 21/09/2026 16:30:00,Infront,Euro201,IGM_INF_DSC_DEFAULT,InFront Streaming,Soccer, World - Greek Super League 2 - Mixed, World, Panthrakikos, Niki Volou
-, 10086541, 21/09/2026 14:00:00, 21/09/2026 22:00:00,Stadium Feed,Euro140,CRO_CH13,,Tennis, WTA Sao Paulo, Brazil, , 
-, 10086542, 21/09/2026 14:00:00, 21/09/2026 22:00:00,Stadium Feed,Euro141,DZN_Ch04,,Tennis, WTA Sao Paulo, Brazil, , 
-, 10083299, 21/09/2026 14:00:00, 22/09/2026 07:00:00,WFAN Sports Radio [101.9],Us28,Not Set,Legacy,Special, News & Live Sport, United States, , 
-, 10083312, 21/09/2026 14:00:00, 22/09/2026 07:00:00,Fox Sports Radio New Jersey [95.9],Us29,Not Set,Legacy,Special, News & Live Sport, United States, , 
-, 10082568, 21/09/2026 14:35:00, 21/09/2026 17:05:00,Super Sport Rugby [211],Sa1,Not Set,,Rugby Union, Betway SA Rugby Women's Club Championship, South Africa, Kwaru , Durban University of Technology
-eb7d417c-36a2-400c-b93d-84f6123000a9, 10080287, 21/09/2026 15:00:00, 21/09/2026 17:30:00,Stadium Feed,Euro133,ZOO_Ch04,Stats Perform,Soccer, Georgia - Erovnuli Liga - Male, Georgia, Rustavi, Iberia 1999
-84fc01d5-5032-436b-a13d-4eeb2c315b38, 10075634, 21/09/2026 15:00:00, 21/09/2026 16:59:50,Infront,Euro203,IGM_INF_DSC_DEFAULT,InFront Streaming,Soccer, World - Slovakian 2. Liga - Mixed, World, Petrzalka, Pohronie
-3090a2cf-4a06-48ad-98f8-7ffa1a29ee9f, 10085261, 21/09/2026 15:00:00, 21/09/2026 17:30:00,Digi Sport 1 [14/12],Euro74,ROM-1,Stats Perform,Soccer, Romania - Liga I - Male, Romania, Otelul Galati, Corvinul Hunedoara
-, 10086447, 21/09/2026 15:00:00, 21/09/2026 21:00:00,TVP Sport [183],Euro15,EPOL,Legacy,Boxing, Europe Championship, Europe, , 
-42d2945f-f304-4e41-8eab-63a343239b76, 10084991, 21/09/2026 15:30:00, 21/09/2026 18:30:00,KHL,Russia3,Not Set,Stats Perform,Ice Hockey, Russia - MHL - Male, Russia, Krasnaya Armiya U20, Akademiya SKA U20
-, 10085415, 21/09/2026 15:30:00, 21/09/2026 17:30:00,Digi Sport 2 [16/13],Euro75,ROM-2,,Futsal, Liga I , Romania, CSM Targu Mures, CSM Odorheiu Secuiescc
-, 10083798, 21/09/2026 15:45:00, 21/09/2026 19:00:00,TNT Sport 1 [410],Euro55,ASTRA-3,Legacy,Cycling, World Road Championship, World, , 
-, 10082973, 21/09/2026 15:50:00, 21/09/2026 21:50:00,Eurosport Norway HD,Euro66,SCAND-6 N,Legacy,Cycling, World Road Championship, World, , 
-c9493792-f986-4d40-b18e-aaf7714dc735, 10077417, 21/09/2026 16:00:00, 21/09/2026 19:00:00,Infront,Euro213,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, World - Kontinental Hockey League - Mixed, World, Ak Bars, Lada
-b79966ab-8dd5-4ce1-9045-074e5f1f87a0, 10082655, 21/09/2026 16:00:00, 21/09/2026 18:30:00,Stadium Feed,Euro120,IPL_CH01,Stats Perform,Soccer, Germany - Frauen Bundesliga - Female, Germany, Werder Bremen, Stuttgart
-9fa9a6c1-c6ec-4f54-b095-9be7d461f2bc, 10077014, 21/09/2026 16:00:00, 21/09/2026 18:15:00,Infront,Euro206,IGM_INF_DSC_DEFAULT,InFront Streaming,Handball, World - Polish Superliga - Mixed, World, Gwardia Opole, Stal Mielec
-8431a951-4c2c-46ec-8adf-902c3fcfe7a4, 10077015, 21/09/2026 16:00:00, 21/09/2026 18:15:00,Infront,Euro207,IGM_INF_DSC_DEFAULT,InFront Streaming,Handball, World - Polish Superliga - Mixed, World, Kielce, MMTS Kwidzyn
-4f488e1b-8120-4472-93d8-46878d5553bc, 10077326, 21/09/2026 16:00:00, 21/09/2026 19:00:00,Infront,Euro212,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, World - Kontinental Hockey League - Mixed, World, Ak Bars, Lada
-, 10083956, 21/09/2026 16:00:00, 21/09/2026 21:00:00,ORF Sports [755],Euro27,GER-3,Legacy,Table Tennis, Austrian League, Austria, Sparkasse Salzburg, Stockerau
-4bb5d609-5087-4aa3-8d66-598dffac0404, 10085967, 21/09/2026 16:30:00, 21/09/2026 19:30:00,Match TV,Russia4,Not Set,Stats Perform,Ice Hockey, Russia - MHL - Male, Russia, Spartak Moskva U20, Avto U20
-ef09e05c-3c6f-47f6-900a-3afb02807071, 10074433, 21/09/2026 17:00:00, 21/09/2026 19:30:00,Infront,Euro205,IGM_INF_DSC_DEFAULT,InFront Streaming,Soccer, Sweden - Swedish Ettan - Mixed, Sweden, Vasalund, Assyriska FF
-d4721b2e-053b-4aaf-b766-7f6003f70403, 10074432, 21/09/2026 17:00:00, 21/09/2026 19:30:00,Infront,Euro204,IGM_INF_DSC_DEFAULT,InFront Streaming,Soccer, Sweden - Swedish Ettan - Mixed, Sweden, Angelholms FF, Eskilsminne IF
-978aaabd-7060-43f1-8bcc-2b822baeb861, 10080284, 21/09/2026 17:00:00, 21/09/2026 19:30:00,Stadium Feed,Euro134,ZOO_Ch05,Stats Perform,Soccer, Georgia - Erovnuli Liga - Male, Georgia, Spaeri, Dila
-7e899d49-2e54-4c8d-988c-05c9fe155808, 10074430, 21/09/2026 17:00:00, 21/09/2026 19:30:00,Infront,Euro202,IGM_INF_DSC_DEFAULT,InFront Streaming,Soccer, Sweden - Swedish Ettan - Mixed, Sweden, FC Arlanda, Hammarby TFF herrfotboll
-5fa7505b-b903-4fce-b455-1df2efd7690a, 10074429, 21/09/2026 17:00:00, 21/09/2026 19:30:00,Infront,Euro201,IGM_INF_DSC_DEFAULT,InFront Streaming,Soccer, Sweden - Swedish Ettan - Mixed, Sweden, Jonkopings Sodra IF, Skovde AIK
-439cdc5c-7baa-491c-aa24-91ea4ec33f25, 10074431, 21/09/2026 17:00:00, 21/09/2026 20:00:00,Infront,Euro203,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, Sweden - Swedish HockeyAllsvenskan - Mixed, Sweden, AIK, Kalmar HC
-38ddabdb-6bd5-4ebd-bd35-70c41bc37663, 10075208, 21/09/2026 17:00:00, 21/09/2026 19:30:00,Stadium Feed,Euro127,MTD_CH01,Stats Perform,Soccer, Denmark - 1. Division - Male, Denmark, HB Køge, Hobro
-, 10085421, 21/09/2026 17:00:00, 21/09/2026 23:00:00,Fox Sports 5 HD [505],Aus4,Not Set,Legacy,Pool, Ultimate Pool Champions League, World, , 
-, 10082970, 21/09/2026 17:00:00, 21/09/2026 19:30:00,TV3 Sport Denmark [100],Euro72,DEN-1,Stats Perform,Soccer, Denmark - 1. Division - Male, Denmark, HB Køge, Hobro IK
-1cc0ad1c-c812-4e3f-b6ec-ece789b45016, 10079812, 21/09/2026 17:30:00, 21/09/2026 20:00:00,Stadium Feed,Euro116,GEN_CH02,Stats Perform,Soccer, Argentina - Liga Profesional Argentina - Male, Argentina, Aldosivi, Atletico Tucuman
-9b919d4d-1acf-4077-9af1-204e8721266c, 10085690, 21/09/2026 18:00:00, 21/09/2026 20:30:00,Stadium Feed,Euro121,LVM_CH01,Stats Perform,Soccer, Brazil - Paulista U20 - Male, Brazil, Jabaquara U20, Santos U20
-63f5934c-e777-480a-acb2-42af50076895, 10085262, 21/09/2026 18:00:00, 21/09/2026 20:30:00,Digi Sport 1 [14/12],Euro74,ROM-1,Stats Perform,Soccer, Romania - Liga I - Male, Romania, Petrolul 52, Csikszereda
-2e29a134-1f8f-4917-bb4d-efb86c6b70e3, 10085689, 21/09/2026 18:00:00, 21/09/2026 20:30:00,Stadium Feed,Euro143,ZSM_CH01,Stats Perform,Soccer, Brazil - Paulista U20 - Male, Brazil, XV de Novembro (Jau) U20, Corinthians U20
-18d13ea1-de42-4b95-ba4c-0037784d6f18, 10085688, 21/09/2026 18:00:00, 21/09/2026 20:30:00,Stadium Feed,Euro122,LVM_CH02,Stats Perform,Soccer, Brazil - Paulista U20 - Male, Brazil, EC Sao Bernardo U20, Sao Paulo U20
-0e284d78-d582-47a9-a5fc-ce5b4797e97b, 10082711, 21/09/2026 18:00:00, 21/09/2026 20:30:00,Stadium Feed,Euro118,GEN_CH09,Stats Perform,Soccer, Argentina - Primera Nacional - Male, Argentina, Tristan Suarez, Atlanta
-a97aac51-1efe-4df7-af82-7e0030311b05, 10077250, 21/09/2026 18:30:00, 21/09/2026 21:00:00,Infront,Euro207,IGM_INF_DSC_DEFAULT,InFront Streaming,Soccer, World - Italian Serie C - Mixed, World, Trento, Pro Vercelli
-a8754262-6049-404c-b8de-c86dbfa060d8, 10077249, 21/09/2026 18:30:00, 21/09/2026 21:00:00,Infront,Euro206,IGM_INF_DSC_DEFAULT,InFront Streaming,Soccer, World - Italian Serie C - Mixed, World, Dolomiti Bellunesi, Lumezzane
-a378b434-7ffa-4032-878a-ce81729399ca, 10077251, 21/09/2026 18:30:00, 21/09/2026 21:00:00,Infront,Euro208,IGM_INF_DSC_DEFAULT,InFront Streaming,Soccer, World - Italian Serie C - Mixed, World, Treviso, Desenzano
-53ffc769-e033-49bb-9a1d-7f499f4d2b29, 10077254, 21/09/2026 18:30:00, 21/09/2026 21:00:00,Infront,Euro211,IGM_INF_DSC_DEFAULT,InFront Streaming,Soccer, World - Italian Serie C - Mixed, World, Spezia, Vis Pesaro
-2e86984a-3993-4963-85bb-f1a552c7236d, 10077253, 21/09/2026 18:30:00, 21/09/2026 21:00:00,Infront,Euro210,IGM_INF_DSC_DEFAULT,InFront Streaming,Soccer, World - Italian Serie C - Mixed, World, Pianese, Sambenedettese
-0bf68bdc-8ee9-48ea-9169-d63dc655f556, 10077252, 21/09/2026 18:30:00, 21/09/2026 21:00:00,Infront,Euro209,IGM_INF_DSC_DEFAULT,InFront Streaming,Soccer, World - Italian Serie C - Mixed, World, Guidonia, Livorno
-c98e839a-a91d-4735-af28-57f684b8dcf1, 10082589, 21/09/2026 19:00:00, 21/09/2026 21:30:00,Polsat Sport [119],Euro16,POL-1,Stats Perform,Volleyball, Europe - European Championship - Male, Europe, Slovenia, Serbia
-c91bc837-2ace-427d-aca0-21ae524e707f, 10085691, 21/09/2026 19:00:00, 21/09/2026 21:30:00,Stadium Feed,Euro123,LVM_CH03,Stats Perform,Soccer, Brazil - Paulista U20 - Male, Brazil, Ituano U20, Palmeiras U20
-4e8f6842-063a-40b4-9ce5-d2777e48f373, 10084760, 21/09/2026 19:00:00, 21/09/2026 21:30:00,Stadium Feed,Euro132,ZAP_CH01,Stats Perform,Soccer, Ecuador - Liga Pro - Male, Ecuador, Manta, Orense
-1852254f-41d6-4858-a9ca-57b4ac968be8, 10075073, 21/09/2026 20:30:00, 21/09/2026 23:00:00,Stadium Feed,Euro115,GEN_CH01,Stats Perform,Soccer, Colombia - Primera B - Male, Colombia, Bogota, Barranquilla
-f4eccbd6-3f7e-471a-9327-2dd6c16df88d, 10082723, 21/09/2026 22:00:00, 22/09/2026 00:30:00,Stadium Feed,Euro119,GEN_CH16,Stats Perform,Soccer, Argentina - Primera Nacional - Male, Argentina, Nueva Chicago, Patronato
-7fc98f49-d069-4036-8bb5-7bae824dcb69, 10079817, 21/09/2026 22:00:00, 22/09/2026 00:30:00,Stadium Feed,Euro117,GEN_CH03,Stats Perform,Soccer, Argentina - Liga Profesional Argentina - Male, Argentina, Barracas Central, Independiente Rivadavia
-71286f47-fe09-468e-b271-f3f7b5c73ebe, 10081165, 21/09/2026 22:00:00, 22/09/2026 00:30:00,Stadium Feed,Euro125,LVM_CH19,Stats Perform,Soccer, Bolivia - Copa Bolivia - Male, Bolivia, Guabira, San Antonio Bulo Bulo
-26c0b3ef-5113-4880-a5b8-b0de855cdc0f, 10075068, 21/09/2026 22:00:00, 22/09/2026 00:30:00,Stadium Feed,Euro116,GEN_CH02,Stats Perform,Soccer, Colombia - Primera B - Male, Colombia, Real Cundinamarca, Deportes Quindio
-e235a51c-b868-41e5-a95b-0c539985cd36, 10084489, 21/09/2026 22:05:00, 22/09/2026 00:35:00,Stadium Feed,Euro131,XVI_CH05,Stats Perform,Soccer, Jamaica - Premier League - Male, Jamaica, Humble Lions, Waterhouse
-c1d1e37a-9bed-493a-a175-ac236124cb28, 10084600, 21/09/2026 22:30:00, 22/09/2026 01:00:00,MediaPro,Euro203,IGM_MEDIAPRO_CH01,Stats Perform,Soccer, Uruguay - Liga AUF - Male, Uruguay, Central Espanol, City Torque
-3b3c23a6-f42f-45b1-83c5-b01139ff387e, 10074434, 21/09/2026 22:30:00, 22/09/2026 01:00:00,Infront,Euro201,IGM_INF_DSC_DEFAULT,InFront Streaming,Soccer, Brazil - Brazilian Serie B - Mixed, Brazil, Criciuma, Operario
-6cc1fc38-6be7-4415-8a3d-2b2631eee94e, 10078277, 21/09/2026 22:35:00, 22/09/2026 02:35:00,301 SNE,Us23,Not Set,Stats Perform,Baseball, United States - MLB - Male, United States, Baltimore Orioles, Toronto Blue Jays
-, 10084824, 21/09/2026 22:35:00, 22/09/2026 02:35:00,Super Sport ESPN 2 [219],Sa2,Not Set,Stats Perform,Baseball, United States - MLB - Male, United States, Baltimore Orioles, Toronto Blue Jays
-6ab81938-b712-4561-bb9d-5d77117944e7, 10078276, 21/09/2026 22:40:00, 22/09/2026 02:40:00,722 - Extra Innings,Us19,Not Set,Stats Perform,Baseball, United States - MLB - Male, United States, Detroit Tigers, Washington Nationals
-b78201f1-cde8-4672-8af7-f269e364ca24, 10083996, 21/09/2026 23:00:00, 22/09/2026 02:00:00,305 SN1,Us25,Not Set,Stats Perform,Ice Hockey, United States - NHL - Male, United States, Montreal Canadiens, Ottawa Senators
-a460fd64-11e4-4823-83d4-3ca0e15909ae, 10083993, 21/09/2026 23:00:00, 22/09/2026 02:00:00,659 - ATTPT Root Sports,Us13,Not Set,Stats Perform,Ice Hockey, United States - NHL - Male, United States, Pittsburgh Penguins, Buffalo Sabres
-09b2d0f0-60c1-4479-a07a-15920fb57da4, 10083992, 21/09/2026 23:00:00, 22/09/2026 02:00:00,634 MSG - D,Us14,Not Set,Stats Perform,Ice Hockey, United States - NHL - Male, United States, New Jersey Devils, New York Rangers
-, 10083991, 21/09/2026 23:00:00, 22/09/2026 01:30:00,319 BIGTEN -S,Us24,Not Set,Legacy,Soccer, College Soccer, United States, Ohio State, Washington
-40121efb-caec-4734-bbff-ad70b1037e97, 10082683, 21/09/2026 23:30:00, 22/09/2026 02:00:00,Stadium Feed,Euro124,LVM_CH08,Stats Perform,Soccer, Brazil - Copa Paulista - Male, Brazil, Juventus, Uniao Sao Joao
->>>>>>> feature
-=======
->>>>>>> development
-6a85563d-1a97-4aeb-9022-c32da1cec54e, 10084184, 22/09/2026 06:00:00, 22/09/2026 11:00:00,608 - G-,Jpn5,Not Set,Stats Perform,Baseball, Japan - NPB - Male, Japan, Hiroshima Carp, Yomiuri Giants
-62443313-c4fc-4220-9f70-172fffee4c46, 10079362, 22/09/2026 07:30:00, 22/09/2026 10:00:00,Stadium Feed,Euro135,ADC_CH03,Stats Perform,Basketball, World - FIBA Intercontinental Cup - Male, World, Vilnius Rytas, Tigers
-, 10073345, 22/09/2026 08:00:00, 22/09/2026 20:45:00,Stadium Feed,Euro106,CRO_CH26,,Tennis, WTA Ankara, Turkey, , 
-, 10073354, 22/09/2026 08:00:00, 22/09/2026 20:45:00,Stadium Feed,Euro107,CRO_CH27,,Tennis, WTA Ankara, Turkey, , 
-, 10073386, 22/09/2026 08:00:00, 22/09/2026 20:45:00,Stadium Feed,Euro108,CRO_CH28,,Tennis, WTA Ankara, Turkey, , 
-bG4RSenQ0UG-km-lHWVG8Q, 10085187, 22/09/2026 08:30:00, 22/09/2026 15:30:00,Modus,Euro201,IGM_MODUS_CH01,Manually Created,Darts, Modus Super Series, United Kingdom, , 
-, 10072814, 22/09/2026 08:30:00, 22/09/2026 21:45:00,Stadium Feed,Euro109,CRO_CH01,Legacy,Tennis, WTA Tolentino, Italy, , 
-, 10072815, 22/09/2026 08:30:00, 22/09/2026 21:45:00,Stadium Feed,Euro110,CRO_CH02,Legacy,Tennis, WTA Tolentino, Italy, , 
-, 10072816, 22/09/2026 08:30:00, 22/09/2026 21:45:00,Stadium Feed,Euro111,CRO_CH03,Legacy,Tennis, WTA Tolentino, Italy, , 
-f7809f3c-3c59-452e-ad18-a2ed84b65468, 10084201, 22/09/2026 09:00:00, 22/09/2026 14:00:00,Gaora – 602,Jpn9,Not Set,Stats Perform,Baseball, Japan - NPB - Male, Japan, Nippon-Ham Fighters, Tohoku Rakuten
-dd66237f-996c-4a2d-9e1f-e9a562da6f72, 10084197, 22/09/2026 09:00:00, 22/09/2026 14:00:00,Sukachan 0 [580],Jpn11,Not Set,Stats Perform,Baseball, Japan - NPB - Male, Japan, Fukuoka SoftBank Hawks, Saitama Seibu Lions
-3ed4443d-4ba8-48f9-b8bd-3aa3db7adbbb, 10084174, 22/09/2026 09:00:00, 22/09/2026 14:00:00,TBS2 Japan [617],Jpn8,Not Set,Stats Perform,Baseball, Japan - NPB - Male, Japan, Yokohama BayStars, Chunichi Dragons
-34d755c2-e17d-4dcc-9787-be926be80b11, 10084170, 22/09/2026 09:00:00, 22/09/2026 14:00:00,Fuji One - 614,Jpn7,Not Set,Stats Perform,Baseball, Japan - NPB - Male, Japan, Tokyo Yakult Swallows, Hanshin Tigers
-15cd274b-ddf5-458c-9f4d-60a9bc600cf0, 10084163, 22/09/2026 09:00:00, 22/09/2026 14:00:00,NTV News24 [571],Jpn10,Not Set,Stats Perform,Baseball, Japan - NPB - Male, Japan, Chiba Lotte Marines, Orix Buffaloes
-102bc2f4-c955-4afe-be05-c284af4b640b, 10084992, 22/09/2026 09:00:00, 22/09/2026 12:00:00,KHL,Russia3,Not Set,Stats Perform,Ice Hockey, Russia - MHL - Male, Russia, Taifun U20, Krylya Sovetov U20
-, 10086787, 22/09/2026 09:00:00, 22/09/2026 20:00:00,Super Sport Tennis [214],Sa1,Not Set,Legacy,Tennis, Billie Jean King Cup, World, Czech Republic, Great Britain
-, 10086074, 22/09/2026 09:00:00, 22/09/2026 20:00:00,Sport 5 Plus - [56],Israel11,Not Set,Legacy,Tennis, Billie Jean King Cup, World, Czech Republic, Great Britain
-b3bca116-6925-41d9-a4a9-a635815fbce5, 10080475, 22/09/2026 09:30:00, 22/09/2026 12:00:00,ESPN 1 Aus [509],Aus2,Not Set,Stats Perform,Basketball, Australia - NBL - Male, Australia, Brisbane Bullets, New Zealand Breakers
-a21273cd-a788-4e97-bb85-1113ed3ee7a6, 10080980, 22/09/2026 09:30:00, 22/09/2026 14:30:00,SBS Sports,NewKorea2,Not Set,Stats Perform,Baseball, South Korea - KBO - Male, South Korea, Hanwha Eagles, Lotte Giants
-97eb722e-6db0-4fb4-a7c7-1fc54fc88dd6, 10080978, 22/09/2026 09:30:00, 22/09/2026 14:30:00,MBC ESPN,NewKorea3,Not Set,Stats Perform,Baseball, South Korea - KBO - Male, South Korea, Kiwoom Heroes, Doosan Bears
-64a048d8-03d9-4fd0-84ed-e72de17090d3, 10080973, 22/09/2026 09:30:00, 22/09/2026 14:30:00,KBSN Sports,NewKorea1,Not Set,Stats Perform,Baseball, South Korea - KBO - Male, South Korea, Samsung Lions, NC Dinos
-, 10086347, 22/09/2026 09:30:00, 22/09/2026 14:30:00,SPOTV2,NewKorea5,Not Set,Stats Perform,Baseball, South Korea - KBO - Male, South Korea, KT Wiz, SSG Landers
-9a01175f-50bd-48c3-8a40-d0d8488b786d, 10086849, 22/09/2026 10:00:00, 22/09/2026 12:30:00,beIN Sport 5 - ME [007],Israel7,Not Set,Stats Perform,Soccer, Asia - Asian Games - Male, Asia, Korea Republic U23, Saudi Arabia U23
-, 10079525, 22/09/2026 10:00:00, 22/09/2026 17:00:00,Stadium Feed,Euro112,CRO_CH04,Legacy,Tennis, WTA Porto Open, Portugal, , 
-, 10079526, 22/09/2026 10:00:00, 22/09/2026 17:00:00,Stadium Feed,Euro113,CRO_CH05,Legacy,Tennis, WTA Porto Open, Portugal, , 
-, 10079527, 22/09/2026 10:00:00, 22/09/2026 17:00:00,Stadium Feed,Euro114,CRO_CH06,Legacy,Tennis, WTA Porto Open, Portugal, , 
-, 10082575, 22/09/2026 11:00:00, 22/09/2026 21:00:00,Fox Cricket HD [501],Aus1,Not Set,Stats Perform,Cricket, World - Sri Lanka in England 2026 - Male, World, England , Sri Lanka
-, 10084476, 22/09/2026 11:00:00, 22/09/2026 21:00:00,Radio 5 Live SX,Euro43,R5LX,Stats Perform,Cricket, World - Sri Lanka in England 2026 - Male, World, England, Sri Lanka
-ce6efd21-fcf8-4e60-9db9-6cb37d7cd628, 10079365, 22/09/2026 11:30:00, 22/09/2026 14:00:00,Stadium Feed,Euro135,ADC_CH03,Stats Perform,Basketball, World - FIBA Intercontinental Cup - Male, World, Beijing Royal Fighters, Boca Juniors
-, 10058610, 22/09/2026 12:00:00, 22/09/2026 19:00:00,Stadium Feed,Euro115,UZO_CH01,Legacy,Darts, PDC Players Championship, England, , 
-, 10058611, 22/09/2026 12:00:00, 22/09/2026 19:00:00,Stadium Feed,Euro116,UZO_CH02,Legacy,Darts, PDC Players Championship, England, , 
-, 10058612, 22/09/2026 12:00:00, 22/09/2026 19:00:00,Stadium Feed,Euro117,UZO_CH03,Legacy,Darts, PDC Players Championship, England, , 
-, 10058613, 22/09/2026 12:00:00, 22/09/2026 19:00:00,Stadium Feed,Euro118,UZO_CH04,Legacy,Darts, PDC Players Championship, England, , 
-, 10082967, 22/09/2026 12:00:00, 22/09/2026 18:00:00,Eurosport Norway HD,Euro66,SCAND-6 N,Legacy,Cycling, Tour of Croatia, Croatia, , 
-9ed682a0-c87e-416d-8e26-87fb7066a79b, 10082590, 22/09/2026 13:00:00, 22/09/2026 15:30:00,Polsat Sport [119],Euro16,POL-1,Stats Perform,Volleyball, Europe - European Championship - Male, Europe, France, Romania
-, 10082968, 22/09/2026 14:00:00, 22/09/2026 20:00:00,Eurosport Norway HD,Euro66,SCAND-6 N,Legacy,Cycling, World Road Championship, World, , 
-, 10083300, 22/09/2026 14:00:00, 23/09/2026 07:00:00,WFAN Sports Radio [101.9],Us28,Not Set,Legacy,Special, News & Live Sport, United States, , 
-, 10083315, 22/09/2026 14:00:00, 23/09/2026 07:00:00,Fox Sports Radio New Jersey [95.9],Us29,Not Set,Legacy,Special, News & Live Sport, United States, , 
-5fd6d7ad-096c-4cab-a5bc-4f16c4c7574d, 10085266, 22/09/2026 14:30:00, 22/09/2026 17:00:00,Digi Sport 1 [14/12],Euro74,ROM-1,Stats Perform,Soccer, Romania - Liga II - Male, Romania, Dumbravita, CSM Resita
-, 10086448, 22/09/2026 15:00:00, 22/09/2026 21:00:00,TVP Sport [183],Euro15,EPOL,Legacy,Boxing, Europe Championship, Europe, , 
-9f6f5b7f-78b6-446b-b5cd-d55feb369610, 10074989, 22/09/2026 15:30:00, 22/09/2026 18:30:00,Infront,Euro202,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, Finland - Finnish Liiga - Mixed, Finland, Jokerit, Pelicans
-97dff1be-e0b3-4fcf-8db6-ebba8c5c84ff, 10074990, 22/09/2026 15:30:00, 22/09/2026 18:30:00,Infront,Euro203,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, Finland - Finnish Liiga - Mixed, Finland, Tappara, Karpat
-05564c13-252c-401e-9bdd-85c92ae7db99, 10074988, 22/09/2026 15:30:00, 22/09/2026 18:30:00,Infront,Euro201,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, Finland - Finnish Liiga - Mixed, Finland, HPK, Lukko
-f2b90823-1c5c-4752-9ac5-e854c116539a, 10082591, 22/09/2026 16:00:00, 22/09/2026 18:30:00,Polsat Sport [119],Euro16,POL-1,Stats Perform,Volleyball, Europe - European Championship - Male, Europe, Poland, Germany
-892694d3-c155-441f-a435-b185f4756ca9, 10078130, 22/09/2026 16:00:00, 22/09/2026 18:30:00,Infront,Euro209,IGM_INF_DSC_DEFAULT,InFront Streaming,Basketball, World - Slovenian Basketball League - Mixed, World, Krka, Tajfun Sentjur
-5c30f8a4-3d10-4be9-88f1-55c2c9a0d15f, 10084089, 22/09/2026 16:00:00, 22/09/2026 19:00:00,Stadium Feed,Euro129,XVI_CH06,Stats Perform,Ice Hockey, Slovakia - 1. Liga - Male, Slovakia, Levice, Ziar nad Hronom
-, 10082969, 22/09/2026 16:00:00, 22/09/2026 22:00:00,Eurosport Norway HD,Euro66,SCAND-6 N,Legacy,Cycling, World Road Championship, World, , 
-d2455cb3-941f-49d5-91a4-1d630c06e09b, 10077327, 22/09/2026 16:30:00, 22/09/2026 19:30:00,Infront,Euro214,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, World - Kontinental Hockey League - Mixed, World, Shanghai Dragons, Avtomobilist
-8cc72983-6288-4040-94d0-4c568aaf59a9, 10077420, 22/09/2026 16:30:00, 22/09/2026 19:30:00,Infront,Euro219,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, World - Kontinental Hockey League - Mixed, World, Dynamo Msk, Barys
-81b41491-e4c8-4ffa-838c-d8bf1854c72a, 10077329, 22/09/2026 16:30:00, 22/09/2026 19:30:00,Infront,Euro216,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, World - Kontinental Hockey League - Mixed, World, Dynamo Msk, Barys
-69efd1b3-544b-49a2-a3fd-f65de6e7d7ee, 10077328, 22/09/2026 16:30:00, 22/09/2026 19:30:00,Infront,Euro215,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, World - Kontinental Hockey League - Mixed, World, Torpedo, Avangard
-69573ddd-fbfd-49fa-8395-b35740a503fd, 10077418, 22/09/2026 16:30:00, 22/09/2026 19:30:00,Infront,Euro217,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, World - Kontinental Hockey League - Mixed, World, Shanghai Dragons, Avtomobilist
-2abdecdf-03a5-4ff8-85d0-3d7cfc79d80d, 10077419, 22/09/2026 16:30:00, 22/09/2026 19:30:00,Infront,Euro218,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, World - Kontinental Hockey League - Mixed, World, Torpedo, Avangard
-6a6d121d-68d1-4b99-8e50-6dc703bcdd1d, 10083863, 22/09/2026 16:45:00, 22/09/2026 19:15:00,beIN Sport 2 - ME [004],Israel7,Not Set,Stats Perform,Soccer, Europe - UEFA Women's Champions League - Female, Europe, Bayern Munchen, Manchester City
-4501d4ba-ba84-46e2-b482-03538c4f4ed4, 10085032, 22/09/2026 16:45:00, 22/09/2026 19:15:00,TV12 [12],Euro63,SCAND-3 S,Stats Perform,Soccer, Europe - UEFA Women's Champions League - Female, Europe, Internazionale, Hacken
-fd834512-705f-449b-bcbc-39c2ab160557, 10075000, 22/09/2026 17:00:00, 22/09/2026 20:00:00,Infront,Euro213,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, Sweden - Swedish Hockey League - Mixed, Sweden, Frolunda HC, Farjestad BK
-fb265320-3f3f-49ce-b388-c68d3c5905d4, 10074991, 22/09/2026 17:00:00, 22/09/2026 20:00:00,Infront,Euro204,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, Sweden - Swedish Hockey League - Mixed, Sweden, Timra IK, Orebro HK
-f4da839c-e1b6-4d5a-b4cc-f2d66e3a022f, 10074995, 22/09/2026 17:00:00, 22/09/2026 20:00:00,Infront,Euro208,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, Sweden - Swedish Hockey League - Mixed, Sweden, Vaxjo Lakers HC, IF Malmo Redhawks
-f0ed8632-7f3b-4238-8400-a0d11f1391c9, 10074992, 22/09/2026 17:00:00, 22/09/2026 20:00:00,Infront,Euro205,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, Sweden - Swedish Hockey League - Mixed, Sweden, Vaxjo Lakers HC, IF Malmo Redhawks
-d11dba53-4bf4-469b-b5e1-ca5a79e9d298, 10074996, 22/09/2026 17:00:00, 22/09/2026 20:00:00,Infront,Euro209,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, Sweden - Swedish Hockey League - Mixed, Sweden, Rogle BK, Djurgardens IF
-acde47f0-e690-4ea7-aea0-f4e8e361cd7f, 10074999, 22/09/2026 17:00:00, 22/09/2026 20:00:00,Infront,Euro212,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, Sweden - Swedish Hockey League - Mixed, Sweden, Linkoping HC, Brynas IF
-8edc330b-7682-4813-8bb0-dedc40f7a6f0, 10074993, 22/09/2026 17:00:00, 22/09/2026 20:00:00,Infront,Euro206,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, Sweden - Swedish Hockey League - Mixed, Sweden, Timra IK, Orebro HK
-84862da7-b440-4b35-9105-c7d81eccb49b, 10074998, 22/09/2026 17:00:00, 22/09/2026 20:00:00,Infront,Euro211,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, Sweden - Swedish Hockey League - Mixed, Sweden, Frolunda HC, Farjestad BK
-82632cf8-11af-4cc4-b9cb-3a6c8d10522e, 10082962, 22/09/2026 17:00:00, 22/09/2026 19:30:00,TV2 Sport X DK [108],Euro72,DEN-1,Stats Perform,Soccer, Denmark - Kvindeliga - Female, Denmark, AGF, Nordsjælland
-796ff265-cd49-42a5-98ec-bb39168cbe4d, 10077478, 22/09/2026 17:00:00, 22/09/2026 19:30:00,Infront,Euro220,IGM_INF_DSC_DEFAULT,InFront Streaming,Basketball, Turkey - Turkish Presidential Cup - Mixed, World, Fenerbahce, Besiktas
-4cc5f628-b1e1-40c2-8d46-b99d4c2efcb4, 10074997, 22/09/2026 17:00:00, 22/09/2026 20:00:00,Infront,Euro210,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, Sweden - Swedish Hockey League - Mixed, Sweden, Linkoping HC, Brynas IF
-3e5f11c6-1e51-4ad3-94ea-50bd4cfdf80a, 10074994, 22/09/2026 17:00:00, 22/09/2026 20:00:00,Infront,Euro207,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, Sweden - Swedish Hockey League - Mixed, Sweden, Rogle BK, Djurgardens IF
-386674cb-661d-44e5-ade8-2513845e3839, 10085265, 22/09/2026 17:00:00, 22/09/2026 19:30:00,Digi Sport 1 [14/12],Euro74,ROM-1,Stats Perform,Soccer, Romania - Liga II - Male, Romania, ASA Targu Mures, CS Dinamo Bucuresti
-93d72f0f-a7d3-4217-ab30-e2d30173988d, 10078285, 22/09/2026 17:05:00, 22/09/2026 21:05:00,631 - YES,Us17,Not Set,Stats Perform,Baseball, United States - MLB - Male, United States, New York Yankees, Tampa Bay Rays
-, 10085672, 22/09/2026 17:05:00, 22/09/2026 21:05:00,Sport 1 DSF Plus [242],Euro30,GER-6,Stats Perform,Baseball, United States - MLB - Male, United States, New York Yankees, Tampa Bay Rays
-ed85d15a-527c-45fe-a49d-0bd59c9af533, 10086073, 22/09/2026 17:55:00, 22/09/2026 20:25:00,Sport 5 - [55],Israel9,Not Set,Stats Perform,Basketball, Israel - Premier League Cup - Male, Israel, Maccabi Rishon LeZion, Hapoel Be'er Sheva
-56961679-5fd7-4cc3-ab16-dada6c406ead, 10084217, 22/09/2026 18:00:00, 22/09/2026 21:00:00,Stadium Feed,Euro131,XVI_CH10,Stats Perform,Ice Hockey, France - Ligue Magnus - Male, France, Briancon, Bordeaux
-45b3f0b3-fe31-491c-9042-94ad685cc686, 10084213, 22/09/2026 18:00:00, 22/09/2026 21:00:00,Stadium Feed,Euro130,XVI_CH09,Stats Perform,Ice Hockey, France - Ligue Magnus - Male, France, Rapaces de Gap, Bruleurs de Loups
-30fb7b35-7102-439d-88c6-19163aaa4900, 10082976, 22/09/2026 18:00:00, 22/09/2026 20:15:00,TV2 Sport Denmark [107],Euro71,SCAND-11,Stats Perform,Handball, Denmark - Cup - Male, Denmark, SønderjyskE, GOG
-, 10086377, 22/09/2026 18:00:00, 22/09/2026 20:00:00,Premier Sport 2 [419],Euro54,ASTRA-2,Legacy,Speedway, Elitserien Sverige, Sweden, Vastervik, Dackarna
-921da4ec-58a1-4325-a777-08979ca24abf, 10084228, 22/09/2026 18:15:00, 22/09/2026 21:15:00,Stadium Feed,Euro128,XVI_CH08,Stats Perform,Ice Hockey, France - Ligue Magnus - Male, France, Amiens, Ducs d'Angers
-1e4cf874-981e-45a7-8dd9-dec196263229, 10084211, 22/09/2026 18:15:00, 22/09/2026 21:15:00,Stadium Feed,Euro132,XVI_CH11,Stats Perform,Ice Hockey, France - Ligue Magnus - Male, France, Spartiates de Marseille, Dragons de Rouen
-d26aa7ed-50ee-4e49-ab29-bb176ba8b529, 10084237, 22/09/2026 18:30:00, 22/09/2026 21:30:00,Stadium Feed,Euro127,XVI_CH07,Stats Perform,Ice Hockey, France - Ligue Magnus - Male, France, Anglet, Pionniers de Chamonix
-4ddd1866-eb2d-4c69-b25c-c0da60dff608, 10084215, 22/09/2026 18:30:00, 22/09/2026 21:30:00,Stadium Feed,Euro133,XVI_CH12,Stats Perform,Ice Hockey, France - Ligue Magnus - Male, France, Cergy Pontoise, Nice
-de97e643-a88e-4247-ac38-716e4ebec2e0, 10085024, 22/09/2026 19:00:00, 22/09/2026 21:30:00,ESPN 2 Aus [510],Aus2,Not Set,Stats Perform,Soccer, Europe - UEFA Women's Champions League - Female, Europe, Arsenal, Køge
-d4c61a5b-6709-4631-8119-e8a08953049b, 10083866, 22/09/2026 19:00:00, 22/09/2026 21:30:00,beIN Sport 2 - ME [004],Israel7,Not Set,Stats Perform,Soccer, Europe - UEFA Women's Champions League - Female, Europe, Real Madrid, Paris Saint-Germain
-5967cca1-0bd2-4912-ba8a-0c4729d3c929, 10083862, 22/09/2026 19:00:00, 22/09/2026 21:30:00,No available coverage,Euro1,Not Set,Stats Perform,Soccer, Europe - UEFA Women's Champions League - Female, Europe, Juventus, Benfica
-, 10085424, 22/09/2026 19:00:00, 22/09/2026 21:30:00,Radio 5 Live united kingdom,Euro44,R5L,Stats Perform,Soccer, Europe - UEFA Women's Champions League - Female, Europe, Arsenal, Køge
-, 10082971, 22/09/2026 19:00:00, 23/09/2026 01:00:00,Eurosport Norway HD,Euro66,SCAND-6 N,Legacy,Cycling, World Road Championship, World, , 
-bd52a2df-f4db-4f94-b790-44cf4cfdb86f, 10075072, 22/09/2026 21:00:00, 22/09/2026 23:30:00,Stadium Feed,Euro119,GEN_CH03,Stats Perform,Soccer, Colombia - Primera B - Male, Colombia, Independiente Cauca, Internacional Palmira
-92bf3c66-3c1c-42b0-a844-ccc10cb97ea2, 10075071, 22/09/2026 21:00:00, 22/09/2026 23:30:00,Stadium Feed,Euro122,GEN_CH04,Stats Perform,Soccer, Colombia - Primera B - Male, Colombia, Atletico, Tigres
-65d231f4-d166-4cc7-b8cb-d87f593c8d68, 10075070, 22/09/2026 21:00:00, 22/09/2026 23:30:00,Stadium Feed,Euro138,GEN_CH02,Stats Perform,Soccer, Colombia - Primera B - Male, Colombia, Real Santander, Orsomarso
-dc35fdf4-9e53-4427-aaef-42f3fdaf88d9, 10082999, 22/09/2026 21:30:00, 23/09/2026 00:00:00,Stadium Feed,Euro138,Not Set,Stats Perform,Soccer, Paraguay - Copa Paraguay - Male, Paraguay, 2 de Mayo, Sol de America
-3b3c23a6-f42f-45b1-83c5-b01139ff387e, 10074434, 22/09/2026 22:30:00, 23/09/2026 01:00:00,Infront,Euro201,IGM_INF_DSC_DEFAULT,InFront Streaming,Soccer, Brazil - Brazilian Serie B - Mixed, Brazil, Criciuma, Operario
-180f1d00-e754-4965-acff-f38ab312de17, 10078278, 22/09/2026 22:35:00, 23/09/2026 02:35:00,301 SNE,Us23,Not Set,Stats Perform,Baseball, United States - MLB - Male, United States, Baltimore Orioles, Toronto Blue Jays
-f6ba1ab9-fcb4-4b06-8fa8-7c0384cb9612, 10078288, 22/09/2026 22:40:00, 23/09/2026 02:40:00,659 - ATTPT Root Sports,Us13,Not Set,Stats Perform,Baseball, United States - MLB - Male, United States, Pittsburgh Pirates, St. Louis Cardinals
-827db562-81d1-41d4-b89c-4fd3979d9b26, 10078284, 22/09/2026 22:40:00, 23/09/2026 02:40:00,730 - Extra Innings,Us11,Not Set,Stats Perform,Baseball, United States - MLB - Male, United States, Detroit Tigers, Washington Nationals
-4baa02ec-bf4b-4f72-9805-86a94a173401, 10078281, 22/09/2026 22:40:00, 23/09/2026 02:40:00,725 - Extra Innings,Us12,Not Set,Stats Perform,Baseball, United States - MLB - Male, United States, Philadelphia Phillies, Milwaukee Brewers
-, 10086999, 22/09/2026 22:40:00, 23/09/2026 02:40:00,Sport 1 DSF Plus [242],Euro30,GER-6,Stats Perform,Baseball, United States - MLB - Male, United States, Detroit Tigers, Washington Nationals
-2299e936-3cc8-4816-92ff-966fc45a671d, 10078280, 22/09/2026 22:45:00, 23/09/2026 02:45:00,723 - Extra Innings,Us15,Not Set,Stats Perform,Baseball, United States - MLB - Male, United States, Boston Red Sox, Cleveland Guardians
-e9d53fea-f7d1-4b96-a3ea-0751dbcf991b, 10084964, 22/09/2026 23:00:00, 23/09/2026 02:00:00,634 MSG - D,Us14,Not Set,Stats Perform,Ice Hockey, United States - NHL - Male, United States, New York Rangers, New York Islanders
-e03cc22e-e1a4-4653-9c64-7a5e1f92a022, 10084963, 22/09/2026 23:00:00, 23/09/2026 02:00:00,628 - NESN,Us10,Not Set,Stats Perform,Ice Hockey, United States - NHL - Male, United States, Boston Bruins, Philadelphia Flyers
-d3b67778-f4de-4a05-b879-5d821c10d2ec, 10070744, 22/09/2026 23:00:00, 23/09/2026 01:30:00,Stadium Feed,Euro120,LVM_CH19,Stats Perform,Soccer, Bolivia - Copa Bolivia - Male, Bolivia, Nacional Potosi, Real Potosi
-ae99ea0a-b701-484f-a9eb-7fbce621550c, 10086052, 22/09/2026 23:00:00, 23/09/2026 02:00:00,215 - NHL Net,Us20,Not Set,Stats Perform,Ice Hockey, United States - NHL - Male, United States, Carolina Hurricanes, Florida Panthers
-0f961440-8751-4ae1-838f-f32d3664dcdf, 10080137, 22/09/2026 23:00:00, 23/09/2026 01:30:00,Stadium Feed,Euro121,GEN_CH01,Stats Perform,Soccer, Colombia - Primera A - Male, Colombia, Independiente Medellin, Jaguares de Cordoba
-, 10083625, 22/09/2026 23:00:00, 23/09/2026 07:00:00,306 SN360,Us22,Not Set,Legacy,Martial Arts, Dana White's Contender Series, World, , 
-722cf1ae-9f28-4c93-a9d9-e0b950cc1678, 10078283, 22/09/2026 23:05:00, 23/09/2026 03:05:00,Italy Sport Max [206],Euro7,Sky-IT4,Stats Perform,Baseball, United States - MLB - Male, United States, New York Yankees, Tampa Bay Rays
-, 10086053, 22/09/2026 23:05:00, 23/09/2026 03:05:00,631 - YES,Us17,Not Set,Stats Perform,Baseball, United States - MLB - Male, United States, New York Yankees, Tampa Bay Rays
-c719c574-43e4-493c-87bb-d56a063801f9, 10078287, 22/09/2026 23:15:00, 23/09/2026 03:15:00,732 - Extra Innings united states,Us16,Not Set,Stats Perform,Baseball, United States - MLB - Male, United States, Atlanta Braves, Cincinnati Reds
-, 10084825, 22/09/2026 23:15:00, 23/09/2026 03:15:00,Super Sport ESPN 2 [219],Sa2,Not Set,Stats Perform,Baseball, United States - MLB - Male, United States, Atlanta Braves, Cincinnati Reds
-e8fbe2d1-1002-4894-ada0-b3bbecb3a299, 10084453, 22/09/2026 23:30:00, 23/09/2026 02:00:00,Stadium Feed,Euro137,WBD_CH03,Stats Perform,Soccer, Chile - Copa Chile - Male, Chile, Audax Italiano, Colo Colo
-b09f139d-1e58-45b0-9be6-44ec0ff570a3, 10084451, 22/09/2026 23:30:00, 23/09/2026 02:00:00,Stadium Feed,Euro1,WBD_CH02,Stats Perform,Soccer, Chile - Copa Chile - Male, Chile, Cobreloa, Coquimbo Unido
-c54402af-b247-47c7-993c-a56f3588d796, 10078286, 22/09/2026 23:40:00, 23/09/2026 03:40:00,664 - FSDPLS,Us8,Not Set,Stats Perform,Baseball, United States - MLB - Male, United States, Chicago Cubs, Miami Marlins
-1f3c690e-1fa1-48dc-b21e-fda9d2000acc, 10078279, 22/09/2026 23:40:00, 23/09/2026 03:40:00,665 - NBCSCH,Us18,Not Set,Stats Perform,Baseball, United States - MLB - Male, United States, Kansas City Royals, Chicago White Sox
-<<<<<<< HEAD
-=======
->>>>>>> f8980e7 (.)
->>>>>>> development
+3ea00b79-5c9d-4a39-96f9-50bcf9e32255, 10084173, 23/09/2026 06:00:00, 23/09/2026 11:00:00,608 - G-,Jpn5,Not Set,Stats Perform,Baseball, Japan - NPB - Male, Japan, Hiroshima Carp, Yomiuri Giants
+, 10079508, 23/09/2026 06:00:00, 23/09/2026 18:00:00,Stadium Feed,Euro112,DZN_Ch02,Legacy,Tennis, WTA Singapore, Singapore, , 
+, 10084205, 23/09/2026 06:00:00, 23/09/2026 20:00:00,Sport TV 6 [26],Euro83,MEO 1,Legacy,Tennis, Hangzhou Open, China PR, , 
+151d18c0-d8f6-4342-9417-f003f16ba066, 10079359, 23/09/2026 07:30:00, 23/09/2026 10:00:00,Stadium Feed,Euro101,ADC_CH03,Stats Perform,Basketball, World - FIBA Intercontinental Cup - Male, World, Shanghai Sharks, Tigers
+a80c31b2-cce8-4896-a7c0-3b1d57998067, 10086813, 23/09/2026 08:00:00, 23/09/2026 10:30:00,Sukachan 5 [585],Jpn10,Not Set,Stats Perform,Soccer, Japan - Emperor Cup - Male, Japan, Gamba Osaka, Tokushima Vortis
+88240f5d-c894-4468-af37-0d5eb4f3f194, 10084185, 23/09/2026 08:00:00, 23/09/2026 13:00:00,NTV News24 [571],Jpn10,Not Set,Stats Perform,Baseball, Japan - NPB - Male, Japan, Chiba Lotte Marines, Orix Buffaloes
+354b208d-b519-411e-adb8-1ba54b2c6645, 10084850, 23/09/2026 08:00:00, 23/09/2026 10:30:00,Sukachan 4 [584],Jpn12,Not Set,Stats Perform,Soccer, Japan - Emperor Cup - Male, Japan, Kashima Antlers, Ventforet Kofu
+obesBx9eikCah58JN6hg5w, 10085188, 23/09/2026 08:30:00, 23/09/2026 15:30:00,Modus,Euro205,IGM_MODUS_CH01,Manually Created,Darts, Modus Super Series, United Kingdom, , 
+f28bcdc9-69cb-4b10-b428-84c3e789dab4, 10077421, 23/09/2026 09:00:00, 23/09/2026 12:00:00,Infront,Euro203,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, World - Kontinental Hockey League - Mixed, World, Amur, CSKA
+68bdc045-59df-4ebb-b61c-70311b56cd17, 10077330, 23/09/2026 09:00:00, 23/09/2026 12:00:00,Infront,Euro201,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, World - Kontinental Hockey League - Mixed, World, Amur, CSKA
+65a40ccb-aec4-467f-b6f8-6107237a6f4e, 10084181, 23/09/2026 09:00:00, 23/09/2026 14:00:00,TBS2 Japan [617],Jpn8,Not Set,Stats Perform,Baseball, Japan - NPB - Male, Japan, Yokohama BayStars, Chunichi Dragons
+5a4cb484-657e-4125-a48f-f15767fb8e3a, 10084178, 23/09/2026 09:00:00, 23/09/2026 14:00:00,Gaora – 602,Jpn5,Not Set,Stats Perform,Baseball, Japan - NPB - Male, Japan, Nippon-Ham Fighters, Tohoku Rakuten
+, 10073346, 23/09/2026 09:00:00, 23/09/2026 23:00:00,Stadium Feed,Euro108,CRO_CH26,,Tennis, WTA Ankara, Turkey, , 
+, 10086786, 23/09/2026 09:00:00, 23/09/2026 20:00:00,SuperSport Extra 2 [217],Sa2,Not Set,Legacy,Tennis, Billie Jean King Cup, World, Spain, Kazakhstan
+, 10086079, 23/09/2026 09:00:00, 23/09/2026 18:00:00,Sport 5 Plus - [56],Israel10,Not Set,Legacy,Tennis, Billie Jean King Cup, World, Spain, Kazakhstan
+fc0fa6e2-850b-4797-8b07-235bd041e8b3, 10077422, 23/09/2026 09:30:00, 23/09/2026 12:30:00,Infront,Euro204,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, World - Kontinental Hockey League - Mixed, World, Admiral, Lokomotiv
+d6fda94b-e1ad-4524-af28-e38b602fe2b6, 10080999, 23/09/2026 09:30:00, 23/09/2026 14:30:00,SPOTV2,NewKorea5,Not Set,Stats Perform,Baseball, South Korea - KBO - Male, South Korea, Doosan Bears, KIA Tigers
+d18a428c-cf65-4f9e-a8b9-6bbf6bdfd3d7, 10080998, 23/09/2026 09:30:00, 23/09/2026 14:30:00,SPOTV,NewKorea4,Not Set,Stats Perform,Baseball, South Korea - KBO - Male, South Korea, KT Wiz, NC Dinos
+a2861e63-b240-4018-800a-6fdc6b4b002d, 10077331, 23/09/2026 09:30:00, 23/09/2026 12:30:00,Infront,Euro202,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, World - Kontinental Hockey League - Mixed, World, Admiral, Lokomotiv
+8c23a3db-ddf2-4351-9af2-2947c2111e6e, 10080473, 23/09/2026 09:30:00, 23/09/2026 12:00:00,ESPN 1 Aus [509],Aus2,Not Set,Stats Perform,Basketball, Australia - NBL - Male, Australia, Cairns Taipans, Tasmania JackJumpers
+8bfd4924-9b91-404c-b147-9b1e176b5bb4, 10080992, 23/09/2026 09:30:00, 23/09/2026 14:30:00,KBSN Sports,NewKorea1,Not Set,Stats Perform,Baseball, South Korea - KBO - Male, South Korea, Hanwha Eagles, Lotte Giants
+, 10073361, 23/09/2026 10:00:00, 23/09/2026 23:00:00,Stadium Feed,Euro109,CRO_CH27,,Tennis, WTA Ankara, Turkey, , 
+, 10079528, 23/09/2026 10:00:00, 23/09/2026 23:00:00,Stadium Feed,Euro106,CRO_CH04,Legacy,Tennis, WTA Porto Open, Portugal, , 
+, 10079529, 23/09/2026 10:00:00, 23/09/2026 23:00:00,Stadium Feed,Euro107,CRO_CH05,Legacy,Tennis, WTA Porto Open, Portugal, , 
+, 10073387, 23/09/2026 10:00:00, 23/09/2026 23:00:00,Stadium Feed,Euro110,CRO_CH28,,Tennis, WTA Ankara, Turkey, , 
+, 10072817, 23/09/2026 10:00:00, 24/09/2026 00:15:00,Stadium Feed,Euro105,CRO_CH02,Legacy,Tennis, WTA Tolentino, Italy, , 
+, 10072819, 23/09/2026 10:00:00, 23/09/2026 23:15:00,Stadium Feed,Euro104,CRO_CH01,Legacy,Tennis, WTA Tolentino, Italy, , 
+10418f35-9c78-4ab0-9ac3-0864643f0f62, 10086844, 23/09/2026 10:30:00, 23/09/2026 13:00:00,beIN Sport 3 - ME [005],Israel7,Not Set,Stats Perform,Soccer, Asia - Asian Games - Male, Asia, Kyrgyz Republic U23, Hong Kong
+, 10086449, 23/09/2026 10:30:00, 23/09/2026 16:30:00,TVP Sport [183],Euro15,EPOL,Legacy,Boxing, Europe Championship, Europe, , 
+2c05eaf3-81e7-4116-a1b4-9219b9282e89, 10079360, 23/09/2026 11:30:00, 23/09/2026 14:00:00,Stadium Feed,Euro101,ADC_CH03,Stats Perform,Basketball, World - FIBA Intercontinental Cup - Male, World, Beijing Royal Fighters, NBA G League United
+, 10083680, 23/09/2026 12:00:00, 23/09/2026 18:00:00,Eurosport Norway HD,Euro66,SCAND-6 N,Legacy,Cycling, Tour of Croatia, Croatia, , 
+, 10058614, 23/09/2026 12:00:00, 23/09/2026 23:00:00,Stadium Feed,Euro129,UZO_CH01,Legacy,Darts, PDC Players Championship, England, , 
+, 10058615, 23/09/2026 12:00:00, 23/09/2026 23:00:00,Stadium Feed,Euro130,UZO_CH02,Legacy,Darts, PDC Players Championship, England, , 
+, 10058616, 23/09/2026 12:00:00, 23/09/2026 23:00:00,Stadium Feed,Euro131,UZO_CH03,Legacy,Darts, PDC Players Championship, England, , 
+, 10058617, 23/09/2026 12:00:00, 23/09/2026 23:00:00,Stadium Feed,Euro132,UZO_CH04,Legacy,Darts, PDC Players Championship, England, , 
+05d1b7e4-3592-488a-a44f-cfe930e5bbc5, 10076453, 23/09/2026 13:00:00, 23/09/2026 15:30:00,Stadium Feed,Euro102,ADC_CH18,Stats Perform,Soccer, World - FIFA U20 Women's World Cup - Female, World, Italy U20, Spain U20
+be52d545-87f1-408b-b9df-bc55e0a2a11d, 10077423, 23/09/2026 14:00:00, 23/09/2026 17:00:00,Infront,Euro207,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, World - Kontinental Hockey League - Mixed, World, Salavat Yulaev, Metallurg Mg
+3e68444d-0f5b-4670-90e4-7be4a20feaff, 10084993, 23/09/2026 14:00:00, 23/09/2026 17:00:00,KHL,Russia3,Not Set,Stats Perform,Ice Hockey, Russia - MHL - Male, Russia, Snezhnye Barsy U20, Omskye Yastreby U20
+283c3bc5-8133-4a9b-a19e-6eaa9fd14ecd, 10083585, 23/09/2026 14:00:00, 23/09/2026 16:30:00,Yes Sport 1 - [63],Israel11,POL-1,Stats Perform,Volleyball, Europe - European Championship - Male, Europe, Belgium, Slovenia
+0935de6d-5f16-4434-aa80-f575ec0416fa, 10077332, 23/09/2026 14:00:00, 23/09/2026 17:00:00,Infront,Euro206,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, World - Kontinental Hockey League - Mixed, World, Salavat Yulaev, Metallurg Mg
+, 10083301, 23/09/2026 14:00:00, 24/09/2026 07:00:00,WFAN Sports Radio [101.9],Us28,Not Set,Legacy,Special, News & Live Sport, United States, , 
+, 10083316, 23/09/2026 14:00:00, 24/09/2026 07:00:00,Fox Sports Radio New Jersey [95.9],Us29,Not Set,Legacy,Special, News & Live Sport, United States, , 
+00512a37-04fa-44e6-8fb9-fa12c9376c7b, 10083736, 23/09/2026 14:30:00, 23/09/2026 17:00:00,Sportdigital Fussball HD [241],Euro28,GER-4,Stats Perform,Soccer, Asia - Gulf Cup of Nations - Male, Asia, Iraq, Oman
+90809d47-5d76-4af8-94c0-5601832a068b, 10087641, 23/09/2026 14:40:00, 23/09/2026 17:10:00,Stadium Feed,Euro120,FIF_CH08,Stats Perform,Soccer, United Arab Emirates - Presidents Cup - Male, United Arab Emirates, Al Jazira Al Hamra, Forte Virtus
+5b993da0-f21b-4908-b1c7-464a8e42863e, 10087640, 23/09/2026 14:40:00, 23/09/2026 17:10:00,Stadium Feed,Euro121,FIF_CH09,Stats Perform,Soccer, United Arab Emirates - Presidents Cup - Male, United Arab Emirates, Al Arabi, Emirates
+341ffeda-340c-4724-aaf7-1f1e10a4a70b, 10087965, 23/09/2026 14:40:00, 23/09/2026 17:10:00,Stadium Feed,Euro1,Not Set,Stats Perform,Soccer, United Arab Emirates - Presidents Cup - Male, United Arab Emirates, Gulf United, Fujairah
+0976b9c2-b97e-4839-ad76-3ec07cb491fd, 10087639, 23/09/2026 14:40:00, 23/09/2026 17:10:00,Stadium Feed,Euro119,FIF_CH07,Stats Perform,Soccer, United Arab Emirates - Presidents Cup - Male, United Arab Emirates, Al Bataeh, Palm City 365
+, 10086450, 23/09/2026 15:00:00, 23/09/2026 21:00:00,TVP Sport [183],Euro15,EPOL,Legacy,Boxing, Europe Championship, Europe, , 
+fd9a57ea-189d-4ad4-8eb3-159870b0738b, 10081023, 23/09/2026 15:30:00, 23/09/2026 18:30:00,Stadium Feed,Euro134,XVI_CH06,Stats Perform,Ice Hockey, Europe - Baltic Championship - Male, Europe, Liepaja, Kyiv Capitals
+c6ad95cb-18ca-42ae-82d4-8346dfd59b57, 10084102, 23/09/2026 15:30:00, 23/09/2026 18:30:00,Stadium Feed,Euro136,XVI_CH08,Stats Perform,Ice Hockey, Slovakia - 1. Liga - Male, Slovakia, Skalica, Humenne
+a344c311-0402-4eb7-918c-0493250e4123, 10076277, 23/09/2026 15:30:00, 23/09/2026 18:30:00,Infront,Euro203,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, Finland - Finnish Liiga - Mixed, Finland, HIFK, Karpat
+a20f3795-e80f-4254-ad87-13246fde4192, 10084096, 23/09/2026 15:30:00, 23/09/2026 18:30:00,Stadium Feed,Euro135,XVI_CH07,Stats Perform,Ice Hockey, Slovakia - 1. Liga - Male, Slovakia, Gladiators Trnava, HK Detva
+71c3ec0c-3604-4652-a843-ea3d6b206b57, 10076276, 23/09/2026 15:30:00, 23/09/2026 18:30:00,Infront,Euro202,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, Finland - Finnish Liiga - Mixed, Finland, Sport, K-Espoo
+71acbd9b-ce8e-48e0-9e88-6f9d537c17d2, 10076275, 23/09/2026 15:30:00, 23/09/2026 18:30:00,Infront,Euro201,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, Finland - Finnish Liiga - Mixed, Finland, SaiPa, Assat
+6aff1d5b-7fe5-4b0e-a538-11ebdb33ede4, 10076279, 23/09/2026 15:30:00, 23/09/2026 18:30:00,Infront,Euro205,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, Finland - Finnish Mestis - Mixed, Finland, IPK, Hermes
+0ae79bd3-d5f3-40dc-a7fa-893f92f81b97, 10076278, 23/09/2026 15:30:00, 23/09/2026 18:30:00,Infront,Euro204,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, Finland - Finnish Liiga - Mixed, Finland, KooKoo, KalPa
+65dbb680-8cd4-44e5-8d62-a03eaab502be, 10086075, 23/09/2026 15:40:00, 23/09/2026 18:10:00,Sport 5 - [55],Israel9,Not Set,Stats Perform,Basketball, Israel - Premier League Cup - Male, Israel, Hapoel Holon, Maccabi Ramat Gan
+f0f41976-6ce4-4f12-90a6-214055036a26, 10086748, 23/09/2026 16:00:00, 23/09/2026 18:30:00,464 - UDN,Us10,Not Set,Stats Perform,Soccer, United States - USL Championship - Male, United States, Birmingham Legion, Brooklyn
+f023b87d-dbe4-48be-a251-2719b810b820, 10076890, 23/09/2026 16:00:00, 23/09/2026 19:00:00,Infront,Euro226,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, World - Czech 2. Liga - Mixed, World, Havl. Brod, Usti
+ed26e2e1-ed41-4914-b8bd-05b2b07613f3, 10076879, 23/09/2026 16:00:00, 23/09/2026 19:00:00,Infront,Euro215,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, World - Czech 2. Liga - Mixed, World, Prostejov 1913, Uhersky Brod
+e8698841-b94f-4df4-be02-7600b1939500, 10076883, 23/09/2026 16:00:00, 23/09/2026 19:00:00,Infront,Euro219,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, World - Czech 2. Liga - Mixed, World, Znojmo, Valasske Mezirici
+e32f2829-d3f8-4d4c-b75b-57b54ec57cfc, 10076886, 23/09/2026 16:00:00, 23/09/2026 19:00:00,Infront,Euro222,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, World - Czech 2. Liga - Mixed, World, Kobra Praha, Cheb
+b7b53691-797d-4f00-bfaf-ec2ff9b612c0, 10078132, 23/09/2026 16:00:00, 23/09/2026 18:30:00,Infront,Euro211,IGM_INF_DSC_DEFAULT,InFront Streaming,Basketball, World - Slovenian Basketball League - Mixed, World, Perspektiva Ilirija, Gorica
+b44016f3-c32e-4f19-84ee-d791c1930220, 10076884, 23/09/2026 16:00:00, 23/09/2026 19:00:00,Infront,Euro220,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, World - Czech 2. Liga - Mixed, World, Decin, Pribram
+b3501cb4-9840-462e-9503-1ab252eea860, 10084100, 23/09/2026 16:00:00, 23/09/2026 19:00:00,Stadium Feed,Euro138,XVI_CH10,Stats Perform,Ice Hockey, Slovakia - 1. Liga - Male, Slovakia, Topolcany, Spartak Dubnica
+93f0e4c4-8f06-47a2-a2da-af786105b584, 10084095, 23/09/2026 16:00:00, 23/09/2026 19:00:00,Stadium Feed,Euro137,XVI_CH09,Stats Perform,Ice Hockey, Slovakia - 1. Liga - Male, Slovakia, Nove Zamky, Martin
+9082d259-4ade-49eb-a140-b91b0f9282ab, 10076880, 23/09/2026 16:00:00, 23/09/2026 19:00:00,Infront,Euro216,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, World - Czech 2. Liga - Mixed, World, Koprivnice, SHKM Hodonin
+7eb4f6cb-d549-400e-9ad3-d2e804e955e6, 10076888, 23/09/2026 16:00:00, 23/09/2026 19:00:00,Infront,Euro224,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, World - Czech 2. Liga - Mixed, World, Mostecti Ivi, Kadan
+7dcdda94-74b6-40a5-beb0-843e9f2cc778, 10076878, 23/09/2026 16:00:00, 23/09/2026 19:00:00,Infront,Euro214,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, World - Czech 2. Liga - Mixed, World, Kromeriz, Opava
+70a50956-945c-4fcf-acd7-438165fffb0e, 10076877, 23/09/2026 16:00:00, 23/09/2026 19:00:00,Infront,Euro213,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, World - Czech 2. Liga - Mixed, World, Novy Jicin, Jestrabi Prostejov
+401f680d-3c2a-4230-99a5-80dec246b821, 10085052, 23/09/2026 16:00:00, 23/09/2026 18:30:00,Sporting TV [36],Euro83,MEO 1,Stats Perform,Soccer, Europe - UEFA Women's Europa Cup - Female, Europe, Brøndby, Sporting CP
+37830e69-c8a1-47ea-8d71-00edd28130a8, 10087642, 23/09/2026 16:00:00, 23/09/2026 18:30:00,Sport TV 1 [21],Euro84,MEO 2,Stats Perform,Soccer, World - Friendlies - Male, World, Gibraltar, Sao Tome e Principe
+28ec1c0c-3f66-4dca-9dfb-f03f51dd543a, 10079356, 23/09/2026 16:00:00, 23/09/2026 18:30:00,Stadium Feed,Euro115,FIB_CH01,Stats Perform,Basketball, Europe - Euroleague (W) - Female, Europe, Vilniaus Kibirkstis, AZS Poznan
+02797505-928e-4e8c-9ba1-481d5df6d6e7, 10079355, 23/09/2026 16:00:00, 23/09/2026 18:30:00,Stadium Feed,Euro116,FIB_CH02,Stats Perform,Basketball, Europe - Euroleague (W) - Female, Europe, Zabiny Brno, Crvena Zvezda
+014196d5-8ec3-4248-b5a8-31ac9d2d7258, 10076889, 23/09/2026 16:00:00, 23/09/2026 19:00:00,Infront,Euro225,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, World - Czech 2. Liga - Mixed, World, Pisek, Benatky
+0122da73-a97c-4b9e-834a-992f4a638d2a, 10076882, 23/09/2026 16:00:00, 23/09/2026 19:00:00,Infront,Euro218,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, World - Czech 2. Liga - Mixed, World, Velke Mezirici, Poruba
+f6ea87ba-92d6-49ca-bd42-130570701dad, 10081022, 23/09/2026 16:20:00, 23/09/2026 19:20:00,Stadium Feed,Euro139,XVI_CH11,Stats Perform,Ice Hockey, Europe - Baltic Championship - Male, Europe, Mogo, Tallinn Panter
+d61ab704-710f-4cd3-b093-3ec4f9a38c93, 10076881, 23/09/2026 16:30:00, 23/09/2026 19:30:00,Infront,Euro217,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, World - Czech 2. Liga - Mixed, World, Technika Brno, Sumperk
+c9810d98-35be-475f-8f7b-487584c502dc, 10076887, 23/09/2026 16:30:00, 23/09/2026 19:30:00,Infront,Euro223,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, World - Czech 2. Liga - Mixed, World, Kralupy, Zdar nad Sazavou
+9493eae1-f17d-496e-815f-4234a6ace2d3, 10077424, 23/09/2026 16:30:00, 23/09/2026 19:30:00,Infront,Euro229,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, World - Kontinental Hockey League - Mixed, World, Neftekhimik, Lada
+8857d354-6de1-4f9b-8844-d8d8f07bee3b, 10082977, 23/09/2026 16:30:00, 23/09/2026 18:45:00,TV2 Sport Denmark [107],Euro71,SCAND-11,Stats Perform,Handball, Denmark - Cup - Male, Denmark, Nordsjælland, Skjern
+477b29b7-fec4-4d15-9914-f85d4d8966e3, 10076469, 23/09/2026 16:30:00, 23/09/2026 19:00:00,Stadium Feed,Euro102,ADC_CH18,Stats Perform,Soccer, World - FIFA U20 Women's World Cup - Female, World, Korea DPR U20, Colombia U20
+4455a18c-576f-4cab-bc79-420253f26149, 10084088, 23/09/2026 16:30:00, 23/09/2026 19:30:00,Stadium Feed,Euro140,XVI_CH12,Stats Perform,Ice Hockey, Slovakia - 1. Liga - Male, Slovakia, TEBS Bratislava, Povazska Bystrica
+43f6e662-4c34-4b8a-a614-f31a7f67497b, 10085056, 23/09/2026 16:30:00, 23/09/2026 18:45:00,Match Game russia,Russia2,Not Set,Stats Perform,Handball, Russia - Super League - Male, Russia, Zenit St. Petersburg, Medvedi Chekhov
+421f755f-ec52-4778-8e24-af9d521792b0, 10076885, 23/09/2026 16:30:00, 23/09/2026 19:30:00,Infront,Euro221,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, World - Czech 2. Liga - Mixed, World, Milevsko, HC Vrchlabi
+33cf4842-d98b-46a6-b27a-5f2a21bc42e1, 10077333, 23/09/2026 16:30:00, 23/09/2026 19:30:00,Infront,Euro228,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, World - Kontinental Hockey League - Mixed, World, Neftekhimik, Lada
+f44571c6-ce94-4850-92b0-6f66528ce91e, 10085026, 23/09/2026 16:45:00, 23/09/2026 19:15:00,221 - CBSSN,Us5,Not Set,Stats Perform,Soccer, Europe - UEFA Women's Champions League - Female, Europe, Servette Chenois, OL Lyonnes
+6dc423d9-c838-42a9-99a9-76dfad1ef4f2, 10085025, 23/09/2026 16:45:00, 23/09/2026 19:15:00,beIN Sports Xtra 1 - ME,Israel7,Not Set,Stats Perform,Soccer, Europe - UEFA Women's Champions League - Female, Europe, OH Leuven, Roma
+ee90d1cb-a155-4456-9697-79f5a9bbf0fa, 10079215, 23/09/2026 17:00:00, 23/09/2026 20:00:00,Infront,Euro230,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, Sweden - Swedish Hockeyettan - Mixed, Sweden, Nykoping, Hanvikens
+ea46ffe0-bf12-4980-b17d-118fad57067b, 10076286, 23/09/2026 17:00:00, 23/09/2026 20:00:00,Infront,Euro212,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, Sweden - Swedish HockeyAllsvenskan - Mixed, Sweden, Vasteras IK, Sodertalje SK
+c7bc3877-be47-434b-bb5c-5346881fa3ce, 10076281, 23/09/2026 17:00:00, 23/09/2026 20:00:00,Infront,Euro207,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, Sweden - Swedish HockeyAllsvenskan - Mixed, Sweden, Visby/Roma HK, Kalmar HC
+bc29f030-74f3-42a5-96a5-a709bbd81aa6, 10076284, 23/09/2026 17:00:00, 23/09/2026 20:00:00,Infront,Euro210,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, Sweden - Swedish HockeyAllsvenskan - Mixed, Sweden, Ostersunds IK, Almtuna IS
+9c103be6-ccb3-4d09-b1ee-e004ac449d5c, 10079358, 23/09/2026 17:00:00, 23/09/2026 19:30:00,Stadium Feed,Euro117,FIB_CH03,Stats Perform,Basketball, Europe - Euroleague (W) - Female, Europe, Flammes Carolo, KP Brno
+5d34619c-12c2-4bdc-b919-c912d3b2e89f, 10076282, 23/09/2026 17:00:00, 23/09/2026 20:00:00,Infront,Euro208,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, Sweden - Swedish HockeyAllsvenskan - Mixed, Sweden, MoDo Hockey, Mora IK
+59f8d143-ff99-4164-ab89-1bb551342fc2, 10076285, 23/09/2026 17:00:00, 23/09/2026 20:00:00,Infront,Euro211,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, Sweden - Swedish HockeyAllsvenskan - Mixed, Sweden, Vimmerby HC, AIK
+315704d0-d8ed-4088-b1aa-9ac8f65288a2, 10076280, 23/09/2026 17:00:00, 23/09/2026 20:00:00,Infront,Euro206,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, Sweden - Swedish HockeyAllsvenskan - Mixed, Sweden, Nybro Vikings IF, BIK Karlskoga
+1261930e-09c3-4fa5-a53a-41aa1ad134dd, 10076283, 23/09/2026 17:00:00, 23/09/2026 20:00:00,Infront,Euro209,IGM_INF_DSC_DEFAULT,InFront Streaming,Ice Hockey, Sweden - Swedish HockeyAllsvenskan - Mixed, Sweden, Leksands IF, IK Oskarshamn
+118a0864-1f6a-4ffd-90a5-6c7679188e4a, 10078290, 23/09/2026 17:10:00, 23/09/2026 21:10:00,721 - Extra Innings,Us15,Not Set,Stats Perform,Baseball, United States - MLB - Male, United States, Detroit Tigers, Washington Nationals
+, 10084821, 23/09/2026 17:10:00, 23/09/2026 21:10:00,Super Sport ESPN [218],Sa1,Not Set,Stats Perform,Baseball, United States - MLB - Male, United States, Detroit Tigers, Washington Nationals
+b8a69adf-0901-4c2e-a805-380747ba421e, 10084937, 23/09/2026 17:15:00, 23/09/2026 20:15:00,ORF Sports [755],Euro27,GER-3,Stats Perform,Ice Hockey, Austria - ICE Hockey League - Male, Austria, KAC, Villach
+9fa02d7f-5554-4e71-994b-1e3f9f49f54f, 10086078, 23/09/2026 17:30:00, 23/09/2026 20:00:00,Sport 5 Live - [58],Israel10,Not Set,Stats Perform,Basketball, Europe - Eurocup Women - Female, Europe, Proteas Voulas, Elitzur Ramla
+eee19fa3-59fb-48e6-8f5e-381a879dcded, 10083831, 23/09/2026 18:00:00, 23/09/2026 20:30:00,Stadium Feed,Euro1,Not Set,Stats Perform,Soccer, England - Players Cup - Female, England, Tottenham Hotspur, West Ham United
+ddc2d575-9a1d-4fe8-a18a-05232c2c4dee, 10083830, 23/09/2026 18:00:00, 23/09/2026 20:30:00,Stadium Feed,Euro1,Not Set,Stats Perform,Soccer, England - Players Cup - Female, England, Liverpool, Sunderland
+a45277dd-22db-4964-9a05-78fbcba28e67, 10083827, 23/09/2026 18:00:00, 23/09/2026 20:30:00,Stadium Feed,Euro1,Not Set,Stats Perform,Soccer, England - Players Cup - Female, England, Everton, Birmingham City
+909f3712-b039-49e9-b012-e34ceab63cba, 10083826, 23/09/2026 18:00:00, 23/09/2026 20:30:00,Stadium Feed,Euro1,Not Set,Stats Perform,Soccer, England - Players Cup - Female, England, Crystal Palace, Watford
+47b25843-60b5-4ad7-b2b3-b914eb805ee6, 10083737, 23/09/2026 18:00:00, 23/09/2026 20:30:00,Sportdigital Fussball HD [241],Euro28,GER-4,Stats Perform,Soccer, Asia - Gulf Cup of Nations - Male, Asia, Saudi Arabia, Kuwait
+456a7f43-3c2e-4ce1-9a44-464503c6cb7e, 10083821, 23/09/2026 18:00:00, 23/09/2026 20:30:00,Stadium Feed,Euro1,Not Set,Stats Perform,Soccer, England - Players Cup - Female, England, Nottingham Forest, Aston Villa
+092f04d9-bb31-46c6-ba56-1317979958b8, 10083820, 23/09/2026 18:00:00, 23/09/2026 20:30:00,Stadium Feed,Euro1,Not Set,Stats Perform,Soccer, England - Players Cup - Female, England, Manchester United, Sheffield United
+acb03677-26dc-41f8-8692-cf1005aca240, 10077016, 23/09/2026 18:15:00, 23/09/2026 20:30:00,Infront,Euro227,IGM_INF_DSC_DEFAULT,InFront Streaming,Handball, World - Polish Superliga - Mixed, World, Kalisz, Ostrow Wielkopolski
+f482434b-f060-4a00-b62b-edd33587c1de, 10082978, 23/09/2026 18:30:00, 23/09/2026 20:45:00,TV2 Sport Denmark [107],Euro71,SCAND-11,Stats Perform,Handball, Denmark - Cup - Male, Denmark, HØJ, Aalborg
+e7546ac6-bf0e-40bd-8f0b-18eca1b99957, 10084075, 23/09/2026 18:30:00, 23/09/2026 21:00:00,Infront,Euro202,IGM_INF_DSC_DEFAULT,InFront Streaming,Soccer, World - Uruguay Copa - Mixed, World, Liverpool, Colon
+b71bd5f4-f95b-4899-9e1f-5db8a8432ea5, 10077870, 23/09/2026 18:30:00, 23/09/2026 21:30:00,Stadium Feed,Euro141,XVI_CH13,Stats Perform,Ice Hockey, United Kingdom - Elite League - Male, United Kingdom, Guildford Flames, Sheffield Steelers
+9687877f-0fca-4dcd-8582-6220ded3e97f, 10079357, 23/09/2026 18:30:00, 23/09/2026 21:00:00,Stadium Feed,Euro118,FIB_CH04,Stats Perform,Basketball, Europe - Euroleague (W) - Female, Europe, Panathinaikos, Emlak Konut
+93b4114b-f48f-4811-b7af-3fe2c6c7aa33, 10084074, 23/09/2026 18:30:00, 23/09/2026 21:00:00,Infront,Euro201,IGM_INF_DSC_DEFAULT,InFront Streaming,Soccer, World - Uruguay Copa - Mixed, World, Boston River, Fenix
+8e8bb91b-fdfb-4303-b233-625379751b16, 10077869, 23/09/2026 18:30:00, 23/09/2026 21:30:00,Stadium Feed,Euro142,XVI_CH14,Stats Perform,Ice Hockey, United Kingdom - Elite League - Male, United Kingdom, Manchester Storm, Glasgow Clan
+7ca11eaa-6f3c-4fb1-8e91-dc19b410787a, 10083824, 23/09/2026 18:30:00, 23/09/2026 21:00:00,Stadium Feed,Euro1,Not Set,Stats Perform,Soccer, England - Players Cup - Female, England, Leicester City, London City Lionesses
+51d7be7f-2b9d-471b-80dc-21f12fe100d0, 10083822, 23/09/2026 18:45:00, 23/09/2026 21:15:00,Stadium Feed,Euro1,Not Set,Stats Perform,Soccer, England - Players Cup - Female, England, Brighton & Hove Albion, Charlton Athletic
+9e4aaa4e-4920-4553-8c7d-77937c6f7d9c, 10083704, 23/09/2026 19:00:00, 23/09/2026 21:30:00,L Equipe [79/321] SD,Euro18,FRA-1,Stats Perform,Soccer, Europe - UEFA Women's Champions League - Female, Europe, Barcelona, Paris FC
+9d4e8e6b-4c26-4d12-8df9-75e8826bb9fb, 10080055, 23/09/2026 19:00:00, 23/09/2026 21:30:00,Stadium Feed,Euro124,MPR_CH01,Stats Perform,Soccer, N/C America - Concacaf Nations League - Male, N/C America, Turks and Caicos Islands, Montserrat
+9a260fc3-6419-4160-bb58-8729909d6c56, 10083864, 23/09/2026 19:00:00, 23/09/2026 21:30:00,beIN Sports Xtra 1 - ME,Israel7,Not Set,Stats Perform,Soccer, Europe - UEFA Women's Champions League - Female, Europe, Chelsea, Austria Wien
+115eebc1-ea94-48c0-8b98-2e6d4f8b6572, 10082992, 23/09/2026 19:00:00, 23/09/2026 21:30:00,Stadium Feed,Euro127,SMP_CH08,Stats Perform,Soccer, Paraguay - Copa Paraguay - Male, Paraguay, Sportivo San Lorenzo, 4 de Mayo
+, 10085109, 23/09/2026 19:00:00, 23/09/2026 21:30:00,NRK 2 [2],Euro62,SCAND-2 N,Stats Perform,Soccer, Europe - UEFA Women's Champions League - Female, Europe, Barcelona, Paris FC
+86ce824f-a822-4505-8194-a355a5e51d02, 10083586, 23/09/2026 19:05:00, 23/09/2026 21:35:00,Yes Sport 1 - [63],Israel11,POL-1,Stats Perform,Volleyball, Europe - European Championship - Male, Europe, Italy, Finland
+9a780a7e-38dc-41dc-aa4f-935a88facb59, 10085260, 23/09/2026 19:30:00, 23/09/2026 21:45:00,Benfica TV [28],Euro83,MEO 1,Stats Perform,Handball, Portugal - Campeonato 1 - Male, Portugal, Benfica, Avanca
+3c52fd7c-9384-48b7-9e19-139b21867654, 10078295, 23/09/2026 19:45:00, 23/09/2026 23:45:00,696 - NBCSBA,Us7,Not Set,Stats Perform,Baseball, United States - MLB - Male, United States, San Francisco Giants, Minnesota Twins
+, 10084822, 23/09/2026 19:45:00, 23/09/2026 23:45:00,Super Sport ESPN [218],Sa1,Not Set,Stats Perform,Baseball, United States - MLB - Male, United States, San Francisco Giants, Minnesota Twins
+, 10084956, 23/09/2026 19:58:00, 24/09/2026 03:58:00,RTE 1 [101],Euro49,SKYIE-1,Legacy,Other, Irish Lotto, Republic of Ireland, , 
+9f3b6b50-cdfe-4fe7-abce-bb750bdf5620, 10075018, 23/09/2026 20:00:00, 23/09/2026 22:30:00,Stadium Feed,Euro123,LVM_CH15,Stats Perform,Soccer, Peru - Liga 1 - Male, Peru, ADT, Cienciano
+3f3c4704-519d-4234-bcd1-5591bbc642c0, 10080041, 23/09/2026 20:00:00, 23/09/2026 22:30:00,Stadium Feed,Euro125,MPR_CH02,Stats Perform,Soccer, N/C America - Concacaf Nations League - Male, N/C America, Bahamas, Saint Martin
+8479befe-d172-4b59-8431-3f2a26fe5374, 10082995, 23/09/2026 21:30:00, 24/09/2026 00:00:00,Stadium Feed,Euro128,SMP_CH09,Stats Perform,Soccer, Paraguay - Copa Paraguay - Male, Paraguay, Fernando de la Mora, Libertad
+2e16f411-d74c-42a2-bd78-4f2f5d47c5e2, 10078293, 23/09/2026 22:35:00, 24/09/2026 02:35:00,301 SNE,Us23,Not Set,Stats Perform,Baseball, United States - MLB - Male, United States, Baltimore Orioles, Toronto Blue Jays
+a172393e-f624-4b02-8b45-9948f01ecda2, 10078300, 23/09/2026 22:40:00, 24/09/2026 02:40:00,725 - Extra Innings,Us16,Not Set,Stats Perform,Baseball, United States - MLB - Male, United States, Philadelphia Phillies, Milwaukee Brewers
+2041e98e-bc00-493c-ba9b-ba8ebf1f4f2a, 10078291, 23/09/2026 22:40:00, 24/09/2026 02:40:00,659 - ATTPT Root Sports,Us13,Not Set,Stats Perform,Baseball, United States - MLB - Male, United States, Pittsburgh Pirates, St. Louis Cardinals
+506ef486-9bc4-4693-aa75-0d353af273e1, 10084077, 23/09/2026 23:00:00, 24/09/2026 01:30:00,Infront,Euro203,IGM_INF_DSC_DEFAULT,InFront Streaming,Soccer, World - Uruguay Copa - Mixed, World, Wanderers, Cerrito
+3b8d6602-6330-4bc1-9dc4-53088612338b, 10084076, 23/09/2026 23:00:00, 24/09/2026 01:30:00,Infront,Euro202,IGM_INF_DSC_DEFAULT,InFront Streaming,Soccer, World - Uruguay Copa - Mixed, World, Hill, Dep. Maldonado
+17a16529-6b9b-46f2-95dd-56f684a345d0, 10086755, 23/09/2026 23:00:00, 24/09/2026 02:00:00,315 TSN 5,Us21,Not Set,Stats Perform,Ice Hockey, United States - NHL - Male, United States, Ottawa Senators, Toronto Maple Leafs
+094501b8-a1ae-4363-b1c4-f6cde8e502c0, 10080034, 23/09/2026 23:00:00, 24/09/2026 01:30:00,Stadium Feed,Euro126,MPR_CH03,Stats Perform,Soccer, N/C America - Concacaf Nations League - Male, N/C America, Aruba, Antigua and Barbuda
+, 10086759, 23/09/2026 23:00:00, 24/09/2026 01:30:00,319 BIGTEN -S,Us24,Not Set,Legacy,Volleyball, Women's College Volleyball, United States, Missouri, Nebraska
+, 10086763, 23/09/2026 23:00:00, 24/09/2026 01:30:00,611 - SEC Network,Us11,Not Set,Legacy,Volleyball, Women's College Volleyball, United States, Georgia, South Carolina
+, 10086767, 23/09/2026 23:00:00, 24/09/2026 01:30:00,612 ACC,Us12,Not Set,Legacy,Volleyball, Women's College Volleyball, United States, Florida State, Miami
+ac5a41ec-366f-405f-b11d-6f2c07384869, 10078302, 23/09/2026 23:05:00, 24/09/2026 03:05:00,733 - Extra Innings,Us19,Not Set,Stats Perform,Baseball, United States - MLB - Male, United States, New York Yankees, Tampa Bay Rays
+a1de1c3c-03ee-45c4-8ea6-5916ce252303, 10078301, 23/09/2026 23:10:00, 24/09/2026 03:10:00,206 -ESPN 1,Us1,Not Set,Stats Perform,Baseball, United States - MLB - Male, United States, Boston Red Sox, Cleveland Guardians
+c1e39462-144b-4061-be64-f1d4c01d6c4f, 10078304, 23/09/2026 23:15:00, 24/09/2026 03:15:00,730 - Extra Innings,Us20,Not Set,Stats Perform,Baseball, United States - MLB - Male, United States, Atlanta Braves, Cincinnati Reds
+5e47178c-9ba2-43a6-8eda-a3c5658309e8, 10084448, 23/09/2026 23:30:00, 24/09/2026 02:00:00,Stadium Feed,Euro133,WBD_CH03,Stats Perform,Soccer, Chile - Copa Chile - Male, Chile, Union La Calera, Universidad Catolica
+b8201c97-d893-490c-844c-ccff4059af1d, 10078303, 23/09/2026 23:40:00, 24/09/2026 03:40:00,665 - NBCSCH,Us18,Not Set,Stats Perform,Baseball, United States - MLB - Male, United States, Kansas City Royals, Chicago White Sox
+5195759d-a54b-451d-bc51-9cffef0632a0, 10078296, 23/09/2026 23:40:00, 24/09/2026 03:40:00,664 - FSDPLS,Us8,Not Set,Stats Perform,Baseball, United States - MLB - Male, United States, Chicago Cubs, Miami Marlins

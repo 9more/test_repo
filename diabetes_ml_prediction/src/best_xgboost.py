@@ -39,8 +39,6 @@ results_df = pd.DataFrame(results)
 
 best_threshold = results_df.loc[results_df["f1"].idxmax()]
 
-joblib.dump(best_threshold, DESTINATION_DIR / "threshold.joblib")
-
 print(f"Best threshold saved to, {DESTINATION_DIR}")
 
 print(best_threshold)

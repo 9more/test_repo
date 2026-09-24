@@ -1,13 +1,18 @@
 import joblib
 
+threshold = 0.15
+
 churn_model = joblib.load("backend/models/churn/churn_model.joblib")
+joblib.dump(threshold, "backend/models/churn/threshold.joblib")
+thresh = joblib.load("backend/models/churn/threshold.joblib")
 
-readmission_model = joblib.load("backend/models/readmission/readmission_model.joblib")
 
-threshold = joblib.load("backend/models/readmission/threshold.joblib")
+print("=" * 60)
+print("printing readmission model:")
+print(readmit)
+print("=" * 60, "\n")
 
-print("Churn model:", type(churn_model))
-print("Readmission model:", type(readmission_model))
-print("Threshold:", threshold)
-print(churn_model)
-print(readmission_model)
+print("=" * 60)
+print("printing threshold:")
+print(thresh)
+print("=" * 60, "\n")
