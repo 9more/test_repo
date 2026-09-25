@@ -16,15 +16,20 @@ def prediction():
             return jsonify({"error": "Request body is required"}), 400
 
         model_name = data.get("model")
+
         features = data.get("features")
+
+        encounter_id = data.get("encounter_id")
 
         if not model_name:
             return jsonify({"error": "Model name is required"}), 400
 
-        if not features:
-            return jsonify({"error": "Features are required"}), 400
+        if features is None and encounter_id is None:
+            return jsonify({"error": "Features or encounter_id are required"}), 400
 
-        result = predict(model_name, features)
+        result = predict(
+            model_name=model_name, features=features, encounter_id=encounter_id
+        )
 
         return jsonify(result)
 
