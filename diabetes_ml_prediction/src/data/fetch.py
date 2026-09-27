@@ -12,6 +12,8 @@ ids = diabetes.data.ids
 
 df = pd.concat([ids, diabetes.data.features, diabetes.data.targets], axis=1)
 
+df.to_csv("src/data.csv")
+
 print(df.shape)
 print(df.columns.tolist())
 

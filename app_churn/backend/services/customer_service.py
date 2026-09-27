@@ -86,3 +86,66 @@ def create_customer_features(customer_id, features):
     connection.close()
 
     return feature_record_id
+
+
+def get_customer_features(customer_id):
+
+    connection = get_connection()
+    cursor = connection.cursor()
+
+    query = """
+        SELECT
+            eqpdays,
+            months,
+            change_mou,
+            totmrc_mean,
+            mou_mean,
+            avgqty,
+            asl_flag,
+            change_rev,
+            hnd_price,
+            mou_cvce_mean,
+            avg3mou,
+            uniqsubs,
+            crclscod,
+            refurb_new,
+            totcalls
+
+        FROM customer_features
+
+        WHERE customer_id = %s
+
+        ORDER BY created_at DESC
+
+        LIMIT 1;
+    """
+
+    cursor.execute(query, (customer_id,))
+
+    row = cursor.fetchone()
+
+    cursor.close()
+    connection.close()
+
+    if row is None:
+        return None
+
+    columns = [
+        "eqpdays",
+        "months",
+        "change_mou",
+        "totmrc_Mean",
+        "mou_Mean",
+        "avgqty",
+        "asl_flag",
+        "change_rev",
+        "hnd_price",
+        "mou_cvce_Mean",
+        "avg3mou",
+        "uniqsubs",
+        "crclscod",
+        "refurb_new",
+        "totcalls",
+    ]
+
+    return dict(zip(columns, row))
