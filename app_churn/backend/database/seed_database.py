@@ -1,8 +1,6 @@
 import pandas as pd
 
-from database.connection import get_connection
-
-
+from connection import get_connection
 
 CHURN_DATASET = (
     "/Users/imohekpenyong/test_repo/"
@@ -10,14 +8,11 @@ CHURN_DATASET = (
 )
 
 READMISSION_DATASET = (
-    "/Users/imohekpenyong/test_repo/"
-    "diabetes_ml_prediction/src/data.csv"
+    "/Users/imohekpenyong/test_repo/" "diabetes_ml_prediction/src/data.csv"
 )
 
 
-
 SAMPLE_SIZE = 10_000
-
 
 
 CHURN_FEATURES = [
@@ -35,7 +30,7 @@ CHURN_FEATURES = [
     "uniqsubs",
     "crclscod",
     "refurb_new",
-    "totcalls"
+    "totcalls",
 ]
 
 
@@ -50,7 +45,7 @@ READMISSION_NUMERIC = [
     "number_outpatient",
     "number_emergency",
     "number_inpatient",
-    "number_diagnoses"
+    "number_diagnoses",
 ]
 
 READMISSION_CATEGORICAL = [
@@ -89,15 +84,11 @@ READMISSION_CATEGORICAL = [
     "metformin-rosiglitazone",
     "metformin-pioglitazone",
     "change",
-    "diabetesMed"
+    "diabetesMed",
 ]
 
 
-READMISSION_FEATURES = (
-    READMISSION_NUMERIC
-    + READMISSION_CATEGORICAL
-)
-
+READMISSION_FEATURES = READMISSION_NUMERIC + READMISSION_CATEGORICAL
 
 
 def clean_value(value):
@@ -107,26 +98,18 @@ def clean_value(value):
 
     return value
 
+
 def seed_churn():
 
     print("\nLoading churn dataset...")
 
-    df = pd.read_csv(
-        CHURN_DATASET
-    )
+    df = pd.read_csv(CHURN_DATASET)
 
-    print(
-        f"Original churn rows: {len(df)}"
-    )
+    print(f"Original churn rows: {len(df)}")
 
-    df = df.sample(
-        n=SAMPLE_SIZE,
-        random_state=42
-    )
+    df = df.sample(n=SAMPLE_SIZE, random_state=42)
 
-    print(
-        f"Selected churn rows: {len(df)}"
-    )
+    print(f"Selected churn rows: {len(df)}")
 
     connection = get_connection()
     cursor = connection.cursor()
@@ -138,12 +121,10 @@ def seed_churn():
 
         for _, row in df.iterrows():
 
-            cursor.execute(
-                """
+            cursor.execute("""
                 INSERT INTO customers DEFAULT VALUES
                 RETURNING customer_id;
-                """
-            )
+                """)
 
             customer_id = cursor.fetchone()[0]
 
@@ -153,9 +134,7 @@ def seed_churn():
 
             for feature in CHURN_FEATURES:
 
-                values.append(
-                    clean_value(row[feature])
-                )
+                values.append(clean_value(row[feature]))
             cursor.execute(
                 """
                 INSERT INTO customer_features (
@@ -183,24 +162,16 @@ def seed_churn():
                     %s
                 );
                 """,
-                (
-                    customer_id,
-                    *values
-                )
+                (customer_id, *values),
             )
 
             feature_count += 1
 
         connection.commit()
 
-        print(
-            f"Customers inserted: {customer_count}"
-        )
+        print(f"Customers inserted: {customer_count}")
 
-        print(
-            f"Customer feature records inserted: "
-            f"{feature_count}"
-        )
+        print(f"Customer feature records inserted: " f"{feature_count}")
 
     except Exception:
 
@@ -214,65 +185,31 @@ def seed_churn():
         connection.close()
 
 
-
-
 def seed_readmission():
 
     print("\nLoading readmission dataset...")
 
-    df = pd.read_csv(
-        READMISSION_DATASET
-    )
+    df = pd.read_csv(READMISSION_DATASET)
 
-    print(
-        f"Original readmission rows: {len(df)}"
-    )
+    print(f"Original readmission rows: {len(df)}")
 
+    positive = df[df["readmitted"] == "<30"]
 
-    positive = df[
-        df["readmitted"] == "<30"
-    ]
+    negative = df[df["readmitted"] != "<30"]
 
-    negative = df[
-        df["readmitted"] != "<30"
-    ]
+    positive_sample_size = round(SAMPLE_SIZE * len(positive) / len(df))
 
-    positive_sample_size = round(
-        SAMPLE_SIZE * len(positive) / len(df)
-    )
+    negative_sample_size = SAMPLE_SIZE - positive_sample_size
 
-    negative_sample_size = (
-        SAMPLE_SIZE - positive_sample_size
-    )
+    positive_sample = positive.sample(n=positive_sample_size, random_state=42)
 
-    positive_sample = positive.sample(
-        n=positive_sample_size,
-        random_state=42
-    )
+    negative_sample = negative.sample(n=negative_sample_size, random_state=42)
 
-    negative_sample = negative.sample(
-        n=negative_sample_size,
-        random_state=42
-    )
+    df = pd.concat([positive_sample, negative_sample]).sample(frac=1, random_state=42)
 
-    df = pd.concat(
-        [
-            positive_sample,
-            negative_sample
-        ]
-    ).sample(
-        frac=1,
-        random_state=42
-    )
+    print(f"Selected readmission rows: {len(df)}")
 
-    print(
-        f"Selected readmission rows: {len(df)}"
-    )
-
-    print(
-        "30-day readmissions in sample:",
-        (df["readmitted"] == "<30").sum()
-    )
+    print("30-day readmissions in sample:", (df["readmitted"] == "<30").sum())
 
     connection = get_connection()
     cursor = connection.cursor()
@@ -286,13 +223,7 @@ def seed_readmission():
 
         for _, row in df.iterrows():
 
-            patient_nbr = int(
-                row["patient_nbr"]
-            )
-
-            # -------------------------------------------------
-            # Create patient if we have not seen this patient
-            # -------------------------------------------------
+            patient_nbr = int(row["patient_nbr"])
 
             if patient_nbr not in patient_cache:
 
@@ -313,8 +244,8 @@ def seed_readmission():
                         patient_nbr,
                         clean_value(row["gender"]),
                         clean_value(row["race"]),
-                        clean_value(row["age"])
-                    )
+                        clean_value(row["age"]),
+                    ),
                 )
 
                 patient_id = cursor.fetchone()[0]
@@ -325,29 +256,13 @@ def seed_readmission():
 
             else:
 
-                patient_id = patient_cache[
-                    patient_nbr
-                ]
-
-            # -------------------------------------------------
-            # Prepare encounter values
-            # -------------------------------------------------
+                patient_id = patient_cache[patient_nbr]
 
             encounter_values = []
 
             for feature in READMISSION_FEATURES:
 
-                encounter_values.append(
-                    clean_value(row[feature])
-                )
-
-            # -------------------------------------------------
-            # Database column names
-            #
-            # PostgreSQL cannot use the '-' names directly
-            # as unquoted column names, so our schema uses
-            # underscores for these medication columns.
-            # -------------------------------------------------
+                encounter_values.append(clean_value(row[feature]))
 
             cursor.execute(
                 """
@@ -411,10 +326,7 @@ def seed_readmission():
                 )
                 RETURNING encounter_id;
                 """,
-                (
-                    patient_id,
-                    *encounter_values
-                )
+                (patient_id, *encounter_values),
             )
 
             cursor.fetchone()
@@ -423,13 +335,9 @@ def seed_readmission():
 
         connection.commit()
 
-        print(
-            f"Patients inserted: {patient_count}"
-        )
+        print(f"Patients inserted: {patient_count}")
 
-        print(
-            f"Encounters inserted: {encounter_count}"
-        )
+        print(f"Encounters inserted: {encounter_count}")
 
     except Exception:
 
@@ -442,10 +350,6 @@ def seed_readmission():
         cursor.close()
         connection.close()
 
-
-# ---------------------------------------------------------
-# Main
-# ---------------------------------------------------------
 
 def main():
 
@@ -462,36 +366,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-```
-
-### Run it
-
-From the **project root**:
-
-```bash
-cd /Users/imohekpenyong/test_repo/production-ml-project
-```
-
-Then:
-
-```bash
-python backend/database/seed_database.py
-```
-
-One thing to watch for: because you've already created test records such as `customer_id=1` and `patient_id=1`, this script will **add** the sample data rather than replace those records.
-
-After it finishes, we'll check:
-
-```sql
-SELECT COUNT(*) FROM customers;
-
-SELECT COUNT(*) FROM customer_features;
-
-SELECT COUNT(*) FROM patients;
-
-SELECT COUNT(*) FROM encounters;
-```
-
-and also check that the readmission sample retained roughly the expected number of `<30` cases.
-
-**Don't run the seeding script yet if you want us to first make it safe to re-run without creating duplicate records.** The version above is suitable for the initial population; before deployment, we'll make ingestion/migrations more robust.
