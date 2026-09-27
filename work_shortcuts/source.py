@@ -1,3 +1,21 @@
+import pandas as pd
+from pathlib import Path
+
+HOME_DIR = Path.home()
+DATA_DIR = HOME_DIR / "Downloads" / "source_file.csv"
+
+DIR = HOME_DIR / "TEST"
+
+Path.mkdir(DIR, parents=True, exist_ok=True)
+
+df = pd.read_csv(DATA_DIR)
+
+with open(DIR / "test.txt", "w") as f:
+    f.write("This is a test")
+
+print(df.columns)
+
+
 sources = {
     "scandtv": "https://www.allente.se/tv-guide/",
     "eurosport": "https://www.home3.ee/tv-kava/telekanalid/eurosport-2/",
