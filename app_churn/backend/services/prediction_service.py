@@ -11,9 +11,12 @@ FEATURES = {"churn": CHURN_FEATURES, "readmission": READMISSION_FEATURES}
 
 
 def predict(model_name, features=None, encounter_id=None, customer_id=None):
+    def predict(model_name, features=None, encounter_id=None, customer_id=None):
 
-    if model_name not in MODELS:
-        raise ValueError(f"Unknown model: {model_name}")
+        print(">>> PREDICT SERVICE CALLED <<<")
+
+        if model_name not in MODELS:
+            raise ValueError(f"Unknown model: {model_name}")
 
     if encounter_id is not None:
 
@@ -21,6 +24,12 @@ def predict(model_name, features=None, encounter_id=None, customer_id=None):
 
         if features is None:
             raise ValueError(f"Encounter {encounter_id} not found")
+
+        print("FEATURE KEYS:")
+        print(list(features.keys()))
+
+        print("REQUIRED FEATURES:")
+        print(FEATURES[model_name])
 
     elif customer_id is not None:
 

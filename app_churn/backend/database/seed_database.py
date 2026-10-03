@@ -1,6 +1,10 @@
 import pandas as pd
+from sqlalchemy import create_engine, text
 
-from connection import get_connection
+DATABASE_URL = "postgresql+psycopg://" "ml_user:ml_password@localhost:5432/ml_platform"
+
+engine = create_engine(DATABASE_URL)
+
 
 CHURN_DATASET = (
     "/Users/imohekpenyong/test_repo/"
@@ -11,9 +15,7 @@ READMISSION_DATASET = (
     "/Users/imohekpenyong/test_repo/" "diabetes_ml_prediction/src/data.csv"
 )
 
-
 SAMPLE_SIZE = 10_000
-
 
 CHURN_FEATURES = [
     "eqpdays",
@@ -33,7 +35,6 @@ CHURN_FEATURES = [
     "totcalls",
 ]
 
-
 READMISSION_NUMERIC = [
     "admission_type_id",
     "discharge_disposition_id",
@@ -47,6 +48,7 @@ READMISSION_NUMERIC = [
     "number_inpatient",
     "number_diagnoses",
 ]
+
 
 READMISSION_CATEGORICAL = [
     "race",
@@ -87,16 +89,25 @@ READMISSION_CATEGORICAL = [
     "diabetesMed",
 ]
 
-
 READMISSION_FEATURES = READMISSION_NUMERIC + READMISSION_CATEGORICAL
 
+CHURN_COLUMN_MAP = {
+    "totmrc_Mean": "totmrc_mean",
+    "mou_Mean": "mou_mean",
+    "mou_cvce_Mean": "mou_cvce_mean",
+}
 
-def clean_value(value):
 
-    if pd.isna(value):
-        return None
-
-    return value
+READMISSION_COLUMN_MAP = {
+    "A1Cresult": "a1cresult",
+    "glyburide-metformin": "glyburide_metformin",
+    "glipizide-metformin": "glipizide_metformin",
+    "glimepiride-pioglitazone": "glimepiride_pioglitazone",
+    "metformin-rosiglitazone": "metformin_rosiglitazone",
+    "metformin-pioglitazone": "metformin_pioglitazone",
+    "change": "change_status",
+    "diabetesMed": "diabetes_med",
+}
 
 
 def seed_churn():
@@ -105,84 +116,47 @@ def seed_churn():
 
     df = pd.read_csv(CHURN_DATASET)
 
-    print(f"Original churn rows: {len(df)}")
+    print(f"Original churn rows: {len(df):,}")
 
-    df = df.sample(n=SAMPLE_SIZE, random_state=42)
+    df = df.sample(n=SAMPLE_SIZE, random_state=42).copy()
 
-    print(f"Selected churn rows: {len(df)}")
+    print(f"Selected churn rows: {len(df):,}")
 
-    connection = get_connection()
-    cursor = connection.cursor()
+    customers = pd.DataFrame(index=df.index)
 
-    customer_count = 0
-    feature_count = 0
+    customers.index.name = "source_index"
 
-    try:
+    customers["created_at"] = pd.Timestamp.now()
 
-        for _, row in df.iterrows():
+    customers.to_sql("customers", engine, if_exists="append", index=False)
 
-            cursor.execute("""
-                INSERT INTO customers DEFAULT VALUES
-                RETURNING customer_id;
-                """)
+    with engine.connect() as connection:
 
-            customer_id = cursor.fetchone()[0]
+        result = connection.execute(
+            text("""
+                SELECT customer_id
+                FROM customers
+                ORDER BY customer_id DESC
+                LIMIT :limit
+                """),
+            {"limit": len(customers)},
+        )
 
-            customer_count += 1
+        customer_ids = [row[0] for row in result]
 
-            values = []
+    customer_ids.reverse()
 
-            for feature in CHURN_FEATURES:
+    feature_df = df[CHURN_FEATURES].copy()
 
-                values.append(clean_value(row[feature]))
-            cursor.execute(
-                """
-                INSERT INTO customer_features (
-                    customer_id,
-                    eqpdays,
-                    months,
-                    change_mou,
-                    totmrc_mean,
-                    mou_mean,
-                    avgqty,
-                    asl_flag,
-                    change_rev,
-                    hnd_price,
-                    mou_cvce_mean,
-                    avg3mou,
-                    uniqsubs,
-                    crclscod,
-                    refurb_new,
-                    totcalls
-                )
-                VALUES (
-                    %s, %s, %s, %s, %s,
-                    %s, %s, %s, %s, %s,
-                    %s, %s, %s, %s, %s,
-                    %s
-                );
-                """,
-                (customer_id, *values),
-            )
+    feature_df = feature_df.rename(columns=CHURN_COLUMN_MAP)
 
-            feature_count += 1
+    feature_df.insert(0, "customer_id", customer_ids)
 
-        connection.commit()
+    feature_df.to_sql("customer_features", engine, if_exists="append", index=False)
 
-        print(f"Customers inserted: {customer_count}")
+    print(f"Customers inserted: {len(customers):,}")
 
-        print(f"Customer feature records inserted: " f"{feature_count}")
-
-    except Exception:
-
-        connection.rollback()
-
-        raise
-
-    finally:
-
-        cursor.close()
-        connection.close()
+    print(f"Customer feature records inserted: " f"{len(feature_df):,}")
 
 
 def seed_readmission():
@@ -191,164 +165,126 @@ def seed_readmission():
 
     df = pd.read_csv(READMISSION_DATASET)
 
-    print(f"Original readmission rows: {len(df)}")
+    print(f"Original readmission rows: {len(df):,}")
 
     positive = df[df["readmitted"] == "<30"]
 
     negative = df[df["readmitted"] != "<30"]
 
-    positive_sample_size = round(SAMPLE_SIZE * len(positive) / len(df))
+    positive_size = round(SAMPLE_SIZE * len(positive) / len(df))
 
-    negative_sample_size = SAMPLE_SIZE - positive_sample_size
+    negative_size = SAMPLE_SIZE - positive_size
 
-    positive_sample = positive.sample(n=positive_sample_size, random_state=42)
+    positive_sample = positive.sample(n=positive_size, random_state=42)
 
-    negative_sample = negative.sample(n=negative_sample_size, random_state=42)
+    negative_sample = negative.sample(n=negative_size, random_state=42)
 
-    df = pd.concat([positive_sample, negative_sample]).sample(frac=1, random_state=42)
+    df = (
+        pd.concat([positive_sample, negative_sample])
+        .sample(frac=1, random_state=42)
+        .copy()
+    )
 
-    print(f"Selected readmission rows: {len(df)}")
+    print(f"Selected readmission rows: {len(df):,}")
 
-    print("30-day readmissions in sample:", (df["readmitted"] == "<30").sum())
+    print("30-day readmissions:", (df["readmitted"] == "<30").sum())
 
-    connection = get_connection()
-    cursor = connection.cursor()
+    patients = (
+        df[["patient_nbr", "gender", "race", "age"]]
+        .drop_duplicates(subset=["patient_nbr"])
+        .copy()
+    )
 
-    patient_cache = {}
+    patients = patients.rename(columns={"patient_nbr": "patient_nbr"})
 
-    patient_count = 0
-    encounter_count = 0
+    with engine.connect() as connection:
 
-    try:
-
-        for _, row in df.iterrows():
-
-            patient_nbr = int(row["patient_nbr"])
-
-            if patient_nbr not in patient_cache:
-
-                cursor.execute(
-                    """
-                    INSERT INTO patients (
-                        patient_nbr,
-                        gender,
-                        race,
-                        age
-                    )
-                    VALUES (
-                        %s, %s, %s, %s
-                    )
-                    RETURNING patient_id;
-                    """,
-                    (
-                        patient_nbr,
-                        clean_value(row["gender"]),
-                        clean_value(row["race"]),
-                        clean_value(row["age"]),
-                    ),
-                )
-
-                patient_id = cursor.fetchone()[0]
-
-                patient_cache[patient_nbr] = patient_id
-
-                patient_count += 1
-
-            else:
-
-                patient_id = patient_cache[patient_nbr]
-
-            encounter_values = []
-
-            for feature in READMISSION_FEATURES:
-
-                encounter_values.append(clean_value(row[feature]))
-
-            cursor.execute(
-                """
-                INSERT INTO encounters (
+        existing = pd.read_sql(
+            text("""
+                SELECT
                     patient_id,
-                    admission_type_id,
-                    discharge_disposition_id,
-                    admission_source_id,
-                    time_in_hospital,
-                    num_lab_procedures,
-                    num_procedures,
-                    num_medications,
-                    number_outpatient,
-                    number_emergency,
-                    number_inpatient,
-                    number_diagnoses,
-                    weight,
-                    payer_code,
-                    medical_specialty,
-                    diag_1,
-                    diag_2,
-                    diag_3,
-                    max_glu_serum,
-                    A1Cresult,
-                    metformin,
-                    repaglinide,
-                    nateglinide,
-                    chlorpropamide,
-                    glimepiride,
-                    acetohexamide,
-                    glipizide,
-                    glyburide,
-                    tolbutamide,
-                    pioglitazone,
-                    rosiglitazone,
-                    acarbose,
-                    miglitol,
-                    troglitazone,
-                    tolazamide,
-                    examide,
-                    citoglipton,
-                    insulin,
-                    glyburide_metformin,
-                    glipizide_metformin,
-                    glimepiride_pioglitazone,
-                    metformin_rosiglitazone,
-                    metformin_pioglitazone,
-                    change_status,
-                    diabetes_med
-                )
-                VALUES (
-                    %s, %s, %s, %s, %s,
-                    %s, %s, %s, %s, %s,
-                    %s, %s, %s, %s, %s,
-                    %s, %s, %s, %s, %s,
-                    %s, %s, %s, %s, %s,
-                    %s, %s, %s, %s, %s,
-                    %s, %s, %s, %s, %s,
-                    %s, %s, %s, %s, %s,
-                    %s, %s, %s, %s, %s
-                )
-                RETURNING encounter_id;
-                """,
-                (patient_id, *encounter_values),
-            )
+                    patient_nbr
+                FROM patients
+                """),
+            connection,
+        )
 
-            cursor.fetchone()
+    existing_ids = set(existing["patient_nbr"])
 
-            encounter_count += 1
+    new_patients = patients[~patients["patient_nbr"].isin(existing_ids)].copy()
 
-        connection.commit()
+    if not new_patients.empty:
 
-        print(f"Patients inserted: {patient_count}")
+        new_patients.to_sql("patients", engine, if_exists="append", index=False)
 
-        print(f"Encounters inserted: {encounter_count}")
+    with engine.connect() as connection:
 
-    except Exception:
+        patient_lookup = pd.read_sql(
+            text("""
+                SELECT
+                    patient_id,
+                    patient_nbr
+                FROM patients
+                """),
+            connection,
+        )
 
-        connection.rollback()
+    df = df.merge(patient_lookup, on="patient_nbr", how="left")
 
-        raise
+    encounter_features = READMISSION_NUMERIC + [
+        feature
+        for feature in READMISSION_CATEGORICAL
+        if feature not in ["race", "gender", "age"]
+    ]
 
-    finally:
+    encounter_df = df[["patient_id"] + encounter_features].copy()
+    encounter_df = encounter_df.rename(columns=READMISSION_COLUMN_MAP)
+    print(encounter_df.columns.tolist())
 
-        cursor.close()
-        connection.close()
+    print("\nEncounter columns:")
+    print(encounter_df.columns.tolist())
+
+    print("\nEncounter dtypes:")
+    print(encounter_df.dtypes)
+
+    print("\nFirst encounter:")
+    print(encounter_df.head(1).to_dict("records"))
+
+    encounter_df.to_sql("encounters", engine, if_exists="append", index=False)
+
+    print(f"Patients inserted: " f"{len(new_patients):,}")
+
+    print(f"Unique patients in sample: " f"{len(patients):,}")
+
+    print(f"Encounters inserted: " f"{len(encounter_df):,}")
+
+
+def show_summary():
+
+    print("\n" + "=" * 60)
+    print("DATABASE SUMMARY")
+    print("=" * 60)
+
+    with engine.connect() as connection:
+
+        tables = [
+            "patients",
+            "encounters",
+            "customers",
+            "customer_features",
+            "predictions",
+        ]
+
+        for table in tables:
+
+            result = connection.execute(text(f"""
+                    SELECT COUNT(*)
+                    FROM {table}
+                    """))
+
+            count = result.scalar()
+
+            print(f"{table:20} {count:,}")
 
 
 def main():
@@ -357,11 +293,13 @@ def main():
     print("PRODUCTION ML DATABASE SEED")
     print("=" * 60)
 
-    seed_churn()
+    # seed_churn()
 
     seed_readmission()
 
-    print("\nDatabase seeding completed successfully.")
+    show_summary()
+
+    print("\nDatabase seeding completed.")
 
 
 if __name__ == "__main__":

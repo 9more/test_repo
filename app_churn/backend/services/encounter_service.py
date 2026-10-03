@@ -158,7 +158,7 @@ def get_encounter(encounter_id):
         encounters.diag_3,
 
         encounters.max_glu_serum,
-        encounters.A1Cresult,
+        encounters.a1cresult,
 
         encounters.metformin,
         encounters.repaglinide,
@@ -194,7 +194,7 @@ def get_encounter(encounter_id):
         ON encounters.patient_id = patients.patient_id
 
     WHERE encounters.encounter_id = %s;
-"""
+    """
 
     cursor.execute(query, (encounter_id,))
 
