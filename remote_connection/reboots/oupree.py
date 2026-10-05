@@ -2,6 +2,7 @@ import os
 import subprocess
 import webbrowser
 import platform
+import ipaddress
 from dotenv import load_dotenv
 
 load_dotenv()
