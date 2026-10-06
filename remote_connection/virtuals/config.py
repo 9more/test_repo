@@ -1,3 +1,5 @@
+SOURCE = {"1": "INSPIRED", "2": "KIRON", "3": "HIGHLIGHT_GAMES"}
+
 CLIENTS = {
     "1": "BETFRED",
     "2": "CORAL",
@@ -33,7 +35,3 @@ CLIENT_CATEGORIES = {
         6: "Horses Jumps",
     },
 }
-
-
-for key, value in CLIENT_CATEGORIES[CLIENTS["3"]].items():
-    print(f"Type {key} for {value}")

@@ -3,7 +3,9 @@ import webbrowser
 import os
 import subprocess
 import ipaddress
-from virtuals.config import CLIENT_CATEGORIES, CLIENTS
+
+from h11 import CLIENT
+from virtuals.config import CLIENT_CATEGORIES, CLIENTS, SOURCE
 
 load_dotenv()
 
@@ -138,19 +140,23 @@ def online():
 def online2():
     while True:
         source = input(
-            "\nType 1 for INSPIRED" "\nType 2 for KIRON" "\nType 3 for HIGHLIGHT GAMES"
+            f"\nType 1 for {SOURCE['1']}"
+            f"\nType 2 for {SOURCE['2']}"
+            f"\nType 3 for {SOURCE['3']}\n"
         ).strip()
         if source == "1":
             while True:
                 client = input(
-                    "\nType 1 for BETFRED" "\nType 2 for CORAL" "\nType 3 for LADBROKES"
+                    f"\nType 1 for {CLIENTS['1']}"
+                    f"\nType 2 for {CLIENTS['2']}"
+                    f"\nType 3 for {CLIENTS['3']}\n"
                 ).strip()
                 if client in CLIENTS:
                     print(f"\nYou selected {CLIENTS[client]}")
                 else:
                     print("Invalid selection. Please choose a valid client.")
                     continue
-                print(f"\n{CLIENTS[client]} INSPIRED VIRTUAL CATEGORIES:")
+                print(f"\n{CLIENTS[client]} {CLIENTS['1']} VIRTUAL CATEGORIES:")
                 for key, value in CLIENT_CATEGORIES[CLIENTS[client]].items():
                     print(f"Type {key} for {value}")
                 vgen = int(input("\nEnter a VGEN to remote into: "))
