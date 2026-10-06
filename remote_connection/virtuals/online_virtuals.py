@@ -3,9 +3,7 @@ import webbrowser
 import os
 import subprocess
 import ipaddress
-
-from h11 import CLIENT
-from virtuals.config import CLIENT_CATEGORIES, CLIENTS, SOURCE
+from config import CLIENT_CATEGORIES, CLIENTS, SOURCE
 
 load_dotenv()
 
@@ -156,9 +154,13 @@ def online2():
                 else:
                     print("Invalid selection. Please choose a valid client.")
                     continue
-                print(f"\n{CLIENTS[client]} {CLIENTS['1']} VIRTUAL CATEGORIES:")
+                print(f"\n{CLIENTS[client]} {SOURCE['1']} VIRTUAL CATEGORIES:")
                 for key, value in CLIENT_CATEGORIES[CLIENTS[client]].items():
-                    print(f"Type {key} for {value}")
+                    print(
+                        f"Type {key} for VGEN{key}-- {value}"
+                        if client == "1"
+                        else f"Type {key} for {CLIENTS[client][0]}VGEN{key}-- {value}"
+                    )
                 vgen = int(input("\nEnter a VGEN to remote into: "))
 
                 while True:
@@ -210,6 +212,3 @@ def online2():
         ).lower()
         if questiom == "n":
             break
-
-
-online2()
