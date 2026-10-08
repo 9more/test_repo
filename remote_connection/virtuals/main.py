@@ -1,5 +1,5 @@
-from online_virtuals import online2
-from retail_virtual import retail
+from virtuals.online_virtuals import online2
+from virtuals.retail_virtual import retail
 
 
 def main():

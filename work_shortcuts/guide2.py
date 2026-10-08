@@ -34,7 +34,7 @@ while True:
         print(f"Match found: '{matched_text}' " f"(Confidence: {score:.1f}%)")
 
         print(
-            f"Server: {df.loc[row_index, 'Server']} ; Decoder: {df.loc[row_index, "Decoder"]}"
+            f"Server: {df.loc[row_index, 'Server']} ; Decoder: {df.loc[row_index, 'Decoder']}"
         )
         print(score)
 
@@ -42,7 +42,7 @@ while True:
 
         print(f"Opening: {guide_link}")
 
-        webbrowser.get("chrome").open_new_tab(guide_link)
+        webbrowser.open(guide_link)
 
     else:
         print("No broadcaster match found.")
