@@ -4,7 +4,7 @@ import webbrowser
 import platform
 import ipaddress
 from dotenv import load_dotenv
-from remote_connection.virtuals.config import REMOTE_LOCATIONS
+from remote_connection.config import REMOTE_LOCATIONS
 
 load_dotenv()
 
@@ -12,12 +12,12 @@ load_dotenv()
 def oupree2():
     while True:
         user_input = input(
-            f"\nEnter 1 for {REMOTE_LOCATIONS['1']} boxes"
+            f"\n1 for {REMOTE_LOCATIONS['1']} boxes"
             f"\n2 for {REMOTE_LOCATIONS['2']} boxes"
             f"\n3 for {REMOTE_LOCATIONS['3']} boxes"
             f"\n4 for {REMOTE_LOCATIONS['4']} boxes"
-            f"\n5 for {REMOTE_LOCATIONS['5']} channels"
-            f"\n6 for {REMOTE_LOCATIONS['6']} channels"
+            f"\n5 for {REMOTE_LOCATIONS['5']} boxes"
+            f"\n6 for {REMOTE_LOCATIONS['6']} boxes"
             "\nSelection: "
         ).strip()
 
@@ -50,14 +50,22 @@ def oupree2():
                 )
                 webbrowser.open(f"https://{new_ip_address}")
             question = (
-                input("Do you want to connect to another box? (y/n): ").strip().lower()
+                input(
+                    f"Connect to another box in {REMOTE_LOCATIONS.get(user_input, 'Invalid selection.')}? (y/n): "
+                )
+                .strip()
+                .lower()
             )
             if question != "y":
                 print("Exiting the program.")
                 break
 
         question = (
-            input("Do you want to connect to another box? (y/n): ").strip().lower()
+            input(
+                f"Do you want to connect to another box in {REMOTE_LOCATIONS.get(user_input, 'Invalid selection.')}? (y/n): "
+            )
+            .strip()
+            .lower()
         )
         if question != "y":
             print("Exiting the program.")

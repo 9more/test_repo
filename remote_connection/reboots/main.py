@@ -3,7 +3,7 @@ from remote_connection.reboots.oupree import oupree2
 
 
 def main():
-    user_input = input("\nType 1 for redrat\nType2 for oupree:  ")
+    user_input = input("\nType 1 for REDRAT\nType 2 for OUPREE\nSelection: ").strip()
     redrat() if user_input == "1" else oupree2()
 
 

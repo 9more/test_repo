@@ -53,9 +53,20 @@ def online2():
                         target_ip = ip + vgen
 
                         print(f"Remote IP: {target_ip}")
+                        # Default installation path for TightVNC on Windows (adjust path/version if needed)
+                        tightvnc_path = r"C:\Program Files\TightVNC\tvncviewer.exe"
+
+                        # Optional: target host and port (e.g., 192.168.1.50:5901)
+                        # Open TightVNC Viewer as a separate process
+                        subprocess.Popen([tightvnc_path, str(target_ip)])
 
                     except ValueError:
                         print(f"Invalid IP address: {base_ip}")
+                        print("TightVNC Viewer started successfully.")
+                        print(
+                            f"Error: TightVNC executable not found at '{tightvnc_path}'. Please check"
+                            " your installation path."
+                        )
 
                     question = input(
                         f"\nWould you like to check another {CLIENTS[client]} Controller? y=YES, n=NO  "
