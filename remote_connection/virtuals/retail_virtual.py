@@ -36,18 +36,29 @@ def retail():
             )
 
     else:
-        for key, value in RETAIL_CATEGORIES[SOURCE["3"]].items():
-            print(f"Type {key} for {value}")
-        controller = input(f"\nEnter a controller to remote into: \n").strip()
-        base_url = os.getenv(f"{SOURCE['3']}_RETAIL")
-        new_ip_address = base_url + controller
-        print(
-            f"Connecting to {RETAIL_CATEGORIES[SOURCE['3']][controller]} at IP address {new_ip_address}"
-        )
-        subprocess.Popen(
-            ["ffplay", "-i", new_ip_address],
-            stdout=subprocess.DEVNULL,
-            stderr=subprocess.DEVNULL,
-            stdin=subprocess.DEVNULL,
-            close_fds=True,
-        )
+        while True:
+            for key, value in RETAIL_CATEGORIES[SOURCE["3"]].items():
+                print(f"Type {key} for {value}")
+            controller = input(f"\nEnter a controller to remote into: \n").strip()
+            base_url = os.getenv(f"{SOURCE['3']}_RETAIL")
+            new_ip_address = base_url + controller
+            print(
+                f"Connecting to {RETAIL_CATEGORIES[SOURCE['3']][controller]} at IP address {new_ip_address}"
+            )
+            subprocess.Popen(
+                ["ffplay", "-i", new_ip_address],
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL,
+                stdin=subprocess.DEVNULL,
+                close_fds=True,
+            )
+            question = (
+                input(
+                    f"Do you want to connect to another box in {RETAIL_CATEGORIES[SOURCE['3']][controller]}? (y/n): "
+                )
+                .strip()
+                .lower()
+            )
+            if question != "y":
+                print("Exiting the program.")
+                break
