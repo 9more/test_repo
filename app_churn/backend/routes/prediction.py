@@ -9,7 +9,6 @@ prediction_bp = Blueprint("prediction", __name__)
 def prediction():
 
     try:
-
         data = request.get_json()
 
         if not data:
@@ -17,21 +16,29 @@ def prediction():
 
         model_name = data.get("model")
 
-        features = data.get("features")
-
-        encounter_id = data.get("encounter_id")
-
         if not model_name:
             return jsonify({"error": "Model name is required"}), 400
 
-        if features is None and encounter_id is None:
-            return jsonify({"error": "Features or encounter_id are required"}), 400
+        features = data.get("features")
+        encounter_id = data.get("encounter_id")
+        customer_id = data.get("customer_id")
+
+        if features is None and encounter_id is None and customer_id is None:
+            return (
+                jsonify(
+                    {"error": ("Provide features, encounter_id, " "or customer_id")}
+                ),
+                400,
+            )
 
         result = predict(
-            model_name=model_name, features=features, encounter_id=encounter_id
+            model_name=model_name,
+            features=features,
+            encounter_id=encounter_id,
+            customer_id=customer_id,
         )
 
-        return jsonify(result)
+        return jsonify(result), 200
 
     except ValueError as error:
 
@@ -41,4 +48,4 @@ def prediction():
 
         print("Prediction error:", error)
 
-        return jsonify({"error": str(error)}), 500
+        return jsonify({"error": "Prediction service failed"}), 500

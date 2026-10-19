@@ -1,6 +1,6 @@
 import webbrowser
 import difflib
-from source import sources
+from source import df
 
 valid_keys = sources.keys()
 

@@ -6,7 +6,7 @@ i# Checkpoints
 venv/
 env/
 .env
-
+config.py
 # Dependencies
 node_modules/
 
@@ -37,7 +37,7 @@ venv/
 .venv/
 env/
 ENV/
-
+~/test_repo/remote_connection/virtuals/config.py
 # Jupyter
 .ipynb_checkpoints/
 .virtual_documents/
