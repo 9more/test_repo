@@ -12,9 +12,7 @@ function Dashboard() {
         setLoading(true);
         setError("");
 
-        const response = await fetch(
-          `${import.meta.env.VITE_API_URL}/predictions/history?limit=5`,
-        );
+        const response = await fetch("/api/predictions/history?limit=5");
 
         const data = await response.json();
 

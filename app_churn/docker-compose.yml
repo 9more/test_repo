@@ -2,17 +2,55 @@ services:
   postgres:
     image: postgres:16
     container_name: production_ml_postgres
+    restart: unless-stopped
 
     environment:
-      POSTGRES_USER: ml_user
-      POSTGRES_PASSWORD: ml_password
-      POSTGRES_DB: ml_platform
-
-    ports:
-      - "5432:5432"
+      POSTGRES_USER: ${DB_USER:-ml_user}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?Set DB_PASSWORD in the root .env file}
+      POSTGRES_DB: ${DB_NAME:-ml_platform}
 
     volumes:
       - postgres_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: app-churn-backend:latest
+    container_name: app_churn_backend
+    restart: unless-stopped
+
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: ${DB_NAME:-ml_platform}
+      DB_USER: ${DB_USER:-ml_user}
+      DB_PASSWORD: ${DB_PASSWORD:?Set DB_PASSWORD in the root .env file}
+      FLASK_DEBUG: "0"
+
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: app-churn-frontend:latest
+    container_name: app_churn_frontend
+    restart: unless-stopped
+
+    ports:
+      - "8080:80"
+
+    depends_on:
+      - backend
 
 volumes:
   postgres_data:

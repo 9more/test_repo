@@ -1,0 +1,23 @@
+artifact_path: /Users/imohekpenyong/test_repo/a-industrial-anomaly-detection/mlruns/2/models/m-7bc1f05feccc4b8ea6ba656a581083d4/artifacts
+flavors:
+  python_function:
+    config:
+      device: null
+    data: data
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.pytorch
+    pickle_module_name: mlflow.pytorch.pickle_module
+    python_version: 3.11.15
+  pytorch:
+    code: null
+    model_data: data
+    pytorch_version: 2.14.1
+mlflow_version: 3.17.2
+model_id: m-7bc1f05feccc4b8ea6ba656a581083d4
+model_size_bytes: 2545
+model_uuid: m-7bc1f05feccc4b8ea6ba656a581083d4
+prompts: null
+run_id: dea931dded184dadbadb887b9b6b4113
+utc_time_created: '2026-10-28 07:11:07.555936'

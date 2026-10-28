@@ -7,7 +7,6 @@ from routes.customers import customers_bp
 from routes.history import history_bp
 
 app = Flask(__name__)
-app = Flask(__name__)
 
 CORS(
     app,
