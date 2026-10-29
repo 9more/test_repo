@@ -1,3 +1,5 @@
+from tkinter import FALSE
+
 from flask import Flask
 from flask_cors import CORS
 from routes.prediction import prediction_bp
@@ -26,4 +28,4 @@ def health():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5001, debug=True)
+    app.run(host="0.0.0.0", port=5001, debug=False)
