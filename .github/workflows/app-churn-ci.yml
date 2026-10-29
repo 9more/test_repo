@@ -1,0 +1,39 @@
+name: App Churn CI
+
+on:
+  push:
+    branches:
+      - development
+    paths:
+      - "app_churn/**"
+      - ".github/workflows/app-churn-ci.yml"
+  pull_request:
+    branches:
+      - development
+    paths:
+      - "app_churn/**"
+      - ".github/workflows/app-churn-ci.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Validate App Churn Docker Images
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build backend image
+        run: |
+          docker build \
+            -t app-churn-backend:ci \
+            ./app_churn/backend
+
+      - name: Build frontend image
+        run: |
+          docker build \
+            -t app-churn-frontend:ci \
+            ./app_churn/frontend
