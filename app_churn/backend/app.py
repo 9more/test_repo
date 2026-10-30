@@ -1,5 +1,3 @@
-from tkinter import FALSE
-
 from flask import Flask
 from flask_cors import CORS
 from routes.prediction import prediction_bp
