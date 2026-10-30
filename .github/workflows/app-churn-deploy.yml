@@ -70,7 +70,7 @@ jobs:
           chmod 700 ~/.ssh
 
           # Remove Windows line endings and write the private key.
-          printf '%s' "$SSH_PRIVATE_KEY_B64" | tr -d '\r' > ~/.ssh/deploy_key
+          printf '%s' "$SSH_PRIVATE_KEY_B64" | base64 --decode > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
 
           # Validate that the private key can be read.
