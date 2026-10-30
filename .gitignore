@@ -70,6 +70,7 @@ frontend/dist/
 *.egg-info/
 
 # Model artifacts (if regenerated)
+# Ignore joblib files generally
 *.joblib
 
 !imoh-ai/backend/models/
