@@ -1,3 +1,4 @@
+
 name: App Churn Production Deployment
 
 on:
@@ -58,55 +59,74 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Configure SSH
+      - name: Prepare SSH credentials
         env:
           SSH_PRIVATE_KEY: ${{ secrets.LIGHTSAIL_SSH_KEY }}
           SSH_KNOWN_HOSTS: ${{ secrets.LIGHTSAIL_KNOWN_HOSTS }}
         run: |
-          install -m 700 -d ~/.ssh
-          printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
+          set -euo pipefail
+
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+
+          # Remove Windows line endings and write the private key.
+          printf '%s' "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
+
+          # Validate that the private key can be read.
+          ssh-keygen -y -f ~/.ssh/deploy_key > /dev/null
+
+          # Install the trusted Lightsail host key.
           printf '%s\n' "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
           chmod 600 ~/.ssh/known_hosts
 
-       - name: Configure SSH
-         env:
-         SSH_PRIVATE_KEY: ${{ secrets.LIGHTSAIL_SSH_KEY }}
-         SSH_KNOWN_HOSTS: ${{ secrets.LIGHTSAIL_KNOWN_HOSTS }}
-         run: |
-         install -m 700 -d ~/.ssh
-         printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
-         chmod 600 ~/.ssh/deploy_key
+          echo "SSH credentials prepared and private key validated."
 
-         ssh-keygen -y -f ~/.ssh/deploy_key > /dev/null
-
-         printf '%s\n' "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
-         chmod 600 ~/.ssh/known_hosts
-
-      - name: Prepare deployment directory
+      - name: Test Lightsail connection
         env:
           HOST: ${{ secrets.LIGHTSAIL_HOST }}
           USER: ${{ secrets.LIGHTSAIL_USER }}
         run: |
-          ssh -i ~/.ssh/deploy_key "$USER@$HOST" \
-            'mkdir -p ~/app_churn'
+          set -euo pipefail
+
+          ssh \
+            -o BatchMode=yes \
+            -o IdentitiesOnly=yes \
+            -o StrictHostKeyChecking=yes \
+            -i ~/.ssh/deploy_key \
+            "$USER@$HOST" \
+            'mkdir -p ~/app_churn && echo "Lightsail connection successful."'
 
       - name: Copy production Compose file
         env:
           HOST: ${{ secrets.LIGHTSAIL_HOST }}
           USER: ${{ secrets.LIGHTSAIL_USER }}
         run: |
-          scp -i ~/.ssh/deploy_key \
+          set -euo pipefail
+
+          scp \
+            -o BatchMode=yes \
+            -o IdentitiesOnly=yes \
+            -o StrictHostKeyChecking=yes \
+            -i ~/.ssh/deploy_key \
             app_churn/docker-compose.prod.yml \
             "$USER@$HOST:app_churn/docker-compose.prod.yml"
 
-      - name: Pull and deploy this commit
+      - name: Pull and deploy images
         env:
           HOST: ${{ secrets.LIGHTSAIL_HOST }}
           USER: ${{ secrets.LIGHTSAIL_USER }}
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          ssh -i ~/.ssh/deploy_key "$USER@$HOST" \
+          set -euo pipefail
+
+          ssh \
+            -o BatchMode=yes \
+            -o IdentitiesOnly=yes \
+            -o StrictHostKeyChecking=yes \
+            -i ~/.ssh/deploy_key \
+            "$USER@$HOST" \
             "cd ~/app_churn && \
              IMAGE_TAG=$IMAGE_TAG docker compose -f docker-compose.prod.yml pull && \
              IMAGE_TAG=$IMAGE_TAG docker compose -f docker-compose.prod.yml up -d --remove-orphans"
+
