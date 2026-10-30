@@ -19,6 +19,8 @@ services:
     image: ghcr.io/9more/app-churn-backend:${IMAGE_TAG:?Set IMAGE_TAG}
     container_name: app_churn_backend
     restart: unless-stopped
+    volumes:
+      - ./models:/app/models:ro
     environment:
       DB_HOST: postgres
       DB_PORT: 5432
