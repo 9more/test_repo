@@ -1,21 +1,42 @@
+import os
 import pandas as pd
-from sqlalchemy import create_engine, text
 
-DATABASE_URL = "postgresql+psycopg://" "ml_user:ml_password@localhost:5432/ml_platform"
+from sqlalchemy import (
+    create_engine,
+    text,
+    MetaData,
+    Table,
+    insert,
+    URL,
+)
+
+# --------------------------------------------------
+# DATABASE CONNECTION
+# --------------------------------------------------
+
+DATABASE_URL = URL.create(
+    drivername="postgresql+psycopg",
+    username=os.environ["DB_USER"],
+    password=os.environ["DB_PASSWORD"],
+    host=os.environ.get("DB_HOST", "localhost"),
+    port=int(os.environ.get("DB_PORT", 5432)),
+    database=os.environ["DB_NAME"],
+)
 
 engine = create_engine(DATABASE_URL)
 
+# --------------------------------------------------
+# DATASET PATHS
+# --------------------------------------------------
 
-CHURN_DATASET = (
-    "/Users/imohekpenyong/test_repo/"
-    "production-ml-project/data/raw/telecom_customer.csv"
-)
-
-READMISSION_DATASET = (
-    "/Users/imohekpenyong/test_repo/" "diabetes_ml_prediction/src/data.csv"
-)
+CHURN_DATASET = "/app/data/churn/telecom_customer.csv"
+READMISSION_DATASET = "/app/data/readmission/data.csv"
 
 SAMPLE_SIZE = 10_000
+
+# --------------------------------------------------
+# FEATURE DEFINITIONS
+# --------------------------------------------------
 
 CHURN_FEATURES = [
     "eqpdays",
@@ -48,7 +69,6 @@ READMISSION_NUMERIC = [
     "number_inpatient",
     "number_diagnoses",
 ]
-
 
 READMISSION_CATEGORICAL = [
     "race",
@@ -89,14 +109,11 @@ READMISSION_CATEGORICAL = [
     "diabetesMed",
 ]
 
-READMISSION_FEATURES = READMISSION_NUMERIC + READMISSION_CATEGORICAL
-
 CHURN_COLUMN_MAP = {
     "totmrc_Mean": "totmrc_mean",
     "mou_Mean": "mou_mean",
     "mou_cvce_Mean": "mou_cvce_mean",
 }
-
 
 READMISSION_COLUMN_MAP = {
     "A1Cresult": "a1cresult",
@@ -110,6 +127,41 @@ READMISSION_COLUMN_MAP = {
 }
 
 
+# --------------------------------------------------
+# SAFETY CHECK
+# --------------------------------------------------
+
+
+def check_empty_database():
+
+    tables = [
+        "patients",
+        "encounters",
+        "customers",
+        "customer_features",
+        "predictions",
+    ]
+
+    with engine.connect() as connection:
+
+        for table in tables:
+
+            count = connection.execute(
+                text(f"SELECT COUNT(*) FROM {table}")
+            ).scalar_one()
+
+            if count > 0:
+                raise RuntimeError(
+                    f"{table} already contains {count:,} rows. "
+                    "Seeding stopped to prevent duplicate records."
+                )
+
+
+# --------------------------------------------------
+# CHURN SEEDING
+# --------------------------------------------------
+
+
 def seed_churn():
 
     print("\nLoading churn dataset...")
@@ -118,45 +170,54 @@ def seed_churn():
 
     print(f"Original churn rows: {len(df):,}")
 
+    if len(df) < SAMPLE_SIZE:
+        raise ValueError("Churn dataset contains fewer than 10,000 rows.")
+
     df = df.sample(n=SAMPLE_SIZE, random_state=42).copy()
 
-    print(f"Selected churn rows: {len(df):,}")
+    # Generate a separate database ID for every customer.
+    metadata = MetaData()
 
-    customers = pd.DataFrame(index=df.index)
+    customers_table = Table(
+        "customers",
+        metadata,
+        autoload_with=engine,
+    )
 
-    customers.index.name = "source_index"
+    customer_rows = [{} for _ in range(len(df))]
 
-    customers["created_at"] = pd.Timestamp.now()
-
-    customers.to_sql("customers", engine, if_exists="append", index=False)
-
-    with engine.connect() as connection:
+    with engine.begin() as connection:
 
         result = connection.execute(
-            text("""
-                SELECT customer_id
-                FROM customers
-                ORDER BY customer_id DESC
-                LIMIT :limit
-                """),
-            {"limit": len(customers)},
+            insert(customers_table).returning(
+                customers_table.c.customer_id,
+                sort_by_parameter_order=True,
+            ),
+            customer_rows,
         )
 
-        customer_ids = [row[0] for row in result]
+        customer_ids = list(result.scalars())
 
-    customer_ids.reverse()
+        feature_df = df[CHURN_FEATURES].copy()
 
-    feature_df = df[CHURN_FEATURES].copy()
+        feature_df = feature_df.rename(columns=CHURN_COLUMN_MAP)
 
-    feature_df = feature_df.rename(columns=CHURN_COLUMN_MAP)
+        feature_df.insert(0, "customer_id", customer_ids)
 
-    feature_df.insert(0, "customer_id", customer_ids)
+        feature_df.to_sql(
+            "customer_features",
+            connection,
+            if_exists="append",
+            index=False,
+        )
 
-    feature_df.to_sql("customer_features", engine, if_exists="append", index=False)
+    print(f"Customers inserted: {len(customer_ids):,}")
+    print(f"Customer features inserted: {len(feature_df):,}")
 
-    print(f"Customers inserted: {len(customers):,}")
 
-    print(f"Customer feature records inserted: " f"{len(feature_df):,}")
+# --------------------------------------------------
+# READMISSION SEEDING
+# --------------------------------------------------
 
 
 def seed_readmission():
@@ -168,16 +229,21 @@ def seed_readmission():
     print(f"Original readmission rows: {len(df):,}")
 
     positive = df[df["readmitted"] == "<30"]
-
     negative = df[df["readmitted"] != "<30"]
 
     positive_size = round(SAMPLE_SIZE * len(positive) / len(df))
 
     negative_size = SAMPLE_SIZE - positive_size
 
-    positive_sample = positive.sample(n=positive_size, random_state=42)
+    positive_sample = positive.sample(
+        n=positive_size,
+        random_state=42,
+    )
 
-    negative_sample = negative.sample(n=negative_size, random_state=42)
+    negative_sample = negative.sample(
+        n=negative_size,
+        random_state=42,
+    )
 
     df = (
         pd.concat([positive_sample, negative_sample])
@@ -186,8 +252,10 @@ def seed_readmission():
     )
 
     print(f"Selected readmission rows: {len(df):,}")
-
-    print("30-day readmissions:", (df["readmitted"] == "<30").sum())
+    print(
+        "30-day readmissions:",
+        (df["readmitted"] == "<30").sum(),
+    )
 
     patients = (
         df[["patient_nbr", "gender", "race", "age"]]
@@ -195,68 +263,57 @@ def seed_readmission():
         .copy()
     )
 
-    patients = patients.rename(columns={"patient_nbr": "patient_nbr"})
+    with engine.begin() as connection:
 
-    with engine.connect() as connection:
-
-        existing = pd.read_sql(
-            text("""
-                SELECT
-                    patient_id,
-                    patient_nbr
-                FROM patients
-                """),
+        patients.to_sql(
+            "patients",
             connection,
+            if_exists="append",
+            index=False,
         )
-
-    existing_ids = set(existing["patient_nbr"])
-
-    new_patients = patients[~patients["patient_nbr"].isin(existing_ids)].copy()
-
-    if not new_patients.empty:
-
-        new_patients.to_sql("patients", engine, if_exists="append", index=False)
-
-    with engine.connect() as connection:
 
         patient_lookup = pd.read_sql(
             text("""
-                SELECT
-                    patient_id,
-                    patient_nbr
+                SELECT patient_id, patient_nbr
                 FROM patients
-                """),
+            """),
             connection,
         )
 
-    df = df.merge(patient_lookup, on="patient_nbr", how="left")
+        df = df.merge(
+            patient_lookup,
+            on="patient_nbr",
+            how="left",
+            validate="many_to_one",
+        )
 
-    encounter_features = READMISSION_NUMERIC + [
-        feature
-        for feature in READMISSION_CATEGORICAL
-        if feature not in ["race", "gender", "age"]
-    ]
+        if df["patient_id"].isna().any():
+            raise RuntimeError("Some encounters have no patient ID.")
 
-    encounter_df = df[["patient_id"] + encounter_features].copy()
-    encounter_df = encounter_df.rename(columns=READMISSION_COLUMN_MAP)
-    print(encounter_df.columns.tolist())
+        encounter_features = READMISSION_NUMERIC + [
+            feature
+            for feature in READMISSION_CATEGORICAL
+            if feature not in ["race", "gender", "age"]
+        ]
 
-    print("\nEncounter columns:")
-    print(encounter_df.columns.tolist())
+        encounter_df = df[["patient_id"] + encounter_features].copy()
 
-    print("\nEncounter dtypes:")
-    print(encounter_df.dtypes)
+        encounter_df = encounter_df.rename(columns=READMISSION_COLUMN_MAP)
 
-    print("\nFirst encounter:")
-    print(encounter_df.head(1).to_dict("records"))
+        encounter_df.to_sql(
+            "encounters",
+            connection,
+            if_exists="append",
+            index=False,
+        )
 
-    encounter_df.to_sql("encounters", engine, if_exists="append", index=False)
+    print(f"Unique patients inserted: {len(patients):,}")
+    print(f"Encounters inserted: {len(encounter_df):,}")
 
-    print(f"Patients inserted: " f"{len(new_patients):,}")
 
-    print(f"Unique patients in sample: " f"{len(patients):,}")
-
-    print(f"Encounters inserted: " f"{len(encounter_df):,}")
+# --------------------------------------------------
+# DATABASE SUMMARY
+# --------------------------------------------------
 
 
 def show_summary():
@@ -265,26 +322,28 @@ def show_summary():
     print("DATABASE SUMMARY")
     print("=" * 60)
 
-    with engine.connect() as connection:
+    tables = [
+        "patients",
+        "encounters",
+        "customers",
+        "customer_features",
+        "predictions",
+    ]
 
-        tables = [
-            "patients",
-            "encounters",
-            "customers",
-            "customer_features",
-            "predictions",
-        ]
+    with engine.connect() as connection:
 
         for table in tables:
 
-            result = connection.execute(text(f"""
-                    SELECT COUNT(*)
-                    FROM {table}
-                    """))
-
-            count = result.scalar()
+            count = connection.execute(
+                text(f"SELECT COUNT(*) FROM {table}")
+            ).scalar_one()
 
             print(f"{table:20} {count:,}")
+
+
+# --------------------------------------------------
+# MAIN
+# --------------------------------------------------
 
 
 def main():
@@ -293,8 +352,9 @@ def main():
     print("PRODUCTION ML DATABASE SEED")
     print("=" * 60)
 
-    # seed_churn()
+    check_empty_database()
 
+    seed_churn()
     seed_readmission()
 
     show_summary()
