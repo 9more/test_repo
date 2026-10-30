@@ -61,7 +61,7 @@ jobs:
 
       - name: Prepare SSH credentials
         env:
-          SSH_PRIVATE_KEY: ${{ secrets.LIGHTSAIL_SSH_KEY_B64 }}
+          SSH_PRIVATE_KEY_B64: ${{ secrets.LIGHTSAIL_SSH_KEY_B64 }}
           SSH_KNOWN_HOSTS: ${{ secrets.LIGHTSAIL_KNOWN_HOSTS }}
         run: |
           set -euo pipefail
@@ -69,18 +69,15 @@ jobs:
           mkdir -p ~/.ssh
           chmod 700 ~/.ssh
 
-          # Remove Windows line endings and write the private key.
           printf '%s' "$SSH_PRIVATE_KEY_B64" | base64 --decode > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
 
-          # Validate that the private key can be read.
           ssh-keygen -y -f ~/.ssh/deploy_key > /dev/null
 
-          # Install the trusted Lightsail host key.
           printf '%s\n' "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
           chmod 600 ~/.ssh/known_hosts
 
-          echo "SSH credentials prepared and private key validated."
+          echo "SSH private key validated successfully."
 
       - name: Test Lightsail connection
         env:
